@@ -1,0 +1,20 @@
+{
+	"name": "smart-sync-community-lint",
+	"private": true,
+	"type": "module",
+	"dependencies": {
+		"@eslint/js": "10.0.1",
+		"@eslint/json": "0.14.0",
+		"eslint": "10.13.0",
+		"eslint-plugin-obsidianmd": "0.4.2",
+		"obsidian": "1.8.7",
+		"typescript-eslint": "8.71.2",
+		"obsidian-api-current": "npm:obsidian@1.14.4"
+	},
+	"overrides": {
+		"eslint": "$eslint",
+		"@eslint/js": "$@eslint/js",
+		"moment": "2.31.0",
+		"eslint-plugin-obsidianmd": { "@eslint/js": "$@eslint/js" }
+	}
+}

@@ -1,16 +1,27 @@
-# Smart Sync — Global distribution
+# Smart Sync
 
-This repository reserves the distribution entry for Smart Sync, the Global Obsidian plugin (ID smart-sync-global). No plugin Release or installable package has been published here.
+Sync notes, attachments and selected settings with client-side encryption. Keep original file modification times, manage devices and recover earlier versions. Additional local tools include sorting, pinned notes, recent files and password-protected note content.
 
-The overseas service, complete English resources, privacy information and regional acceptance gates must be ready before distribution. External login and billing are design-only. Do not use the China edition's account, storage or binaries as a substitute for a Global release.
+Plugin ID: `smart-sync-global`. This repository contains a generated source preview for Community preparation. No installable Global Release has been published here. The preview is not a stable-release recommendation.
 
-Shared Client source: [obsidian-smart-sync-client](https://github.com/adventurer2008/obsidian-smart-sync-client). China distribution: [obsidian-smart-sync-release-cn](https://github.com/adventurer2008/obsidian-smart-sync-release-cn). Server and operational tooling remain private.
+## Account and payments
 
-New Client candidates use Apache License 2.0; dependency notices accompany applicable software distributions. This repository does not grant access to a hosted service or license the private Server. Existing China releases through 0.1.81 retain their original MIT terms and assets.
+An account is required for hosted synchronization. Sign in with Google, GitHub or an emailed code. A free storage tier is available; additional storage is a paid subscription. See current [plans](https://pay.smartsync.cc/pay/plans) before purchase. Stripe handles checkout and recurring subscriptions. Account sign-in does not replace the encryption passphrase; keep that passphrase safe.
 
-CHG-20261021-06; requirement R304 / DEC282: create the approved separate Global distribution placeholder. No version, manifest or fabricated acceptance is provided.
+To delete an account, first delete its cloud vaults and wait for cleanup. The plugin then requires identity verification and confirmation. Account deletion does not automatically refund payments. Contact [support](mailto:admin@smartsync.cc) for payment/refund questions; see the [terms](https://smartsync.cc/terms/).
 
+## Privacy and compatibility
 
-## Documentation language
+Protected content and paths are encrypted on the device before upload. Account identity, vault/device labels, usage and other operational metadata are outside content encryption. Encryption does not replace backups or device security. Read the [privacy policy](https://smartsync.cc/privacy/) and [user guide](USER-GUIDE.md).
 
-CHG-20261021-15; U301/R311; DEC292. Global user-facing documentation, installation instructions, privacy information and future release notes are maintained in English. The China distribution uses Simplified Chinese as its primary documentation language. Preserve original license and dependency notice texts. This documentation update does not publish a Global release.
+The plugin uses shared desktop and mobile controls. Mobile operating systems may suspend background synchronization; reopen Obsidian and confirm important changes finish uploading. Desktop-only capabilities are hidden or guarded on mobile. Fresh physical-device acceptance for this exact candidate remains incomplete; synthetic tests do not establish support on every device.
+
+## Source and build
+
+Development takes place only in [the canonical Client repository](https://github.com/adventurer2008/obsidian-smart-sync-client). `SOURCE-SNAPSHOT.json` identifies the exact exported commit and file hashes. Do not edit the generated runtime here. Server code, deployment tools and credentials are excluded.
+
+Use Node 26.12.1, run `npm ci --ignore-scripts`, then `npm run build`. The build verifies the source snapshot and produces `main.js`, `manifest.json` and `styles.css`. Building locally does not install the plugin, publish a Release or pass official Community review. See [Community preparation](COMMUNITY.md) for current gates.
+
+Client source uses [Apache-2.0](LICENSE); dependency terms are in [THIRD-PARTY-NOTICES.md](THIRD-PARTY-NOTICES.md). A source license does not grant hosted-service access or rights to the private Server.
+
+CHG-20261104-GITHUB-COMMUNITY-PREP: replace the original placeholder with a fixed public Client source preview and review materials; no tag, binary Release or listing submission.
