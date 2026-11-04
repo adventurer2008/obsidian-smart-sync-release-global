@@ -1,10 +1,10 @@
 {
   "format": "smart-sync-community-source-1",
   "sourceRepository": "adventurer2008/obsidian-smart-sync-client",
-  "sourceCommit": "d3ca18676ed13f2e00a43ce3e49803d99c9d5965",
+  "sourceCommit": "b9e7504a85e3853cbece3a749dcdc8328cfab50e",
   "edition": "global",
   "version": "1.1.4",
-  "previewOnly": true,
+  "previewOnly": false,
   "sourceInputs": {
     "LICENSE": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
     "THIRD-PARTY-NOTICES.md": "c95b35209a0341a117d566cbadbc3a9d8e9817114ed77f7e862c554f2a076bde",
@@ -35,7 +35,7 @@
     "src/peers.js": "940bdd08e2962ed1f416e49a6718a95baa9a72d03617b6972c435579b2ee5bc6",
     "src/pinning.js": "ea447a9c241e89297aeb972bf0c355d20347aedd96f6fce2b184fa9e1ad4fcd8",
     "src/planning.js": "8606d1e95df31d4cb3d4366bb8a76f045dec9154b67b77535bf652e6743ca088",
-    "src/plugin.js": "9e6ee4b1950e28acdfb3decbb706008fa0fc56811b71ee8a9a27deafc71359cf",
+    "src/plugin.js": "c928a31c6e7925c6ef6e539318112b33a968d9809012e6566fb2f90b3ba66bef",
     "src/recovery.js": "1bb2e325808be24c05b023c2f393a1ee9787b6d8bc08de1590a26bb42438b574",
     "src/resume.js": "d8cca0fede4d0ae75ae95369882420efb472c08f147e92e6a7c3c93e3bbdad0d",
     "src/routing.js": "eeb9f8246b21d4f229aa086d54a39981caa3775b377060087488bad2c9dfa806",
@@ -59,7 +59,7 @@
     "test/download-window.test.mjs": "f7a644b617191336a27200385b48d4a29bd746d614d3a303414713b047c381dd",
     "test/encryption-dom-sdk.mjs": "cb68e6752c54a4bebf4bb0fd64fc9796e625c881a486067a6a9330f506a50ef0",
     "test/global-connection.test.mjs": "a81e67e534b2c8068f137348f92e3190efa4b964b4c340cb93159f88accf8eee",
-    "test/global-diagnostics.test.mjs": "c159eb83a210eefabdeff0ececa4f92843c91c48103378e342ffe20a270ca79f",
+    "test/global-diagnostics.test.mjs": "05423b0c2c137d2d8581f0897e5fc9fdd9e1a7e5a12fbab90e2f12e81b547505",
     "test/global-parity.test.mjs": "42724becffe6bf9aec0f913b34615d5514b59e1fe0eaa5d9dad8c418e9429be0",
     "test/global-staging.test.mjs": "650cc4cd9aa530be87840d45ef7f7510d1d65df4b8c009395b3b87a44360b8b8",
     "test/history-context-menu.test.mjs": "56916482b95e08ebcdac22e9049118aaabdba4ec92db5290095a6c61e03e765f",
@@ -129,7 +129,7 @@
     "src/peers.js": "940bdd08e2962ed1f416e49a6718a95baa9a72d03617b6972c435579b2ee5bc6",
     "src/pinning.js": "ea447a9c241e89297aeb972bf0c355d20347aedd96f6fce2b184fa9e1ad4fcd8",
     "src/planning.js": "8606d1e95df31d4cb3d4366bb8a76f045dec9154b67b77535bf652e6743ca088",
-    "src/plugin.js": "9e6ee4b1950e28acdfb3decbb706008fa0fc56811b71ee8a9a27deafc71359cf",
+    "src/plugin.js": "c928a31c6e7925c6ef6e539318112b33a968d9809012e6566fb2f90b3ba66bef",
     "src/recovery.js": "1bb2e325808be24c05b023c2f393a1ee9787b6d8bc08de1590a26bb42438b574",
     "src/resume.js": "d8cca0fede4d0ae75ae95369882420efb472c08f147e92e6a7c3c93e3bbdad0d",
     "src/routing.js": "eeb9f8246b21d4f229aa086d54a39981caa3775b377060087488bad2c9dfa806",
@@ -153,7 +153,7 @@
     "test/download-window.test.mjs": "f7a644b617191336a27200385b48d4a29bd746d614d3a303414713b047c381dd",
     "test/encryption-dom-sdk.mjs": "cb68e6752c54a4bebf4bb0fd64fc9796e625c881a486067a6a9330f506a50ef0",
     "test/global-connection.test.mjs": "a81e67e534b2c8068f137348f92e3190efa4b964b4c340cb93159f88accf8eee",
-    "test/global-diagnostics.test.mjs": "c159eb83a210eefabdeff0ececa4f92843c91c48103378e342ffe20a270ca79f",
+    "test/global-diagnostics.test.mjs": "05423b0c2c137d2d8581f0897e5fc9fdd9e1a7e5a12fbab90e2f12e81b547505",
     "test/global-parity.test.mjs": "42724becffe6bf9aec0f913b34615d5514b59e1fe0eaa5d9dad8c418e9429be0",
     "test/global-staging.test.mjs": "650cc4cd9aa530be87840d45ef7f7510d1d65df4b8c009395b3b87a44360b8b8",
     "test/history-context-menu.test.mjs": "56916482b95e08ebcdac22e9049118aaabdba4ec92db5290095a6c61e03e765f",
@@ -206,5 +206,12 @@
     "Preserve raw CSS in source-styles.css; root CSS embeds the public logo",
     "Generated verification and contribution rules; no private inputs"
   ],
-  "historicalReleases": "Existing 0.1.81 and earlier MIT releases and assets are unchanged."
+  "historicalReleases": "Existing 0.1.81 and earlier MIT releases and assets are unchanged.",
+  "releaseCandidateDigest": "e4315743e838c24742e471613962c9ed2bc51e5d9f2fb2fc784a2999ddbd358c",
+  "runtimeManifest": "486e6e261fa03199ddab27e31308cb904f56e2efdff2b490916672acc4e1fb66",
+  "acceptedArtifacts": {
+    "main.js": "1d39be46a0224005a1c8e95b45e686c3837e171935b0490bc3dcdb38896adaa6",
+    "manifest.json": "926cb2b550156edd54eba4f6f84f155d5d8828a342ecf85bc92feb2c3127e058",
+    "styles.css": "5c79e29c861f843d51d6de41d3c740d93905131c6495e4754777ac7cfa725b0b"
+  }
 }

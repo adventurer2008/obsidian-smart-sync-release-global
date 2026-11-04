@@ -1,6 +1,10 @@
 # Smart Sync user guide
 
-This guide describes the Global source preview prepared under CHG-20261104-GITHUB-COMMUNITY-PREP. No installable Global release is published in this repository yet.
+This guide describes the Global1.1.4 Community review candidate (CHG-20261104-GLOBAL-COMMUNITY-SUBMIT). Community listing approval and full physical-device acceptance remain pending.
+
+## Install the review candidate
+
+Use Obsidian1.12.7 or newer. Back up your vault and start with an isolated test vault. From the matching1.1.4 GitHub Release, download main.js, manifest.json and styles.css; verify them against SHA256SUMS.txt. Create a smart-sync-global folder inside your vault's configuration plugins folder (the default is .obsidian/plugins), and place all three files there. Reload Obsidian and enable Smart Sync in Community plugins after reviewing Obsidian's trust prompt yourself. Do not install a China package into this folder. Keep the previous plugin files for rollback and never overwrite your vault notes or plugin data.json to update the plugin.
 
 ## First connection
 
