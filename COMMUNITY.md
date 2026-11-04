@@ -26,7 +26,13 @@ The exact Client protocol/codec completed synthetic encrypted writes and reads o
 
 Global local lint reports zero errors and seven reviewed warnings. Six fetch references preserve cancellation, bounded streaming and redirect rejection that a mechanical requestUrl substitution would lose. The .obsidian literal is a reserved-path rejection guard, not host configuration access. Five window-timer warnings were fixed. No lint rule is suppressed. Local results are not official scan approval.
 
-The official submission form is prepared. Developer Policies agreement and the continued-maintenance commitment have not yet been accepted. No Community submission or approval is claimed by this preparation record; final platform status must be read from the official directory.
+The user completed the initial submission form and its commitments. The listing was then saved with account/service disclosures and Optional payment details, and Publish completed. Official dashboard: "Your entry is live. An automated review is in progress." The queued1.1.4 review points at distribution commit8d88ef6f11892519b409a2928f31da8e5da222c2. Status:Pending, not approved.
+
+Community entry: https://community.obsidian.md/plugins/smart-sync-global
+
+GitHub Release: https://github.com/adventurer2008/obsidian-smart-sync-release-global/releases/tag/1.1.4
+
+All11 public Release attachments were downloaded anonymously and hash-verified. The tag resolves to the fixed distribution commit. The initial Community refresh encountered a short cooldown and an older no-release cache; a later supported refresh recognized1.1.4 and queued its scan. No new version or duplicate entry was created to bypass the cooldown.
 
 ## Acceptance boundaries
 
