@@ -34,6 +34,8 @@ GitHub Release: https://github.com/adventurer2008/obsidian-smart-sync-release-gl
 
 All11 public Release attachments were downloaded anonymously and hash-verified. The tag resolves to the fixed distribution commit. The initial Community refresh encountered a short cooldown and an older no-release cache; a later supported refresh recognized1.1.4 and queued its scan. No new version or duplicate entry was created to bypass the cooldown.
 
+Partial official results observed while Pending: dependency vulnerability check passes; recommendations cover artifact attestations, extra documentation attachments, vault enumeration and clipboard access. CSS warnings cover display:contents compatibility and one !important declaration. The platform explicitly says results are incomplete and more checks are running. These findings are not represented as completed approval; no existing Release assets were removed or overwritten to silence recommendations.
+
 ## Acceptance boundaries
 
 Fresh physical acceptance on Windows, macOS, Linux desktop, Android, iPhone/iOS and iPad/iPadOS remains incomplete for this exact candidate. Prior Windows user testing applies to its earlier installed bundle. Native install/upgrade, secure storage, browser return, narrow/touch layouts, background/lock/restart, offline recovery and mixed-device source-mtime behavior need separate device evidence. Unsupported native controls remain hidden or guarded.
