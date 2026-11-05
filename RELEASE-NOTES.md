@@ -1,13 +1,12 @@
-# Smart Sync 1.1.4
+# Smart Sync 1.1.5
 
-Initial Global Community review candidate for Obsidian1.12.7 or newer.
+- Prevent repeated Danger zone controls and stale section headings when settings refresh after account changes.
+- Keep account and device action labels readable on narrow screens with enlarged interface text.
+- Recover automatic browser sign-in checks after temporary network failures or returning to Obsidian. Keep manual checks and same-account verification.
+- Recover interrupted account creation and deletion flows with bounded retries and clear, localized guidance; preserve confirmation and account/vault isolation.
+- Open the storage-plan browser directly on mobile when a valid account-bound entry is ready, with a conditional native-link fallback for uncertain or failed handoffs.
+- Include the maintained synchronization, original source-mtime preservation, encryption, device management and local tools without removing their existing controls.
 
-- Hosted encrypted synchronization for notes, attachments and selected settings, preserving original file modification times.
-- English account flows with Google, GitHub and email sign-in; local account refresh, guarded cloud-vault creation and cloud-first account deletion.
-- Free storage and optional paid storage through the separate Global Stripe checkout.
-- Version recovery, device management, note sorting, pinned notes, recent files and local note encryption.
-- Markdown-first synchronization and guarded mobile transport; local diagnostics stay on the device.
+The associated Global service update retains independent production/staging identities and the current hosted plan/checkout interface. Update only main.js, manifest.json and styles.css; preserve per-device data.json, secret storage, checkpoints and all vault files. Keep an independent backup and inspect current tasks before closing a device.
 
-An account is required for hosted sync. Keep your encryption passphrase and independent backups. Read the [guide](USER-GUIDE.md), [privacy policy](https://smartsync.cc/privacy/) and [terms](https://smartsync.cc/terms/).
-
-This is the first public review candidate. Official Community approval and complete physical-device acceptance are pending. Windows/macOS/Linux desktop/Android/iPhone/iPad testing must be assessed separately; mobile operating systems can suspend background work. No real Stripe card charge was performed for this candidate. See [the review record](COMMUNITY.md) and SHA256SUMS.txt for verification details.
+Windows/WSL, service and browser-engine verification is recorded separately from physical-device acceptance. Prior user-reported iOS/Android/Windows ordinary flows do not establish every platform, provider or interruption scenario. This release does not claim Obsidian Community approval or a verified five-minute production failover capability.

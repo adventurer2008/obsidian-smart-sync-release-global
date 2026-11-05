@@ -2,7 +2,7 @@
 
 Sync notes, attachments and selected settings with client-side encryption. Keep original file modification times, manage devices and recover earlier versions. Additional local tools include sorting, pinned notes, recent files and password-protected note content.
 
-Plugin ID: `smart-sync-global`. Version 1.1.4 is the initial Global Community review candidate. Download the three plugin files from [Releases](https://github.com/adventurer2008/obsidian-smart-sync-release-global/releases), then follow the [user guide](USER-GUIDE.md). Publication here does not mean Obsidian has approved or listed the plugin.
+Plugin ID: `smart-sync-global`. Version 1.1.5 includes the maintained account, settings and mobile browser-handoff fixes. Download the three plugin files from [Releases](https://github.com/adventurer2008/obsidian-smart-sync-release-global/releases), or select Smart Sync in Wujie Hub, then follow the [user guide](USER-GUIDE.md). Publication here does not mean Obsidian has approved or listed the plugin.
 
 ## Account and payments
 
@@ -24,8 +24,8 @@ The plugin uses shared desktop and mobile controls. Mobile operating systems may
 
 Development takes place only in [the canonical Client repository](https://github.com/adventurer2008/obsidian-smart-sync-client). `SOURCE-SNAPSHOT.json` identifies the exact exported commit and file hashes. Do not edit the generated runtime here. Server code, deployment tools and credentials are excluded.
 
-Use Node 26.12.1, run `npm ci --ignore-scripts`, then `npm run build`. The build verifies the source snapshot and produces `main.js`, `manifest.json` and `styles.css`. Building locally does not install the plugin, publish a Release or pass official Community review. See [Community preparation](COMMUNITY.md) for current gates.
+Use Node 26.12.1, run `npm ci --ignore-scripts`, then `npm run build`. The build verifies the source snapshot and produces `main.js`, `manifest.json` and `styles.css`. Building locally does not install the plugin, publish a Release or pass official Community review. See [Community preparation](https://github.com/adventurer2008/obsidian-smart-sync-release-global/blob/main/COMMUNITY.md) for current gates.
 
 Client source uses [Apache-2.0](LICENSE); dependency terms are in [THIRD-PARTY-NOTICES.md](THIRD-PARTY-NOTICES.md). A source license does not grant hosted-service access or rights to the private Server.
 
-CHG-20261104-GLOBAL-COMMUNITY-SUBMIT: bind the fixed Client source and reproducible artifacts to isolated staging/production protocol checks. Physical-platform acceptance remains incomplete; see [the review record](COMMUNITY.md).
+The fixed Client source and reproducible artifacts are bound to their recorded release checks. Physical-platform acceptance remains limited to its separate evidence; see [the review record](https://github.com/adventurer2008/obsidian-smart-sync-release-global/blob/main/COMMUNITY.md).

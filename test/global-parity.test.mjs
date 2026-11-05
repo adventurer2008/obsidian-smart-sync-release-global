@@ -1,13 +1,54 @@
 import assert from 'node:assert/strict';
 import {test} from 'node:test';
 import {registerHooks} from 'node:module';
+import {createHash} from 'node:crypto';
+import {JSDOM} from 'jsdom';
 globalThis.window={open(){},setTimeout,clearTimeout,setInterval,clearInterval};
 globalThis.__SMART_SYNC_EDITION__={edition:'global',id:'smart-sync-global',name:'Smart Sync',locale:'en',development:false,serviceOrigin:'https://sync.smartsync.cc'};
 registerHooks({resolve(specifier,context,next){return specifier==='obsidian'?{url:new URL('./obsidian-double.mjs',import.meta.url).href,shortCircuit:true}:next(specifier,context);}});
 const {messages,englishDraft,missingEnglishKeys,t,localizedFailure}=await import('../src/i18n.js');
 const {billingCard,capacityWarning}=await import('../src/billing.js');
 const {default:Plugin}=await import('../src/plugin.js');
-const {modals}=await import('./obsidian-double.mjs');
+const {modals,Modal,Platform}=await import('./obsidian-double.mjs');
+
+test('Global mobile storage upgrade presents an English fallback when direct browser opening fails',async()=>{
+ const previousOpen=window.open;Platform.isMobile=true;window.open=()=>{throw Error('Synthetic browser block');};
+ const plugin={app:{},data:{localId:'mobile-global',settings:{origin:'https://sync.smartsync.cc'}},secret:()=> 'synthetic-account',
+  accountApi:async()=>({}),billingApi:()=>({request:async()=>({url:'https://pay.smartsync.cc/pay/plans#ticket='+'a'.repeat(43)})})};
+ try{
+  await Plugin.prototype.openBilling.call(plugin);
+  const dialog=modals.at(-1),link=dialog.contentEl.children.find(child=>child.tag==='a');
+  assert.equal(dialog.title,'My plan');assert.equal(link.text,'Open plans in browser');
+  assert.equal(link.href,'https://pay.smartsync.cc/pay/plans#ticket='+'a'.repeat(43));dialog.close();
+ }finally{Platform.isMobile=false;window.open=previousOpen;}
+});
+
+test('prepared mobile billing opens in the original click stack with no modal and never reuses stale or consumed tickets',async context=>{
+ const opened=[],timers=new Map();let account='synthetic-one',at=Date.now(),entries=0,sequence=0;
+ context.mock.method(Date,'now',()=>at);context.mock.method(window,'open',(...args)=>{opened.push(args);return null;});
+ context.mock.method(window,'setTimeout',callback=>{timers.set(++sequence,callback);return sequence;});context.mock.method(window,'clearTimeout',id=>timers.delete(id));
+ Platform.isMobile=true;context.after(()=>{Platform.isMobile=false;});
+ const plugin={app:{},data:{localId:'prepared-mobile',settings:{origin:'https://sync.smartsync.cc'}},secret:()=>account,accountApi:async()=>({}),
+  billingApi:()=>({request:async()=>{entries++;return{url:'https://pay.smartsync.cc/pay/plans#ticket='+String.fromCharCode(96+entries).repeat(43)};}})};
+ const modalsBefore=modals.length;
+ await Plugin.prototype.openBilling.call(plugin,undefined,true);await Plugin.prototype.openBilling.call(plugin,undefined,true);
+ assert.equal(entries,1);assert.equal(opened.length,0);assert.equal(modals.length,modalsBefore);
+ const first=Plugin.prototype.openBilling.call(plugin);assert.equal(opened.length,1,'must open before another await/network request');await first;assert.equal(entries,1);assert.match(opened[0][0],/#ticket=a+$/);
+ plugin.billingHandoffCancel();
+ await Plugin.prototype.openBilling.call(plugin,undefined,true);account='synthetic-two';await Plugin.prototype.openBilling.call(plugin);assert.equal(entries,3);assert.match(opened[1][0],/#ticket=c+$/);plugin.billingHandoffCancel();
+ await Plugin.prototype.openBilling.call(plugin,undefined,true);at+=90001;await Plugin.prototype.openBilling.call(plugin);assert.equal(entries,5);assert.match(opened[2][0],/#ticket=e+$/);plugin.billingHandoffCancel();
+ assert.equal(modals.length,modalsBefore);assert.equal(timers.size,0);
+});
+
+test('background preparation never opens enrollment, accepts a foreign URL or launches after unload',async context=>{
+ const opened=[];context.mock.method(window,'open',(...args)=>opened.push(args));Platform.isMobile=true;context.after(()=>{Platform.isMobile=false;});
+ let key='synthetic-account';
+ const plugin={app:{},data:{localId:'prepare-guards',settings:{origin:'https://sync.smartsync.cc'}},secret:()=>key,enrollment:()=>assert.fail('background work cannot show login'),accountApi:async()=>({}),billingApi:()=>({request:async()=>({url:'https://foreign.example.invalid/pay/plans#ticket='+'a'.repeat(43)})})};
+ await assert.rejects(Plugin.prototype.openBilling.call(plugin,undefined,true),/Invalid purchase entry/);assert.equal(opened.length,0);
+ key='';await Plugin.prototype.openBilling.call(plugin,undefined,true);assert.equal(opened.length,0);
+ key='synthetic-account';plugin.billingApi=()=>({request:async()=>{plugin.stopped=true;return {url:'https://pay.smartsync.cc/pay/plans#ticket='+'a'.repeat(43)};}});
+ await Plugin.prototype.openBilling.call(plugin,undefined,true);assert.equal(plugin.preparedBillingEntry,undefined);assert.equal(opened.length,0);
+});
 
 test('Global encryption menus and password dialog use English without changing command identifiers',async()=>{
  const {registerNoteEncryption}=await import('../src/note-encryption.js');
@@ -66,8 +107,8 @@ test('Global delete confirmation refuses a changed local account context',async(
 });
 
 test('Global reauthentication keeps current credentials and does not enter workspace selection',async()=>{
- const writes=[],flow={id:'f'.repeat(43),verifier:'v'.repeat(43),localId:'same',origin:'https://sync.smartsync.cc',expires:Date.now()+60000,reauth:true};
- const plugin={manifest:{id:'smart-sync-global'},data:{localId:'same',settings:{origin:flow.origin,workspace:'existing'}},app:{secretStorage:{setSecret:(...value)=>writes.push(value)}},billingApi:()=>({request:async()=>({reauthenticated:true})})};
+ const writes=[],key='synthetic-current-account',flow={id:'f'.repeat(43),verifier:'v'.repeat(43),localId:'same',origin:'https://sync.smartsync.cc',expires:Date.now()+60000,reauth:true,accountBinding:createHash('sha256').update(key).digest('hex')};
+ const plugin={manifest:{id:'smart-sync-global'},data:{localId:'same',settings:{origin:flow.origin,workspace:'existing'}},secret:name=>name==='account'?key:'',app:{secretStorage:{setSecret:(...value)=>writes.push(value)}},billingApi:()=>({request:async()=>({reauthenticated:true})})};
  assert.equal(await Plugin.prototype.finishGlobalSignIn.call(plugin,flow),true);
  assert.deepEqual(writes,[['smart-sync-global-same-oauth','']]);
 });
@@ -151,7 +192,7 @@ test('inline email signs in without opening a browser and shows readable validat
  const stored=new Map(),opened=[],calls=[];let selected=0,rateLimited=false;
  window.open=(...args)=>opened.push(args);
  const plugin={app:{secretStorage:{setSecret:(name,value)=>stored.set(name,value)}},manifest:{id:'smart-sync-global'},data:{localId:'inline',settings:{origin:'https://sync.smartsync.cc'}},stopped:false,
-  secret:name=>stored.get('smart-sync-global-inline-'+name)||'',deviceDisplayName:()=> 'Inline test',
+  secret:name=>stored.get('smart-sync-global-inline-'+name)||'',deviceDisplayName:()=> 'Inline test',registerInterval(){},
   beginGlobalSignIn:Plugin.prototype.beginGlobalSignIn,globalEmailRequest:Plugin.prototype.globalEmailRequest,
   finishGlobalSignIn:async()=>({}),selectAccountWorkspace:async()=>{selected++;},
   billingApi:()=>({request:async(method,path,body)=>{
@@ -196,4 +237,171 @@ test('reopening a pending browser sign-in checks automatically and enters vault 
  assert.equal(checked,1);assert.equal(selected,1);
  await check.click();assert.equal(checked,1);assert.equal(selected,1);
  dialog.close();
+});
+
+function resumeFixture(context, finish) {
+ const dom=new JSDOM('',{pretendToBeVisual:true}),timers=new Map();let sequence=0,selected=0,hidden=false;
+ const flow={id:'f'.repeat(43),verifier:'v'.repeat(43),localId:'resume-mobile',origin:'https://sync.smartsync.cc',expires:Date.now()+60000};
+ Object.defineProperty(dom.window.document,'hidden',{get:()=>hidden});
+ const open=Modal.prototype.open;
+ context.mock.method(Modal.prototype,'open',function(){this.contentEl.ownerDocument=dom.window.document;open.call(this);});
+ context.mock.method(window,'setInterval',callback=>{timers.set(++sequence,callback);return sequence;});
+ context.mock.method(window,'clearInterval',id=>timers.delete(id));
+ const plugin={app:{},data:{localId:flow.localId,settings:{origin:flow.origin}},secret:()=>JSON.stringify(flow),registerInterval(){},
+  billingApi:()=>({request:async()=>({providers:[],emailEnabled:false})}),finishGlobalSignIn:finish,selectAccountWorkspace:async()=>{selected++;}};
+ Plugin.prototype.globalEnrollment.call(plugin);const dialog=modals.at(-1);
+ context.after(()=>{dialog.close();dom.window.close();});
+ return {flow,plugin,dialog,timers,selected:()=>selected,hidden:value=>{hidden=value;},
+  event:name=>(name==='visibilitychange'?dom.window.document:dom.window).dispatchEvent(new dom.window.Event(name)),
+  tick:async()=>{for(const callback of [...timers.values()])callback();await new Promise(resolve=>setImmediate(resolve));}};
+}
+
+test('a temporary sign-in check failure retries automatically without a return event or manual click',async context=>{
+ let now=Date.now(),attempts=0;
+ context.mock.method(Date,'now',()=>now);
+ const f=resumeFixture(context,async()=>{attempts++;if(attempts===1)throw TypeError('Network unavailable');return {};});
+ await new Promise(resolve=>setImmediate(resolve));
+ assert.equal(attempts,1);assert.equal(f.timers.size,1);assert.equal(f.selected(),0);
+ await f.tick();assert.equal(attempts,1); // Backoff prevents a request storm.
+ now+=2600;await f.tick();assert.equal(attempts,2);assert.equal(f.selected(),1);assert.equal(f.timers.size,0);
+});
+
+test('foreground and network return recover sign-in, deduplicate checks and release listeners on close',async context=>{
+ let attempts=0,finish;
+ const f=resumeFixture(context,async()=>{attempts++;if(attempts===1)throw TypeError('Network unavailable');return new Promise(resolve=>{finish=resolve;});});
+ await new Promise(resolve=>setImmediate(resolve));
+ f.hidden(true);await f.tick();f.event('focus');assert.equal(attempts,1);
+ f.hidden(false);f.event('visibilitychange');f.event('focus');f.event('pageshow');f.event('online');
+ assert.equal(attempts,2);assert.equal(f.selected(),0);
+ finish({});await new Promise(resolve=>setImmediate(resolve));
+ assert.equal(f.selected(),1);assert.equal(f.timers.size,0);
+ f.event('visibilitychange');f.event('focus');f.event('pageshow');f.event('online');await f.tick();
+ assert.equal(attempts,2);assert.equal(f.selected(),1);
+});
+
+test('expired or changed local sign-in contexts stop polling before another claim',async context=>{
+ let now=Date.now(),attempts=0;
+ context.mock.method(Date,'now',()=>now);
+ const f=resumeFixture(context,async()=>{attempts++;return undefined;});
+ await new Promise(resolve=>setImmediate(resolve));assert.equal(attempts,1);
+ now+=61000;await f.tick();assert.equal(attempts,1);assert.equal(f.timers.size,0);
+ f.event('online');await f.tick();assert.equal(attempts,1);
+});
+
+test('switching vault identity during browser sign-in rejects foreground recovery',async context=>{
+ let attempts=0;
+ const f=resumeFixture(context,async()=>{attempts++;return undefined;});
+ await new Promise(resolve=>setImmediate(resolve));
+ f.plugin.data.localId='other-vault';f.event('focus');await f.tick();
+ assert.equal(attempts,1);assert.equal(f.timers.size,0);assert.equal(f.selected(),0);
+});
+
+test('a terminal authorization rejection stops automatic sign-in checks',async context=>{
+ let attempts=0;
+ const f=resumeFixture(context,async()=>{attempts++;throw Object.assign(Error('Rejected'),{status:401});});
+ await new Promise(resolve=>setImmediate(resolve));
+ assert.equal(f.timers.size,0);f.event('online');f.event('focus');await f.tick();assert.equal(attempts,1);
+});
+
+test('a lost workspace-list response retries selection without claiming another account-device grant',async context=>{
+ let claims=0,selections=0;
+ const f=resumeFixture(context,async()=>{claims++;return {};});
+ f.plugin.selectAccountWorkspace=async()=>{selections++;if(selections===1)throw TypeError('Network interrupted while reading vaults');};
+ await new Promise(resolve=>setImmediate(resolve));assert.equal(claims,1);assert.equal(selections,1);
+ f.event('online');await new Promise(resolve=>setImmediate(resolve));
+ assert.equal(selections,2);assert.equal(claims,1);assert.equal(f.timers.size,0);
+});
+
+test('an account switch during a delayed claim or principal check never overwrites the new identity',async()=>{
+ for(const phase of ['claim','principal']){
+  let key='',writes=[];
+  const flow={id:'f'.repeat(43),verifier:'v'.repeat(43),localId:'claim-switch',origin:'https://sync.smartsync.cc',expires:Date.now()+60000};
+  const result={key:'k'.repeat(43),id:'12345678-1234-1234-1234-123456789abc',owner:'synthetic-owner',email:'synthetic@example.invalid'};
+  const plugin={manifest:{id:'smart-sync-global'},data:{localId:flow.localId,settings:{origin:flow.origin}},secret:()=>key,
+   app:{secretStorage:{setSecret:(...v)=>writes.push(v)}},
+   billingApi:()=>({request:async()=>{if(phase==='claim')key='different-account';return result;}}),
+   workspaceApi:()=>({request:async()=>{if(phase==='principal')key='different-account';return {accountDevice:true,deviceId:result.id,owner:result.owner,email:result.email};}})};
+  await assert.rejects(Plugin.prototype.finishGlobalSignIn.call(plugin,flow),/context|authorization/);assert.deepEqual(writes,[]);
+ }
+});
+
+test('closing a delete confirmation invalidates a queued destructive action',async()=>{
+ let deleted=0;
+ const plugin={app:{},data:{localId:'cancel-delete',settings:{origin:'https://sync.smartsync.cc'}},secret:()=> 'synthetic-account',
+  accountApi:async()=>({request:async(method)=>{if(method==='POST'){deleted++;return {erased:true};}return {vaults:0,pending:0,requiresReauthentication:false};}}),
+  exclusive:async work=>work(),signOut:async()=>{},notify(){}};
+ await Plugin.prototype.deleteGlobalAccount.call(plugin);await modals.at(-1).contentEl.settings[0].controls[0].click();
+ const dialog=modals.at(-1),rows=dialog.contentEl.settings;rows[0].controls[0].change('DELETE');const submit=rows[1].controls[0];dialog.close();await submit.click();assert.equal(deleted,0);
+});
+
+test('verified inline email retries a lost claim without requiring the consumed code again',async context=>{
+ const dom=new JSDOM('',{pretendToBeVisual:true}),stored=new Map(),timers=new Map();let now=Date.now(),sequence=0,claims=0,selected=0,verified=0;
+ context.mock.method(Date,'now',()=>now);
+ context.mock.method(window,'setInterval',callback=>{timers.set(++sequence,callback);return sequence;});context.mock.method(window,'clearInterval',id=>timers.delete(id));
+ const open=Modal.prototype.open;context.mock.method(Modal.prototype,'open',function(){this.contentEl.ownerDocument=dom.window.document;open.call(this);});
+ const plugin={app:{secretStorage:{setSecret:(name,value)=>stored.set(name,value)}},manifest:{id:'smart-sync-global'},data:{localId:'inline-retry',settings:{origin:'https://sync.smartsync.cc'}},
+  secret:name=>stored.get('smart-sync-global-inline-retry-'+name)||'',registerInterval(){},deviceDisplayName:()=> 'Synthetic retry',
+  beginGlobalSignIn:Plugin.prototype.beginGlobalSignIn,globalEmailRequest:Plugin.prototype.globalEmailRequest,
+  finishGlobalSignIn:async()=>{claims++;if(claims===1)throw TypeError('Claim reply lost');return {};},selectAccountWorkspace:async()=>{selected++;},
+  billingApi:()=>({request:async(method,path)=>{
+   if(path==='auth/config')return {providers:[],emailEnabled:true};
+   if(path==='auth/start')return {id:'f'.repeat(43),url:'https://pay.smartsync.cc/auth/login#flow='+'f'.repeat(43),expires:now+600000};
+   if(path==='auth/email/send')return {sent:true};if(path==='auth/email/verify'){verified++;return {ready:true};}throw Error(path);
+  }})};
+ Plugin.prototype.globalEnrollment.call(plugin);const dialog=modals.at(-1);context.after(()=>{dialog.close();dom.window.close();});await new Promise(r=>setImmediate(r));
+ const rows=[];const visit=el=>{rows.push(...el.settings);for(const child of el.children)visit(child);};visit(dialog.contentEl);
+ rows.find(r=>r.name==='Email address').controls[0].change('retry@example.invalid');await rows.flatMap(r=>r.controls).find(c=>c.text==='Send code').click();
+ rows.find(r=>r.name==='8-digit code').controls[0].change('12345678');await rows.flatMap(r=>r.controls).find(c=>c.text==='Verify and sign in').click();
+ assert.equal(verified,1);assert.equal(claims,1);assert.equal(selected,0);assert.equal(timers.size,1);
+ now+=2600;for(const tick of [...timers.values()])tick();await new Promise(r=>setImmediate(r));
+ assert.equal(claims,2);assert.equal(verified,1);assert.equal(selected,1);assert.equal(timers.size,0);
+});
+
+test('canceling login while vault listing is pending does not open a late picker',async()=>{
+ let finish;
+ const before=modals.length,plugin={app:{},data:{localId:'picker-cancel',settings:{origin:'https://sync.smartsync.cc'}},secret:()=> 'synthetic-account'};
+ let active=true;
+ const pending=Plugin.prototype.selectAccountWorkspace.call(plugin,{workspaces:()=>new Promise(resolve=>{finish=resolve;})},{close(){}},undefined,()=>active);
+ active=false;finish({workspaces:[]});await pending;assert.equal(modals.length,before);
+});
+
+test('a late ACK never erases a newer identity-verification flow',async()=>{
+ const flow={id:'f'.repeat(43),verifier:'v'.repeat(43),localId:'ack-switch',origin:'https://sync.smartsync.cc',expires:Date.now()+60000};
+ const result={key:'k'.repeat(43),id:'12345678-1234-1234-1234-123456789abc',owner:'synthetic-owner',email:'synthetic@example.invalid'};
+ const stored=new Map([['oauth',JSON.stringify(flow)]]),newFlow=JSON.stringify({...flow,id:'n'.repeat(43),reauth:true});
+ const plugin={manifest:{id:'smart-sync-global'},data:{localId:flow.localId,settings:{origin:flow.origin}},secret:name=>stored.get(name)||'',
+  app:{secretStorage:{setSecret:(name,value)=>stored.set(name.split('-').at(-1),value)}},
+  billingApi:()=>({request:async(method,path)=>{if(path==='auth/ack'){stored.set('oauth',newFlow);return{received:true};}return result;}}),
+  workspaceApi:()=>({request:async()=>({accountDevice:true,deviceId:result.id,owner:result.owner,email:result.email})})};
+ await Plugin.prototype.finishGlobalSignIn.call(plugin,flow);assert.equal(stored.get('oauth'),newFlow);assert.equal(stored.get('account'),result.key);
+});
+
+test('saved deletion reauthentication is not reused after changing account in the same local vault',async()=>{
+ let account='synthetic-first-account',requests=0;
+ const stored=new Map();
+ const plugin={manifest:{id:'smart-sync-global'},data:{localId:'reauth-owner',settings:{origin:'https://sync.smartsync.cc'}},
+  secret:name=>name==='account'?account:stored.get(name)||'',deviceDisplayName:()=> 'Synthetic reauth',
+  app:{secretStorage:{setSecret:(name,value)=>stored.set(name.split('-').at(-1),value)}},
+  billingApi:()=>({request:async()=>{requests++;return {id:(requests===1?'a':'b').repeat(43),url:'https://pay.smartsync.cc/auth/login#flow='+(requests===1?'a':'b').repeat(43),expires:Date.now()+60000};}})};
+ const first=await Plugin.prototype.beginGlobalSignIn.call(plugin,'email',()=>true,true,true);
+ account='synthetic-second-account';const second=await Plugin.prototype.beginGlobalSignIn.call(plugin,'email',()=>true,true,true);
+ assert.equal(requests,2);assert.notEqual(first.id,second.id);
+ plugin.billingApi=()=>({request:async()=>assert.fail('foreign reauthentication cannot be claimed')});
+ await assert.rejects(Plugin.prototype.finishGlobalSignIn.call(plugin,first),/context|identity/i);
+});
+
+test('deletion canceled while waiting for exclusive work cannot submit and an uncertain response never reports success',async()=>{
+ for(const mode of ['queued','lost-response']){
+  let run,deleted=0,signedOut=0,notified=0;
+  const plugin={app:{},data:{localId:'delete-interrupt',settings:{origin:'https://sync.smartsync.cc'}},secret:()=> 'synthetic-account',
+   accountApi:async()=>({request:async method=>{if(method==='GET')return {vaults:0,pending:0,requiresReauthentication:false};deleted++;throw TypeError('Response lost');}}),
+   exclusive:mode==='queued'?task=>new Promise((resolve,reject)=>{run=()=>Promise.resolve().then(task).then(resolve,reject);}):async task=>task(),
+   signOut:async()=>{signedOut++;},notify:()=>{notified++;}};
+  await Plugin.prototype.deleteGlobalAccount.call(plugin);await modals.at(-1).contentEl.settings[0].controls[0].click();
+  const dialog=modals.at(-1),rows=dialog.contentEl.settings;rows[0].controls[0].change('DELETE');
+  const submitted=rows[1].controls[0].click();
+  if(mode==='queued'){dialog.close();await run();}
+  await submitted;
+  assert.equal(deleted,mode==='queued'?0:1);assert.equal(signedOut,0);assert.equal(notified,0);dialog.close();
+ }
 });

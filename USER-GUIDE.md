@@ -1,6 +1,6 @@
 # Smart Sync user guide
 
-This guide describes the Global1.1.4 Community review candidate (CHG-20261104-GLOBAL-COMMUNITY-SUBMIT). Community listing approval and full physical-device acceptance remain pending.
+This guide applies to Smart Sync 1.1.5. Community listing approval and complete physical-device acceptance remain separate. Updates replace only main.js, manifest.json and styles.css; preserve existing per-device settings, secret storage, synchronization checkpoints and vault files.
 
 ## Install the review candidate
 
@@ -19,7 +19,7 @@ Use the same account and select the same cloud vault on another device. Account 
 
 ## Storage and purchase
 
-Open the plan entry in plugin settings to view current capacity and purchase more storage. Check the current amount, currency and billing period on the payment page. Selecting a paid plan opens Stripe checkout directly. After paying, return to the app and verify the plan update. If the result is uncertain, inspect the existing order before paying again.
+Open the plan entry in plugin settings to view current capacity and purchase more storage. Mobile storage actions try to open the system browser directly; if the handoff cannot be confirmed, use the offered link. Check the current amount, currency and billing period on the payment page. Selecting a paid plan opens Stripe checkout directly. After paying, return to the app and verify the plan update. If the result is uncertain, inspect the existing order before paying again.
 
 Free and paid plan limits are configured by the service and may differ. Current [plans](https://pay.smartsync.cc/pay/plans) and [terms](https://smartsync.cc/terms/) govern purchases. Contact [support](mailto:admin@smartsync.cc) for refund requests. Canceling renewal and deleting an account do not automatically refund a payment.
 
@@ -31,4 +31,4 @@ Cloud deletion is destructive. Keep a verified local backup first. Delete cloud 
 
 Follow the displayed recovery action. After a lost creation reply, reopen the existing pending operation instead of creating another vault with a different name. Never send an encryption passphrase, login credential, emailed code or private note to support.
 
-Mobile background and lock behavior depends on the operating system. Resume Obsidian, reconnect and inspect remaining tasks after interruption. Desktop tray/startup features are platform-specific and are not mobile background services. Physical-device acceptance of this preview remains incomplete; see [the preparation checklist](COMMUNITY.md).
+Mobile background and lock behavior depends on the operating system. Resume Obsidian, reconnect and inspect remaining tasks after interruption. Desktop tray/startup features are platform-specific and are not mobile background services. Physical-device acceptance remains bounded by the recorded device evidence; see [the preparation checklist](https://github.com/adventurer2008/obsidian-smart-sync-release-global/blob/main/COMMUNITY.md).
