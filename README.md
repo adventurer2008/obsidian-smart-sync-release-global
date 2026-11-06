@@ -10,16 +10,31 @@ The Global application server runs on Oracle Cloud in Ashburn, United States. En
 
 We value data security and privacy. Notes, attachments and file paths are encrypted on your device with AES-256-GCM before upload. Encryption and decryption happen on your devices; the service stores encrypted content, and your encryption password is separate from your account login.
 
-**Current version: 1.1.6** · Obsidian **1.12.7+** · Plugin ID: `smart-sync-global`.
+Use Obsidian **1.12.7 or newer**.
 
 [Website](https://smartsync.cc/) · [Download / update](https://smartsync.cc/download/) · [Operation manual](USER-GUIDE.md) · [Plans](https://smartsync.cc/pricing/)
 
 ## Get started
 
-1. Back up your notes and try a separate vault first. In Wujie Hub, choose **Smart Sync → Stable**, or download the three plugin files from [Releases](https://github.com/adventurer2008/obsidian-smart-sync-release-global/releases).
-2. Install `main.js`, `manifest.json` and `styles.css` in your vault's `.obsidian/plugins/smart-sync-global/` folder. Reload Obsidian and review its trust prompt before enabling the plugin. Updates replace only these three files; preserve settings, secret storage, checkpoints and notes.
-3. Open **Settings → Smart Sync → Sign in**, choose Google, GitHub or email, then create or select a cloud vault. Keep its encryption passphrase safe; account login cannot recover it.
-4. Review sync preferences, run synchronization and confirm completion before adding another device. Follow the [step-by-step manual](USER-GUIDE.md) for pairing, recovery and troubleshooting.
+### Install from Obsidian Community plugins
+
+Once Smart Sync is listed in the Obsidian community directory, you can install it directly in Obsidian:
+
+1. Open Settings → Community plugins in Obsidian.
+2. If community plugins are disabled, select Turn on community plugins and review the notice shown by Obsidian.
+3. Select Browse, search for Smart Sync, and open its listing (author: lihy).
+4. Select Install, then Enable.
+
+### Wujie Hub or manual download
+
+In Wujie Hub, choose **Smart Sync → Stable** for the current stable package.
+
+For manual installation, download `main.js`, `manifest.json` and `styles.css` from the matching [GitHub Release](https://github.com/adventurer2008/obsidian-smart-sync-release-global/releases). Check its `SHA256SUMS.txt`. Place the three files in `<vault>/.obsidian/plugins/smart-sync-global/` (or your custom configuration folder's `plugins/smart-sync-global/`). Reload Obsidian, then enable Smart Sync in Community plugins after reviewing the host's trust prompt yourself.
+
+## Sign in and connect your first vault
+
+1. Open **Settings → Smart Sync → Sign in**, choose Google, GitHub or email, then create or select a cloud vault. Keep its encryption passphrase safe; account login cannot recover it.
+2. Review sync preferences, run synchronization and confirm completion before adding another device. Follow the [step-by-step manual](USER-GUIDE.md) for pairing, recovery and troubleshooting.
 
 ## Features
 
@@ -30,7 +45,6 @@ We value data security and privacy. Notes, attachments and file paths are encryp
 - Password-protected whole notes or selected text, secure editing and encrypted draft recovery. Titles, linked attachments and earlier plaintext history have separate privacy boundaries.
 - Desktop tray where supported and optional Windows launch at login. Mobile systems can suspend background work; return to Obsidian and confirm uploads finish.
 
-Version 1.1.6 also improves narrow-screen action labels, settings refresh, interrupted account operations and browser sign-in recovery. Choose from ten interface languages in Smart Sync settings.
 
 ## Account, payments and privacy
 
