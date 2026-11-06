@@ -1,8 +1,18 @@
 <p><a href="../../../USER-GUIDE.md">English</a> · <a href="../zh-CN/USER-GUIDE.md">简体中文</a> · <a href="../zh-TW/USER-GUIDE.md">繁體中文</a> · <a href="../ja/USER-GUIDE.md">日本語</a> · <a href="../ko/USER-GUIDE.md">한국어</a> · <a href="../de/USER-GUIDE.md">Deutsch</a> · <a href="../fr/USER-GUIDE.md">Français</a> · <a href="../es/USER-GUIDE.md">Español</a> · <a href="../pt-BR/USER-GUIDE.md">Português (Brasil)</a> · <a href="../ru/USER-GUIDE.md">Русский</a></p>
 <h1 id="smart-sync-user-guide">Smart Sync 사용자 안내서</h1>
-<p>Smart Sync 1.1.5에 적용됩니다(<code>smart-sync-global</code>). <a href="https://smartsync.cc/ko/">웹사이트</a> · <a href="https://smartsync.cc/ko/download/">다운로드</a> · <a href="https://smartsync.cc/ko/privacy/">개인 정보 보호</a>.</p>
+<p>Smart Sync에 적용됩니다(<code>smart-sync-global</code>). <a href="https://smartsync.cc/ko/">웹사이트</a> · <a href="https://smartsync.cc/ko/download/">다운로드</a> · <a href="https://smartsync.cc/ko/privacy/">개인 정보 보호</a>.</p>
 <h2 id="install-or-update">설치 또는 업데이트</h2>
-<p>Obsidian 사용 <strong>1.12.7 이상</strong>. 볼트를 백업하고 먼저 별도의 테스트 볼트를 시도해 보십시오. Wujie Hub에서 다음을 선택합니다. <strong>Smart Sync → 안정</strong> 현재 안정 패키지의 경우. 알파는 별도의 테스트 채널입니다.</p>
+<p>Obsidian 사용 <strong>1.12.7 이상</strong>.</p>
+<h3 id="install-from-obsidian-community-plugins">Obsidian 커뮤니티 플러그인에서 설치</h3>
+<p>Smart Sync가 Obsidian 커뮤니티 디렉터리에 등록되면 Obsidian에서 직접 설치할 수 있습니다:</p>
+<ol>
+<li>Obsidian에서 설정 → 커뮤니티 플러그인을 엽니다.</li>
+<li>비활성화되어 있다면 커뮤니티 플러그인 켜기를 선택하고 Obsidian의 안내를 확인하세요.</li>
+<li>찾아보기를 선택하고 Smart Sync를 검색한 뒤 상세 페이지를 엽니다(제작자: lihy).</li>
+<li>설치를 선택하고 완료되면 활성화를 선택합니다.</li>
+</ol>
+<h3 id="wujie-hub-or-manual-download">Wujie Hub 또는 수동 다운로드</h3>
+<p>Wujie Hub에서 다음을 선택하세요: <strong>Smart Sync → 안정</strong> 에서 현재 안정 버전을 설치하세요.</p>
 <p>수동 설치의 경우 다운로드 <code>main.js</code>, <code>manifest.json</code> 그리고 <code>styles.css</code> 일치하는 것에서 <a href="https://github.com/adventurer2008/obsidian-smart-sync-release-global/releases">GitHub 출시</a>. 확인해보세요 <code>SHA256SUMS.txt</code>. 3개의 파일을 넣어주세요 <code>&lt;vault&gt;/.obsidian/plugins/smart-sync-global/</code> (또는 사용자 정의 구성 폴더의 <code>plugins/smart-sync-global/</code>). Obsidian를 다시 로드한 다음 호스트의 신뢰 프롬프트를 직접 검토한 후 커뮤니티 플러그인에서 Smart Sync를 활성화합니다.</p>
 <p>업데이트하려면 플러그인을 비활성화하고 교체하세요. <strong>그 세 가지 프로그램 파일만</strong>을 누른 다음 다시 로드하고 활성화하세요. 보존하다 <code>data.json</code>, 비밀 저장소, 동기화 체크포인트 및 모든 메모. 다른 장치의 플러그인 설정이나 자격 증명을 이 저장소에 복사하지 마세요. 이전 프로그램 파일과 독립적인 백업을 유지하십시오. 프로그램 파일을 다운그레이드해도 클라우드 삭제나 기타 완료된 클라우드 작업은 실행 취소할 수 없습니다. 상호 작용을 해결하지 않고 동일한 자격 증명 모음에서 여러 동기화 공급자를 실행하지 마십시오.</p>
 <h2 id="sign-in-and-connect-your-first-vault">로그인하고 첫 번째 볼트를 연결하세요</h2>
@@ -40,15 +50,14 @@
 <p>지원되는 데스크톱 호스트에서는 <strong>고급 → 트레이 아이콘으로 백그라운드에서 실행</strong> 기본적으로 켜져 있습니다. 볼트 창을 닫으면 계속 실행됩니다. 복원하려면 트레이 아이콘을 클릭하세요. 해당 메뉴는 이 볼트만 닫을 수 있습니다. 지원되지 않는 트레이 호스트는 정상적으로 닫히는 상태를 유지합니다. 모바일에서는 이 옵션이 숨겨집니다.</p>
 <p><strong>로그인 시 트레이로 실행</strong> Windows 전용이며 기본적으로 꺼져 있습니다. 활성화하면 현재 사용자의 시작 폴더에 이 볼트의 바로가기가 생성되고 배경 트레이가 활성화됩니다. 일반 출시는 계속 표시됩니다. 호스트가 요청을 다른 인스턴스로 라우팅할 수 있으므로 사용자 정의 Obsidian 프로필은 시작을 활성화할 수 없습니다. 트레이를 비활성화하거나 시작 지원이 없는 버전을 제거하거나 되돌리기 전에 로그인 시작을 비활성화하십시오. macOS, Linux, Android, iPhone 및 iPad에는 Windows 시작 스위치가 표시되지 않습니다.</p>
 <h2 id="storage-plans-and-payments">스토리지 요금제 및 결제</h2>
-<p>현재 계획을 보려면 설정에서 스토리지 계획 항목을 엽니다. 모바일은 시스템 브라우저를 직접 열려고 시도합니다. 핸드오프가 실패하거나 확인할 수 없는 경우 제공된 링크를 사용하세요. 결제하기 전에 금액, 통화, 간격 및 갱신 조건을 검토하세요.결제 통화는 USD이며 기본 서비스는 Stripe입니다. 일부 계정에는 Dodo Payments가 할당됩니다. 미결제 주문은 다시 열어 계속할 수 있고 기존 주문과 구독은 원래 결제 서비스를 유지합니다. 결과가 불확실하면 다시 결제하지 마세요. 앱으로 돌아가 계획 업데이트를 확인하세요. 다시 지불하기 전에 불확실한 주문을 검사하십시오.</p>
+<p>Open the storage-plan entry in settings to view the current plan. Mobile tries to open the system browser directly; use the offered link if the handoff fails or cannot be confirmed. Review the amount, currency, interval and renewal terms before paying. Checkout uses USD through the provider assigned to your account: Stripe by default, or Dodo Payments for eligible accounts. Reopening an unpaid purchase resumes its original checkout. Existing orders and subscriptions keep their provider; do not pay again while a result is uncertain. Return to the app and verify the plan update; inspect an uncertain order before paying again.</p>
 <p>현재 무료 요금제에는 MB 50개, 클라우드 볼트 1개, 장치 무제한이 포함되어 있습니다. 유료 용량과 현재 조건은 <a href="https://smartsync.cc/ko/pricing/">계획 페이지</a>. 저장 용량은 계정의 모든 클라우드 보관함에서 공유됩니다.</p>
 <h2 id="sign-out-revoke-a-device-or-delete-an-account">로그아웃, 기기 취소 또는 계정 삭제</h2>
 <p>로그아웃해도 로컬 메모가 유지됩니다. 오프라인 로그아웃으로 원격 해지를 확인할 수 없는 경우 즉시 제거가 필요할 때 연결된 다른 장치에서 해당 장치를 취소하세요. 제거해도 클라우드 계정은 삭제되지 않습니다.</p>
 <p>클라우드 삭제는 파괴적입니다. 먼저 독립적인 로컬 백업을 확인하세요. 볼트 관리를 통해 클라우드 볼트를 삭제하고 정리를 기다립니다. 열기 <strong>계정 → 위험지대 → 계정 삭제</strong>, 메시지가 나타나면 동일한 계정을 확인하고 다음을 입력하세요. <strong>DELETE</strong> 정확히. 유료 서비스 시간은 삭제를 방해하지 않습니다. 이렇게 하면 계정 액세스 및 연결된 ID가 제거됩니다. 현지 메모가 남아 있습니다. 읽기 <a href="https://smartsync.cc/ko/privacy/">보존 정책</a>.</p>
 <h2 id="troubleshooting-and-device-limits">문제 해결 및 장치 제한</h2>
 <p>오류와 함께 표시된 복구 조치를 읽으십시오. 장치 또는 저장소 한도에 따라 기존 저장소를 연결하거나, 사용하지 않는 장치를 취소하거나, 적합한 요금제를 선택하세요. 지원이 필요한 경우 진단을 수동으로 내보냅니다. 글로벌 클라이언트는 진단 원격 측정을 업로드하지 않습니다. 눈에 보이는 오류, 플러그인/Obsidian 버전 및 플랫폼을 다음으로 보내십시오. <a href="mailto:admin@smartsync.cc">admin@smartsync.cc</a>. 비밀번호, 토큰, 인증 코드, 개인 메모 내용을 제거하세요.</p>
-<p>Windows, macOS, 데스크톱 Linux, Android, iPhone/iOS 및 iPad/iPadOS는 보호된 동기화 UI를 공유합니다. 데스크톱 기본 기능과 모바일 수명주기 제한은 위에서 설명한 대로 다릅니다. 이전에 사용자가 보고한 일반 Windows/iOS/Android 흐름은 특정 허용 범위를 유지합니다. 이는 6개 플랫폼 제품군 모두의 모든 기능을 물리적 장치에서 완벽하게 수용하는 것이 아닙니다. 다시 시작, 잠금, 분할 보기, 브라우저 반환 및 혼합 버전 동작은 사용하는 실제 장치에서 확인해야 합니다. 업그레이드 중에 장치별 설정과 백업을 유지하세요.</p>
 <h2 id="interface-language">인터페이스 언어</h2>
-<p>다국어 클라이언트 후보는 영어, 중국어 간체 및 번체, 일본어, 한국어, 독일어, 프랑스어, 스페인어, 브라질 포르투갈어 및 러시아어를 지원합니다. 기존의 안정적인 1.1.5 바이너리는 해당 업데이트가 출시될 때까지 영어로 유지됩니다.</p>
+<p>This version supports English, Simplified and Traditional Chinese, Japanese, Korean, German, French, Spanish, Brazilian Portuguese and Russian.</p>
 <p>Obsidian 따르기 또는 Smart Sync 설정 상단 근처의 인터페이스 언어에서 명시적 언어를 선택합니다. 선택 사항은 이 장치의 로컬 볼트에만 적용됩니다. 저장하고 활성 동기화를 마친 다음 플러그인을 다시 로드하거나 Obsidian를 다시 시작하여 설정, 명령 및 메뉴를 함께 업데이트하세요.</p>
 <p>이렇게 하면 표시 텍스트만 변경됩니다. 서비스 지역, 계정, 클라우드 볼트, 암호화 비밀번호, 파일 콘텐츠 및 동기화 진행 상황은 변경되지 않습니다. 장치마다 다른 언어를 사용할 수 있습니다.</p>

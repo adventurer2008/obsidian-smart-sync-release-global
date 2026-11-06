@@ -26,7 +26,7 @@ Encrypted synchronization for your Obsidian notes, attachments and selected sett
 - Password-protected whole notes or selected text, secure editing and encrypted draft recovery. Titles, linked attachments and earlier plaintext history have separate privacy boundaries.
 - Desktop tray where supported and optional Windows launch at login. Mobile systems can suspend background work; return to Obsidian and confirm uploads finish.
 
-Version 1.1.5 also improves narrow-screen action labels, settings refresh, interrupted account operations and browser sign-in recovery. Its Global interface currently uses English. Publication does not imply Obsidian Community listing approval.
+Version 1.1.5 also improves narrow-screen action labels, settings refresh, interrupted account operations and browser sign-in recovery. Choose from ten interface languages in Smart Sync settings.
 
 ## Account, payments and privacy
 

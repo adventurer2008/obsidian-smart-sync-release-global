@@ -1,8 +1,18 @@
 <p><a href="../../../USER-GUIDE.md">English</a> · <a href="../zh-CN/USER-GUIDE.md">简体中文</a> · <a href="../zh-TW/USER-GUIDE.md">繁體中文</a> · <a href="../ja/USER-GUIDE.md">日本語</a> · <a href="../ko/USER-GUIDE.md">한국어</a> · <a href="../de/USER-GUIDE.md">Deutsch</a> · <a href="../fr/USER-GUIDE.md">Français</a> · <a href="../es/USER-GUIDE.md">Español</a> · <a href="../pt-BR/USER-GUIDE.md">Português (Brasil)</a> · <a href="../ru/USER-GUIDE.md">Русский</a></p>
 <h1 id="smart-sync-user-guide">Smart Sync ユーザーガイド</h1>
-<p>Smart Sync 1.1.5 (<code>smart-sync-global</code>). <a href="https://smartsync.cc/ja/">ウェブサイト</a> · <a href="https://smartsync.cc/ja/download/">ダウンロード</a> · <a href="https://smartsync.cc/ja/privacy/">プライバシー</a>.</p>
+<p>Smart Sync (<code>smart-sync-global</code>). <a href="https://smartsync.cc/ja/">ウェブサイト</a> · <a href="https://smartsync.cc/ja/download/">ダウンロード</a> · <a href="https://smartsync.cc/ja/privacy/">プライバシー</a>.</p>
 <h2 id="install-or-update">インストールまたはアップデート</h2>
-<p>Obsidianを使用 <strong>1.12.7以降</strong>。コンテナーをバックアップし、最初に別のテスト用コンテナーを試してください。 Wujie Hub で、選択します <strong>Smart Sync → 安定</strong> 現在の安定したパッケージの場合。アルファは別個のテスト チャネルです。</p>
+<p>Obsidianを使用 <strong>1.12.7以降</strong>.</p>
+<h3 id="install-from-obsidian-community-plugins">Obsidian のコミュニティプラグインからインストール</h3>
+<p>Smart Sync が Obsidian のコミュニティディレクトリに掲載された後は、Obsidian 内から直接インストールできます：</p>
+<ol>
+<li>Obsidian で「設定 → コミュニティプラグイン」を開きます。</li>
+<li>無効になっている場合はコミュニティプラグインを有効にし、Obsidian の注意事項を確認します。</li>
+<li>「閲覧」を選び、Smart Sync を検索して詳細を開きます（作者：lihy）。</li>
+<li>「インストール」を選び、完了後に「有効化」を選びます。</li>
+</ol>
+<h3 id="wujie-hub-or-manual-download">Wujie Hub または手動ダウンロード</h3>
+<p>Wujie Hub で次を選択します： <strong>Smart Sync → 安定</strong> から現在の安定版を入手してください。</p>
 <p>手動インストールの場合は、ダウンロードしてください <code>main.js</code>, <code>manifest.json</code> そして <code>styles.css</code> マッチングから <a href="https://github.com/adventurer2008/obsidian-smart-sync-release-global/releases">GitHub リリース</a>。チェックしてください <code>SHA256SUMS.txt</code>。 3つのファイルを次の場所に置きます <code>&lt;vault&gt;/.obsidian/plugins/smart-sync-global/</code> (またはカスタム構成フォルダーの <code>plugins/smart-sync-global/</code>）。 Obsidian をリロードし、ホストの信頼プロンプトを自分で確認した後、コミュニティ プラグインで Smart Sync を有効にします。</p>
 <p>更新するには、プラグインを無効にして置き換えます <strong>これら 3 つのプログラム ファイルのみ</strong>を選択し、リロードして有効にします。保存する <code>data.json</code>、シークレットストレージ、同期チェックポイント、およびすべてのメモ。別のデバイスのプラグイン設定または資格情報をこのコンテナーにコピーしないでください。以前のプログラム ファイルと独立したバックアップを保持します。プログラム ファイルをダウングレードしても、クラウドの削除やその他の完了したクラウド操作を元に戻すことはできません。相互作用を解決せずに、同じコンテナー上で複数の同期プロバイダーを実行しないでください。</p>
 <h2 id="sign-in-and-connect-your-first-vault">サインインして最初のボールトに接続します</h2>
@@ -40,15 +50,14 @@
 <p>サポートされているデスクトップ ホストでは、 <strong>詳細 → トレイアイコンを使用してバックグラウンドで実行</strong> はデフォルトでオンになっています。 Vault ウィンドウを閉じると、Vault は実行されたままになります。トレイアイコンをクリックして復元します。そのメニューはこのボールトのみを閉じることができます。サポートされていないトレイ ホストは、通常どおり閉じたままになります。モバイルではこのオプションが非表示になります。</p>
 <p><strong>ログイン時にトレイに起動</strong> は Windows のみで、デフォルトではオフになっています。これを有効にすると、現在のユーザーのスタートアップ フォルダーにこのボールトのショートカットが作成され、バックグラウンド トレイが有効になります。通常の打ち上げは表示されたままになります。ホストがリクエストを別のインスタンスにルーティングする可能性があるため、カスタム Obsidian プロファイルでは起動を有効にすることができません。トレイを無効にしたり、アンインストールしたり、起動サポートのないバージョンに戻したりする前に、ログイン起動を無効にしてください。 macOS、Linux、Android、iPhone、iPad では Windows 起動スイッチが表示されません。</p>
 <h2 id="storage-plans-and-payments">ストレージ プランと支払い</h2>
-<p>設定でストレージ プランのエントリを開いて、現在のプランを表示します。モバイルはシステム ブラウザを直接開こうとします。ハンドオフが失敗した場合、または確認できない場合は、提供されたリンクを使用します。支払う前に、金額、通貨、間隔、更新条件を確認してください。支払い通貨は USD です。標準は Stripe ですが、一部のアカウントには Dodo Payments が割り当てられます。未払いの注文は再開でき、既存の注文とサブスクリプションは元の決済サービスを維持します。結果が不明な場合は再度支払わないでください。アプリに戻り、プランの更新を確認します。再度支払う前に、不確実な注文を確認してください。</p>
+<p>Open the storage-plan entry in settings to view the current plan. Mobile tries to open the system browser directly; use the offered link if the handoff fails or cannot be confirmed. Review the amount, currency, interval and renewal terms before paying. Checkout uses USD through the provider assigned to your account: Stripe by default, or Dodo Payments for eligible accounts. Reopening an unpaid purchase resumes its original checkout. Existing orders and subscriptions keep their provider; do not pay again while a result is uncertain. Return to the app and verify the plan update; inspect an uncertain order before paying again.</p>
 <p>現在、無料プランには 50 MB、1 つのクラウド ボールト、無制限のデバイスが含まれています。有料の容量と現在の条件は、 <a href="https://smartsync.cc/ja/pricing/">計画ページ</a>。ストレージ容量はアカウント内のすべてのクラウド保管庫で共有されます。</p>
 <h2 id="sign-out-revoke-a-device-or-delete-an-account">サインアウト、デバイスの取り消し、またはアカウントの削除</h2>
 <p>サインアウトしてもローカルのメモは保持されます。オフライン サインアウトでリモートの取り消しを確認できない場合、すぐに削除する必要がある場合は、接続されている別のデバイスからデバイスを取り消します。アンインストールしてもクラウド アカウントは削除されません。</p>
 <p>クラウドの削除は破壊的です。最初に独立したローカル バックアップを確認してください。ボルト管理を通じてクラウドボルトを削除し、クリーンアップを待ちます。開く <strong>アカウント → 危険ゾーン → アカウントの削除</strong>、プロンプトが表示されたら同じアカウントを確認し、次のように入力します。 <strong>DELETE</strong> まさに。有料サービス時間は削除を妨げるものではありません。これにより、アカウント アクセスと接続された ID が削除されます。ローカルメモが残っています。読んでください <a href="https://smartsync.cc/ja/privacy/">保存ポリシー</a>.</p>
 <h2 id="troubleshooting-and-device-limits">トラブルシューティングとデバイスの制限</h2>
 <p>エラーとともに示された回復アクションを読んでください。デバイスまたはコンテナーの制限に達したら、既存のコンテナーに接続するか、未使用のデバイスを取り消すか、適切なプランを選択します。サポートが必要な場合は、診断を手動でエクスポートします。グローバル クライアントは診断テレメトリをアップロードしません。表示されるエラー、プラグイン/Obsidian のバージョン、プラットフォームを次の宛先に送信します。 <a href="mailto:admin@smartsync.cc">admin@smartsync.cc</a>。パスワード、トークン、確認コード、プライベートメモのコンテンツを削除します。</p>
-<p>Windows、macOS、デスクトップ Linux、Android、iPhone/iOS、iPad/iPadOS は、保護された同期 UI を共有します。デスクトップのネイティブ機能とモバイルのライフサイクル制限は、上で説明したように異なります。以前にユーザーから報告された通常の Windows/iOS/Android フローは、特定の受け入れ範囲を保持しています。これは、6 つのプラットフォーム ファミリすべてのすべての機能が物理デバイスで完全に受け入れられるようになったということではありません。再起動、ロック、分割ビュー、ブラウザ復帰、バージョン混在の動作については、実際に使用しているデバイスで確認する必要があります。アップグレード中にデバイスごとの設定とバックアップを保持します。</p>
 <h2 id="interface-language">インターフェース言語</h2>
-<p>多言語のクライアント候補者は、英語、簡体字および繁体字中国語、日本語、韓国語、ドイツ語、フランス語、スペイン語、ブラジル系ポルトガル語、ロシア語をサポートしています。既存の安定版 1.1.5 バイナリは、その更新がリリースされるまで英語版のままです。</p>
+<p>This version supports English, Simplified and Traditional Chinese, Japanese, Korean, German, French, Spanish, Brazilian Portuguese and Russian.</p>
 <p>Smart Sync 設定の上部近くにあるインターフェイス言語で、[Obsidian に従う] または明示的な言語を選択します。この選択は、このデバイス上のこのローカル ボールトにのみ適用されます。それを保存し、アクティブな同期を終了してから、プラグインをリロードするか Obsidian を再起動して、設定、コマンド、メニューをまとめて更新します。</p>
 <p>これにより、表示テキストのみが変更されます。サービス リージョン、アカウント、クラウド保管庫、暗号化パスワード、ファイルの内容、同期の進行状況は変わりません。デバイスが異なれば、使用する言語も異なる場合があります。</p>

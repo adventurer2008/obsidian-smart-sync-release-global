@@ -8,5 +8,3 @@
 - Include the maintained synchronization, original source-mtime preservation, encryption, device management and local tools without removing their existing controls.
 
 The associated Global service update retains the current hosted plan/checkout interface. Update only main.js, manifest.json and styles.css; preserve per-device data.json, secret storage, checkpoints and all vault files. Keep an independent backup and inspect current tasks before closing a device.
-
-Windows/WSL, service and browser-engine verification is recorded separately from physical-device acceptance. Prior user-reported iOS/Android/Windows ordinary flows do not establish every platform, provider or interruption scenario. This release does not claim Obsidian Community approval or a verified five-minute failover capability.

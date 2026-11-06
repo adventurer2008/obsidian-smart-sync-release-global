@@ -4,11 +4,24 @@
 [English](USER-GUIDE.md) · [Simplified Chinese](docs/i18n/zh-CN/USER-GUIDE.md) · [Traditional Chinese](docs/i18n/zh-TW/USER-GUIDE.md) · [Japanese](docs/i18n/ja/USER-GUIDE.md) · [Korean](docs/i18n/ko/USER-GUIDE.md) · [German](docs/i18n/de/USER-GUIDE.md) · [French](docs/i18n/fr/USER-GUIDE.md) · [Spanish](docs/i18n/es/USER-GUIDE.md) · [Brazilian Portuguese](docs/i18n/pt-BR/USER-GUIDE.md) · [Russian](docs/i18n/ru/USER-GUIDE.md)
 <!-- LANGUAGES:END -->
 
-Applies to Smart Sync 1.1.5 (`smart-sync-global`). [Website](https://smartsync.cc/) · [Downloads](https://smartsync.cc/download/) · [Privacy](https://smartsync.cc/privacy/).
+Applies to Smart Sync (`smart-sync-global`). [Website](https://smartsync.cc/) · [Downloads](https://smartsync.cc/download/) · [Privacy](https://smartsync.cc/privacy/).
 
 ## Install or update
 
-Use Obsidian **1.12.7 or newer**. Back up your vault and try a separate test vault first. In Wujie Hub, choose **Smart Sync → Stable** for the current stable package. Alpha is a separate testing channel.
+Use Obsidian **1.12.7 or newer**.
+
+### Install from Obsidian Community plugins
+
+Once Smart Sync is listed in the Obsidian community directory, you can install it directly in Obsidian:
+
+1. Open Settings → Community plugins in Obsidian.
+2. If community plugins are disabled, select Turn on community plugins and review the notice shown by Obsidian.
+3. Select Browse, search for Smart Sync, and open its listing (author: lihy).
+4. Select Install, then Enable.
+
+### Wujie Hub or manual download
+
+In Wujie Hub, choose **Smart Sync → Stable** for the current stable package.
 
 For manual installation, download `main.js`, `manifest.json` and `styles.css` from the matching [GitHub Release](https://github.com/adventurer2008/obsidian-smart-sync-release-global/releases). Check its `SHA256SUMS.txt`. Place the three files in `<vault>/.obsidian/plugins/smart-sync-global/` (or your custom configuration folder's `plugins/smart-sync-global/`). Reload Obsidian, then enable Smart Sync in Community plugins after reviewing the host's trust prompt yourself.
 
@@ -90,11 +103,10 @@ Cloud deletion is destructive: verify an independent local backup first. Delete 
 
 Read the recovery action shown with the error. At a device or vault limit, connect an existing vault, revoke an unused device, or choose a suitable plan. Export diagnostics manually if support needs them; the Global client does not upload diagnostic telemetry. Send the visible error, plugin/Obsidian versions and platform to [admin@smartsync.cc](mailto:admin@smartsync.cc). Remove passwords, tokens, verification codes and private note content.
 
-Windows, macOS, desktop Linux, Android, iPhone/iOS and iPad/iPadOS share the guarded synchronization UI. Desktop native features and mobile lifecycle limits differ as described above. Earlier user-reported ordinary Windows/iOS/Android flows retain their specific acceptance scope; this is not fresh complete physical-device acceptance of every feature on all six platform families. Restart, lock, split view, browser return and mixed-version behavior require checking on the actual devices you use. Keep per-device settings and backups during upgrades.
 
 ## Interface language
 
-The multilingual Client candidate supports English, Simplified and Traditional Chinese, Japanese, Korean, German, French, Spanish, Brazilian Portuguese and Russian. Existing stable 1.1.5 binaries remain English until that update is released.
+This version supports English, Simplified and Traditional Chinese, Japanese, Korean, German, French, Spanish, Brazilian Portuguese and Russian.
 
 Choose Follow Obsidian or an explicit language in Interface language near the top of Smart Sync settings. The choice applies only to this local vault on this device. Save it, finish any active synchronization, then reload the plugin or restart Obsidian to update settings, commands and menus together.
 
