@@ -1,6 +1,7 @@
 <p><a href="../../../README.md">English</a> · <a href="../zh-CN/README.md">简体中文</a> · <a href="../zh-TW/README.md">繁體中文</a> · <a href="../ja/README.md">日本語</a> · <a href="../ko/README.md">한국어</a> · <a href="../de/README.md">Deutsch</a> · <a href="../fr/README.md">Français</a> · <a href="../es/README.md">Español</a> · <a href="../pt-BR/README.md">Português (Brasil)</a> · <a href="../ru/README.md">Русский</a></p>
 <h1 id="smart-sync">Smart Sync</h1>
-<p>Obsidian 筆記、附件和選定設定的加密同步。保留原始文件修改時間、恢復保留版本並管理您的裝置。</p>
+<p>Obsidian社群同步外掛， <strong>多裝置即時同步，同步速度更快，功能更強，超越Obsidian官方同步功能。</strong><br>
+電腦、手機、平板，筆記、附件與所選設定保持同步。</p>
 <p>Global 應用程式伺服器在美國阿什本的 Oracle Cloud 上運作。 加密物件資料使用 Cloudflare R2 進行私有儲存。</p>
 <p>我們重視資料安全與隱私。筆記、附件及檔案路徑在上傳前，會先在您的裝置上使用 AES-256-GCM 加密。加密及解密均在您的裝置上完成，服務端儲存加密內容；加密密碼與帳戶登入憑證相互獨立。</p>
 <p>使用Obsidian <strong>1.12.7 或更高版本</strong>.</p>

@@ -1,6 +1,7 @@
 <p><a href="../../../README.md">English</a> · <a href="../zh-CN/README.md">简体中文</a> · <a href="../zh-TW/README.md">繁體中文</a> · <a href="../ja/README.md">日本語</a> · <a href="../ko/README.md">한국어</a> · <a href="../de/README.md">Deutsch</a> · <a href="../fr/README.md">Français</a> · <a href="../es/README.md">Español</a> · <a href="../pt-BR/README.md">Português (Brasil)</a> · <a href="../ru/README.md">Русский</a></p>
 <h1 id="smart-sync">Smart Sync</h1>
-<p>Sincronização criptografada para suas notas, anexos e configurações selecionadas do Obsidian. Preserve os tempos de modificação dos arquivos originais, recupere versões retidas e gerencie seus dispositivos.</p>
+<p>Um plugin de sincronização da comunidade para Obsidian. <strong>Sincronização em tempo real entre dispositivos, mais velocidade e recursos mais poderosos que vão além do serviço oficial Obsidian Sync.</strong><br>
+Mantenha notas, anexos e configurações selecionadas sincronizados em computadores, celulares e tablets.</p>
 <p>O servidor de aplicativos Global é executado no Oracle Cloud em Ashburn, Estados Unidos. Os dados de objetos criptografados são armazenados de forma privada no Cloudflare R2.</p>
 <p>Valorizamos a segurança e a privacidade dos dados. Notas, anexos e caminhos de arquivos são criptografados no seu dispositivo com AES-256-GCM antes do envio. A criptografia e a descriptografia ocorrem nos seus dispositivos; o serviço armazena conteúdo criptografado e a senha de criptografia é separada das credenciais de acesso à conta.</p>
 <p>Usar Obsidian <strong>1.12.7 ou mais recente</strong>.</p>

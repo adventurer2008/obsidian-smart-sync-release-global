@@ -4,7 +4,8 @@
 [English](README.md) · [Simplified Chinese](docs/i18n/zh-CN/README.md) · [Traditional Chinese](docs/i18n/zh-TW/README.md) · [Japanese](docs/i18n/ja/README.md) · [Korean](docs/i18n/ko/README.md) · [German](docs/i18n/de/README.md) · [French](docs/i18n/fr/README.md) · [Spanish](docs/i18n/es/README.md) · [Brazilian Portuguese](docs/i18n/pt-BR/README.md) · [Russian](docs/i18n/ru/README.md)
 <!-- LANGUAGES:END -->
 
-Encrypted synchronization for your Obsidian notes, attachments and selected settings. Preserve original file modification times, recover retained versions and manage your devices.
+A community sync plugin for Obsidian, **Real-time sync across devices, faster synchronization and more powerful features that go beyond the official sync features of Obsidian.**  
+Keep notes, attachments and selected settings in sync across computers, phones and tablets.
 
 The Global application server runs on Oracle Cloud in Ashburn, United States. Encrypted object data is stored privately using Cloudflare R2.
 
