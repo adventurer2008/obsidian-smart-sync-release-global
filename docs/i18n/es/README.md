@@ -2,6 +2,7 @@
 <h1 id="smart-sync">Smart Sync</h1>
 <p>Sincronización cifrada para sus notas, archivos adjuntos y configuraciones seleccionadas del Obsidian. Conserve los tiempos de modificación de archivos originales, recupere versiones retenidas y administre sus dispositivos.</p>
 <p>El servidor de aplicaciones global se ejecuta en Oracle Cloud en Ashburn, Estados Unidos. Los datos de objetos cifrados se almacenan de forma privada con Cloudflare R2.</p>
+<p>Las notas, los adjuntos y las rutas de archivos se cifran en su dispositivo con AES-256-GCM antes de subirlos. El cifrado y descifrado se realizan en sus dispositivos; el servicio almacena contenido cifrado y la contraseña de cifrado es independiente del inicio de sesión de la cuenta.</p>
 <p><strong>Versión actual: 1.1.5</strong> · Obsidian <strong>1.12.7+</strong> · ID del complemento: <code>smart-sync-global</code>.</p>
 <p><a href="https://smartsync.cc/es/">Sitio web</a> · <a href="https://smartsync.cc/es/download/">Descargar / actualizar</a> · <a href="USER-GUIDE.md">Manual de operación</a> · <a href="https://smartsync.cc/es/pricing/">Planes</a></p>
 <h2 id="get-started">empezar</h2>

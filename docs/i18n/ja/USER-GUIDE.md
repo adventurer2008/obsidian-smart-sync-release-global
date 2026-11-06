@@ -50,7 +50,7 @@
 <p>サポートされているデスクトップ ホストでは、 <strong>詳細 → トレイアイコンを使用してバックグラウンドで実行</strong> はデフォルトでオンになっています。 Vault ウィンドウを閉じると、Vault は実行されたままになります。トレイアイコンをクリックして復元します。そのメニューはこのボールトのみを閉じることができます。サポートされていないトレイ ホストは、通常どおり閉じたままになります。モバイルではこのオプションが非表示になります。</p>
 <p><strong>ログイン時にトレイに起動</strong> は Windows のみで、デフォルトではオフになっています。これを有効にすると、現在のユーザーのスタートアップ フォルダーにこのボールトのショートカットが作成され、バックグラウンド トレイが有効になります。通常の打ち上げは表示されたままになります。ホストがリクエストを別のインスタンスにルーティングする可能性があるため、カスタム Obsidian プロファイルでは起動を有効にすることができません。トレイを無効にしたり、アンインストールしたり、起動サポートのないバージョンに戻したりする前に、ログイン起動を無効にしてください。 macOS、Linux、Android、iPhone、iPad では Windows 起動スイッチが表示されません。</p>
 <h2 id="storage-plans-and-payments">ストレージ プランと支払い</h2>
-<p>Open the storage-plan entry in settings to view the current plan. Mobile tries to open the system browser directly; use the offered link if the handoff fails or cannot be confirmed. Review the amount, currency, interval and renewal terms before paying. Checkout uses USD through the provider assigned to your account: Stripe by default, or Dodo Payments for eligible accounts. Reopening an unpaid purchase resumes its original checkout. Existing orders and subscriptions keep their provider; do not pay again while a result is uncertain. Return to the app and verify the plan update; inspect an uncertain order before paying again.</p>
+<p>設定のストレージプランから現在のプランを確認できます。モバイルではシステムブラウザーを直接開こうとします。移動に失敗した場合や確認できない場合は、表示されたリンクを使用してください。支払い前に金額、通貨、請求期間、更新条件を確認してください。決済は米ドル（USD）で、アカウントに割り当てられた決済サービスを使用します。既定は Stripe で、対象アカウントでは Dodo Payments が使われる場合もあります。未払いの購入を再度開くと元の注文を再開します。既存の注文とサブスクリプションは元の決済サービスを維持します。結果が不明な場合は再度支払わないでください。Obsidian に戻ってプランの更新を確認し、再度支払う前に状態不明の注文を確認してください。</p>
 <p>現在、無料プランには 50 MB、1 つのクラウド ボールト、無制限のデバイスが含まれています。有料の容量と現在の条件は、 <a href="https://smartsync.cc/ja/pricing/">計画ページ</a>。ストレージ容量はアカウント内のすべてのクラウド保管庫で共有されます。</p>
 <h2 id="sign-out-revoke-a-device-or-delete-an-account">サインアウト、デバイスの取り消し、またはアカウントの削除</h2>
 <p>サインアウトしてもローカルのメモは保持されます。オフライン サインアウトでリモートの取り消しを確認できない場合、すぐに削除する必要がある場合は、接続されている別のデバイスからデバイスを取り消します。アンインストールしてもクラウド アカウントは削除されません。</p>
@@ -58,6 +58,6 @@
 <h2 id="troubleshooting-and-device-limits">トラブルシューティングとデバイスの制限</h2>
 <p>エラーとともに示された回復アクションを読んでください。デバイスまたはコンテナーの制限に達したら、既存のコンテナーに接続するか、未使用のデバイスを取り消すか、適切なプランを選択します。サポートが必要な場合は、診断を手動でエクスポートします。グローバル クライアントは診断テレメトリをアップロードしません。表示されるエラー、プラグイン/Obsidian のバージョン、プラットフォームを次の宛先に送信します。 <a href="mailto:admin@smartsync.cc">admin@smartsync.cc</a>。パスワード、トークン、確認コード、プライベートメモのコンテンツを削除します。</p>
 <h2 id="interface-language">インターフェース言語</h2>
-<p>This version supports English, Simplified and Traditional Chinese, Japanese, Korean, German, French, Spanish, Brazilian Portuguese and Russian.</p>
+<p>本バージョンは英語、簡体字中国語、繁体字中国語、日本語、韓国語、ドイツ語、フランス語、スペイン語、ブラジルポルトガル語、ロシア語に対応しています。</p>
 <p>Smart Sync 設定の上部近くにあるインターフェイス言語で、[Obsidian に従う] または明示的な言語を選択します。この選択は、このデバイス上のこのローカル ボールトにのみ適用されます。それを保存し、アクティブな同期を終了してから、プラグインをリロードするか Obsidian を再起動して、設定、コマンド、メニューをまとめて更新します。</p>
 <p>これにより、表示テキストのみが変更されます。サービス リージョン、アカウント、クラウド保管庫、暗号化パスワード、ファイルの内容、同期の進行状況は変わりません。デバイスが異なれば、使用する言語も異なる場合があります。</p>

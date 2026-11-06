@@ -50,7 +50,7 @@
 <p>在支持的桌面主机上， <strong>高级 → 使用托盘图标在后台运行</strong> 默认情况下处于打开状态。关闭笔记库窗口可使其继续运行；单击其托盘图标将其恢复。它的菜单只能关闭这个笔记库。不受支持的托盘主机保持正常关闭。移动设备隐藏此选项。</p>
 <p><strong>登录时启动至托盘</strong> 仅限 Windows，默认情况下处于关闭状态。启用它会在当前用户的启动文件夹中创建此笔记库的快捷方式并启用后台托盘。普通的发布保持可见。自定义 Obsidian 配置文件无法启用启动，因为主机可能会将请求路由到另一个实例。在禁用托盘、卸载或恢复到不支持启动的版本之前先禁用登录启动。 macOS、Linux、Android、iPhone 和 iPad 不显示 Windows 启动开关。</p>
 <h2 id="storage-plans-and-payments">存储计划和付款</h2>
-<p>Open the storage-plan entry in settings to view the current plan. Mobile tries to open the system browser directly; use the offered link if the handoff fails or cannot be confirmed. Review the amount, currency, interval and renewal terms before paying. Checkout uses USD through the provider assigned to your account: Stripe by default, or Dodo Payments for eligible accounts. Reopening an unpaid purchase resumes its original checkout. Existing orders and subscriptions keep their provider; do not pay again while a result is uncertain. Return to the app and verify the plan update; inspect an uncertain order before paying again.</p>
+<p>在设置中打开存储套餐入口，查看当前套餐。移动端会尝试直接打开系统浏览器；若跳转失败或无法确认，请使用提供的链接。付款前请核对金额、币种、计费周期和续费条款。结算以美元（USD）进行，使用分配给账户的支付渠道：默认是 Stripe，符合条件的账户也可能使用 Dodo Payments。重新打开未付款的购买流程会继续原订单。已有订单和订阅保留原支付渠道；结果不确定时，请勿再次付款。返回 Obsidian 后确认套餐已更新；再次付款前，先查询状态不确定的订单。</p>
 <p>免费计划目前包括 50 个 MB、1 个云笔记库和无限设备。付费容量和当前条款显示在 <a href="https://smartsync.cc/zh-CN/pricing/">计划页面</a>。存储容量由账户下的所有云笔记库共享。</p>
 <h2 id="sign-out-revoke-a-device-or-delete-an-account">注销、撤销设备或删除帐户</h2>
 <p>注销会保留本地注释。如果离线注销无法确认远程撤销，请在需要立即删除时从另一个连接的设备撤销该设备。卸载不会删除云帐户。</p>
@@ -58,6 +58,6 @@
 <h2 id="troubleshooting-and-device-limits">故障排除和设备限制</h2>
 <p>阅读错误显示的恢复操作。在设备或笔记库限制下，连接现有笔记库、撤销未使用的设备或选择合适的计划。如果支持需要，手动导出诊断信息； Global 客户端不上传诊断遥测数据。将可见错误、插件/Obsidian 版本和平台发送至 <a href="mailto:admin@smartsync.cc">admin@smartsync.cc</a>。删除密码、令牌、验证码和私人笔记内容。</p>
 <h2 id="interface-language">界面语言</h2>
-<p>This version supports English, Simplified and Traditional Chinese, Japanese, Korean, German, French, Spanish, Brazilian Portuguese and Russian.</p>
+<p>本版本支持英语、简体中文、繁体中文、日语、韩语、德语、法语、西班牙语、巴西葡萄牙语和俄语。</p>
 <p>在 Smart Sync 设置顶部附近的界面语言中选择遵循 Obsidian 或显式语言。该选择仅适用于该设备上的本地笔记库。保存它，完成任何活动同步，然后重新加载插件或重新启动 Obsidian 以一起更新设置、命令和菜单。</p>
 <p>这仅更改显示文本。服务区域、账户、云库、加密密码、文件内容、同步进度不变。不同的设备可能使用不同的语言。</p>

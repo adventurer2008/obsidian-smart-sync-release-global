@@ -50,7 +50,7 @@
 <p>지원되는 데스크톱 호스트에서는 <strong>고급 → 트레이 아이콘으로 백그라운드에서 실행</strong> 기본적으로 켜져 있습니다. 볼트 창을 닫으면 계속 실행됩니다. 복원하려면 트레이 아이콘을 클릭하세요. 해당 메뉴는 이 볼트만 닫을 수 있습니다. 지원되지 않는 트레이 호스트는 정상적으로 닫히는 상태를 유지합니다. 모바일에서는 이 옵션이 숨겨집니다.</p>
 <p><strong>로그인 시 트레이로 실행</strong> Windows 전용이며 기본적으로 꺼져 있습니다. 활성화하면 현재 사용자의 시작 폴더에 이 볼트의 바로가기가 생성되고 배경 트레이가 활성화됩니다. 일반 출시는 계속 표시됩니다. 호스트가 요청을 다른 인스턴스로 라우팅할 수 있으므로 사용자 정의 Obsidian 프로필은 시작을 활성화할 수 없습니다. 트레이를 비활성화하거나 시작 지원이 없는 버전을 제거하거나 되돌리기 전에 로그인 시작을 비활성화하십시오. macOS, Linux, Android, iPhone 및 iPad에는 Windows 시작 스위치가 표시되지 않습니다.</p>
 <h2 id="storage-plans-and-payments">스토리지 요금제 및 결제</h2>
-<p>Open the storage-plan entry in settings to view the current plan. Mobile tries to open the system browser directly; use the offered link if the handoff fails or cannot be confirmed. Review the amount, currency, interval and renewal terms before paying. Checkout uses USD through the provider assigned to your account: Stripe by default, or Dodo Payments for eligible accounts. Reopening an unpaid purchase resumes its original checkout. Existing orders and subscriptions keep their provider; do not pay again while a result is uncertain. Return to the app and verify the plan update; inspect an uncertain order before paying again.</p>
+<p>설정의 저장 공간 요금제 항목에서 현재 요금제를 확인하세요. 모바일에서는 시스템 브라우저를 직접 열려고 시도합니다. 전환에 실패하거나 확인할 수 없으면 제공된 링크를 사용하세요. 결제 전에 금액, 통화, 청구 주기 및 갱신 조건을 확인하세요. 결제 통화는 미국 달러(USD)이며 계정에 배정된 결제 서비스를 사용합니다. 기본값은 Stripe이고 해당 계정에는 Dodo Payments가 배정될 수도 있습니다. 미결제 구매를 다시 열면 기존 주문이 재개됩니다. 기존 주문과 구독은 원래 결제 서비스를 유지합니다. 결과가 불확실하면 다시 결제하지 마세요. Obsidian으로 돌아와 요금제 업데이트를 확인하고, 다시 결제하기 전에 상태가 불확실한 주문을 조회하세요.</p>
 <p>현재 무료 요금제에는 MB 50개, 클라우드 볼트 1개, 장치 무제한이 포함되어 있습니다. 유료 용량과 현재 조건은 <a href="https://smartsync.cc/ko/pricing/">계획 페이지</a>. 저장 용량은 계정의 모든 클라우드 보관함에서 공유됩니다.</p>
 <h2 id="sign-out-revoke-a-device-or-delete-an-account">로그아웃, 기기 취소 또는 계정 삭제</h2>
 <p>로그아웃해도 로컬 메모가 유지됩니다. 오프라인 로그아웃으로 원격 해지를 확인할 수 없는 경우 즉시 제거가 필요할 때 연결된 다른 장치에서 해당 장치를 취소하세요. 제거해도 클라우드 계정은 삭제되지 않습니다.</p>
@@ -58,6 +58,6 @@
 <h2 id="troubleshooting-and-device-limits">문제 해결 및 장치 제한</h2>
 <p>오류와 함께 표시된 복구 조치를 읽으십시오. 장치 또는 저장소 한도에 따라 기존 저장소를 연결하거나, 사용하지 않는 장치를 취소하거나, 적합한 요금제를 선택하세요. 지원이 필요한 경우 진단을 수동으로 내보냅니다. 글로벌 클라이언트는 진단 원격 측정을 업로드하지 않습니다. 눈에 보이는 오류, 플러그인/Obsidian 버전 및 플랫폼을 다음으로 보내십시오. <a href="mailto:admin@smartsync.cc">admin@smartsync.cc</a>. 비밀번호, 토큰, 인증 코드, 개인 메모 내용을 제거하세요.</p>
 <h2 id="interface-language">인터페이스 언어</h2>
-<p>This version supports English, Simplified and Traditional Chinese, Japanese, Korean, German, French, Spanish, Brazilian Portuguese and Russian.</p>
+<p>이 버전은 영어, 중국어 간체, 중국어 번체, 일본어, 한국어, 독일어, 프랑스어, 스페인어, 브라질 포르투갈어, 러시아어를 지원합니다.</p>
 <p>Obsidian 따르기 또는 Smart Sync 설정 상단 근처의 인터페이스 언어에서 명시적 언어를 선택합니다. 선택 사항은 이 장치의 로컬 볼트에만 적용됩니다. 저장하고 활성 동기화를 마친 다음 플러그인을 다시 로드하거나 Obsidian를 다시 시작하여 설정, 명령 및 메뉴를 함께 업데이트하세요.</p>
 <p>이렇게 하면 표시 텍스트만 변경됩니다. 서비스 지역, 계정, 클라우드 볼트, 암호화 비밀번호, 파일 콘텐츠 및 동기화 진행 상황은 변경되지 않습니다. 장치마다 다른 언어를 사용할 수 있습니다.</p>

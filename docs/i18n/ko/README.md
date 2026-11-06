@@ -2,6 +2,7 @@
 <h1 id="smart-sync">Smart Sync</h1>
 <p>Obsidian 메모, 첨부 파일 및 선택한 설정에 대한 암호화된 동기화입니다. 원본 파일 수정 시간을 보존하고, 보존된 버전을 복구하고, 장치를 관리하세요.</p>
 <p>글로벌 애플리케이션 서버는 미국 Ashburn의 Oracle Cloud에서 실행됩니다. 암호화된 객체 데이터는 Cloudflare R2에 비공개로 저장됩니다.</p>
+<p>노트, 첨부 파일 및 파일 경로는 업로드 전에 기기에서 AES-256-GCM으로 암호화됩니다. 암호화와 복호화는 기기에서 이루어지며 서비스에는 암호화된 콘텐츠가 저장됩니다. 암호화 비밀번호는 계정 로그인 정보와 별개입니다.</p>
 <p><strong>현재 버전: 1.1.5</strong> · Obsidian <strong>1.12.7+</strong> · 플러그인 ID: <code>smart-sync-global</code>.</p>
 <p><a href="https://smartsync.cc/ko/">웹사이트</a> · <a href="https://smartsync.cc/ko/download/">다운로드/업데이트</a> · <a href="USER-GUIDE.md">사용 설명서</a> · <a href="https://smartsync.cc/ko/pricing/">계획</a></p>
 <h2 id="get-started">시작하기</h2>

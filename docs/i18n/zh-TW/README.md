@@ -2,6 +2,7 @@
 <h1 id="smart-sync">Smart Sync</h1>
 <p>Obsidian 筆記、附件和選定設定的加密同步。保留原始文件修改時間、恢復保留版本並管理您的裝置。</p>
 <p>Global 應用程式伺服器在美國阿什本的 Oracle Cloud 上運作。 加密物件資料使用 Cloudflare R2 進行私有儲存。</p>
+<p>筆記、附件及檔案路徑在上傳前，會先在您的裝置上使用 AES-256-GCM 加密。 加密及解密均在您的裝置上完成，服務端儲存加密內容；加密密碼與帳戶登入憑證相互獨立。</p>
 <p><strong>目前版本：1.1.5</strong> · Obsidian <strong>1.12.7+</strong> · 插件ID： <code>smart-sync-global</code>.</p>
 <p><a href="https://smartsync.cc/zh-TW/">網站</a> · <a href="https://smartsync.cc/zh-TW/download/">下載/更新</a> · <a href="USER-GUIDE.md">操作手冊</a> · <a href="https://smartsync.cc/zh-TW/pricing/">計劃</a></p>
 <h2 id="get-started">開始使用</h2>
