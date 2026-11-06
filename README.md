@@ -1,31 +1,39 @@
 # Smart Sync
 
-Sync notes, attachments and selected settings with client-side encryption. Keep original file modification times, manage devices and recover earlier versions. Additional local tools include sorting, pinned notes, recent files and password-protected note content.
+<!-- LANGUAGES:START -->
+[English](README.md) · [Simplified Chinese](docs/i18n/zh-CN/README.md) · [Traditional Chinese](docs/i18n/zh-TW/README.md) · [Japanese](docs/i18n/ja/README.md) · [Korean](docs/i18n/ko/README.md) · [German](docs/i18n/de/README.md) · [French](docs/i18n/fr/README.md) · [Spanish](docs/i18n/es/README.md) · [Brazilian Portuguese](docs/i18n/pt-BR/README.md) · [Russian](docs/i18n/ru/README.md)
+<!-- LANGUAGES:END -->
 
-Plugin ID: `smart-sync-global`. Version 1.1.5 includes the maintained account, settings and mobile browser-handoff fixes. Download the three plugin files from [Releases](https://github.com/adventurer2008/obsidian-smart-sync-release-global/releases), or select Smart Sync in Wujie Hub, then follow the [user guide](USER-GUIDE.md). Publication here does not mean Obsidian has approved or listed the plugin.
+Encrypted synchronization for your Obsidian notes, attachments and selected settings. Preserve original file modification times, recover retained versions and manage your devices.
 
-## Account and payments
+**Current version: 1.1.5** · Obsidian **1.12.7+** · Plugin ID: `smart-sync-global`.
 
-An account is required for hosted synchronization. Sign in with Google, GitHub or an emailed code. A free storage tier is available; additional storage is a paid subscription. See current [plans](https://pay.smartsync.cc/pay/plans) before purchase. Stripe handles checkout and recurring subscriptions. Account sign-in does not replace the encryption passphrase; keep that passphrase safe.
+[Website](https://smartsync.cc/) · [Download / update](https://smartsync.cc/download/) · [Operation manual](USER-GUIDE.md) · [Plans](https://smartsync.cc/pricing/)
 
-To delete an account, first delete its cloud vaults and wait for cleanup. The plugin then requires identity verification and confirmation. Account deletion does not automatically refund payments. Contact [support](mailto:admin@smartsync.cc) for payment/refund questions; see the [terms](https://smartsync.cc/terms/).
+## Get started
 
-## Privacy and compatibility
+1. Back up your notes and try a separate vault first. In Wujie Hub, choose **Smart Sync → Stable**, or download the three plugin files from [Releases](https://github.com/adventurer2008/obsidian-smart-sync-release-global/releases).
+2. Install `main.js`, `manifest.json` and `styles.css` in your vault's `.obsidian/plugins/smart-sync-global/` folder. Reload Obsidian and review its trust prompt before enabling the plugin. Updates replace only these three files; preserve settings, secret storage, checkpoints and notes.
+3. Open **Settings → Smart Sync → Sign in**, choose Google, GitHub or email, then create or select a cloud vault. Keep its encryption passphrase safe; account login cannot recover it.
+4. Review sync preferences, run synchronization and confirm completion before adding another device. Follow the [step-by-step manual](USER-GUIDE.md) for pairing, recovery and troubleshooting.
 
-Protected content and paths are encrypted on the device before upload. Account identity, vault/device labels, usage and other operational metadata are outside content encryption. Encryption does not replace backups or device security. Read the [privacy policy](https://smartsync.cc/privacy/) and [user guide](USER-GUIDE.md).
+## Features
 
-The Global client keeps diagnostic logs on the device; you can export them manually. It does not upload diagnostic telemetry. Device presence, local vault-size reports and peer discovery support your device-management and synchronization features. The service uses Oracle Cloud hosting, private Cloudflare R2 storage, Tencent QQ Mail for account emails, Stripe for payments and optional Google/GitHub identity providers. Server request logging is described in the privacy policy.
+- Notes-first synchronization, attachment download policies, exclusions, task progress and optional LAN acceleration with cloud fallback.
+- History and deleted-note recovery within retention limits, device pairing/revocation and encrypted configuration recovery.
+- Selected Obsidian settings, compatible plugins, themes and snippets synchronized across devices.
+- Folder-level sorting, pinned/bottom notes, recent files and local note search.
+- Password-protected whole notes or selected text, secure editing and encrypted draft recovery. Titles, linked attachments and earlier plaintext history have separate privacy boundaries.
+- Desktop tray where supported and optional Windows launch at login. Mobile systems can suspend background work; return to Obsidian and confirm uploads finish.
 
-On Windows, explicitly enabling **Launch to tray at login** creates a shortcut in your current user's Startup folder outside the vault. Disable that option before uninstalling or reverting to a version without the feature. Other platforms hide this option. Desktop tray behavior uses the host's desktop APIs and safely falls back to normal closing when unavailable.
+Version 1.1.5 also improves narrow-screen action labels, settings refresh, interrupted account operations and browser sign-in recovery. Its Global interface currently uses English. Publication does not imply Obsidian Community listing approval.
 
-The plugin uses shared desktop and mobile controls. Mobile operating systems may suspend background synchronization; reopen Obsidian and confirm important changes finish uploading. Desktop-only capabilities are hidden or guarded on mobile. Fresh physical-device acceptance for this exact candidate remains incomplete; synthetic tests do not establish support on every device.
+## Account, payments and privacy
 
-## Source and build
+Hosted synchronization requires an account. The Free plan currently includes 50 MB, one cloud vault and unlimited devices; paid plans add capacity. Current production checkout uses Stripe with recurring subscriptions. Review [plans](https://smartsync.cc/pricing/) and [terms](https://smartsync.cc/terms/) before paying. Cancellation or account deletion does not automatically issue a refund.
 
-Development takes place only in [the canonical Client repository](https://github.com/adventurer2008/obsidian-smart-sync-client). `SOURCE-SNAPSHOT.json` identifies the exact exported commit and file hashes. Do not edit the generated runtime here. Server code, deployment tools and credentials are excluded.
+Content and paths are encrypted on the device. Account identity, vault/device labels, usage and operational metadata are outside content encryption. The Global client keeps diagnostics locally for manual export and does not upload diagnostic telemetry. Encryption and history do not replace independent backups. Read the [privacy policy](https://smartsync.cc/privacy/).
 
-Use Node 26.12.1, run `npm ci --ignore-scripts`, then `npm run build`. The build verifies the source snapshot and produces `main.js`, `manifest.json` and `styles.css`. Building locally does not install the plugin, publish a Release or pass official Community review. See [Community preparation](https://github.com/adventurer2008/obsidian-smart-sync-release-global/blob/main/COMMUNITY.md) for current gates.
+For account deletion, first delete cloud vaults and wait for cleanup, then use **Account → Danger zone → Delete account**, verify the same identity and enter the requested confirmation. Local notes remain.
 
-Client source uses [Apache-2.0](LICENSE); dependency terms are in [THIRD-PARTY-NOTICES.md](THIRD-PARTY-NOTICES.md). A source license does not grant hosted-service access or rights to the private Server.
-
-The fixed Client source and reproducible artifacts are bound to their recorded release checks. Physical-platform acceptance remains limited to its separate evidence; see [the review record](https://github.com/adventurer2008/obsidian-smart-sync-release-global/blob/main/COMMUNITY.md).
+Questions or refund requests: [admin@smartsync.cc](mailto:admin@smartsync.cc). Include your platform and plugin/Obsidian versions; never send passwords, tokens, email codes or private notes.
