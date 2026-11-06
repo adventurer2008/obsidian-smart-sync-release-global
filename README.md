@@ -49,7 +49,7 @@ For manual installation, download `main.js`, `manifest.json` and `styles.css` fr
 
 ## Account, payments and privacy
 
-Hosted synchronization requires an account. The Free plan currently includes 50 MB, one cloud vault and unlimited devices; paid plans add capacity. Payments are charged in USD. Stripe is the default provider; some accounts may be assigned Dodo Payments. Existing orders and subscriptions stay with their original provider. Review [plans](https://smartsync.cc/pricing/) and [terms](https://smartsync.cc/terms/) before paying.
+Hosted synchronization requires an account. The Free plan includes 50 MB, one cloud vault and unlimited devices; paid plans add capacity. Payments are charged in USD. Stripe is the default provider; some accounts may be assigned Dodo Payments. Existing orders and subscriptions stay with their original provider. Review [plans](https://smartsync.cc/pricing/) and [terms](https://smartsync.cc/terms/) before paying.
 
 Content and paths are encrypted on the device. Account identity, vault/device labels, usage and operational metadata are outside content encryption. The Global client keeps diagnostics locally for manual export and does not upload diagnostic telemetry. Encryption and history do not replace independent backups. Read the [privacy policy](https://smartsync.cc/privacy/).
 

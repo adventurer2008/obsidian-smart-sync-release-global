@@ -33,7 +33,7 @@
 <li>支持的桌面托盘和可选的 Windows 在登录时启动。移动系统可以暂停后台工作；返回 Obsidian 并确认上传完成。</li>
 </ul>
 <h2 id="account-payments-and-privacy">账户、付款和隐私</h2>
-<p>托管同步需要一个帐户。免费套餐目前包括 50 个 MB、1 个云笔记库和无限设备；付费计划增加了容量。支付币种为美元（USD），默认使用 Stripe，部分账号可分配 Dodo Payments。未付款时再次进入会继续原订单；已有订单和订阅保留原渠道，结果不确定时请勿重复付款。评论 <a href="https://smartsync.cc/zh-CN/pricing/">计划</a> 和 <a href="https://smartsync.cc/zh-CN/terms/">条款</a> ，然后再付款。</p>
+<p>托管同步需要一个帐户。免费套餐包括 50 MB、1 个云笔记库和无限设备；付费计划增加了容量。支付币种为美元（USD），默认使用 Stripe，部分账号可分配 Dodo Payments。未付款时再次进入会继续原订单；已有订单和订阅保留原渠道，结果不确定时请勿重复付款。购买前请查看 <a href="https://smartsync.cc/zh-CN/pricing/">计划</a> 和 <a href="https://smartsync.cc/zh-CN/terms/">条款</a> ，然后再付款。</p>
 <p>内容和路径在设备上加密。帐户身份、笔记库/设备标签、使用情况和操作元数据都在内容加密之外。全局客户端将诊断信息保留在本地以供手动导出，并且不会上传诊断遥测数据。加密和历史记录不会取代独立备份。阅读 <a href="https://smartsync.cc/zh-CN/privacy/">隐私政策</a>.</p>
 <p>对于帐户删除，请先删除云笔记库并等待清理，然后使用 <strong>账户 → 危险区域 → 删除账户</strong>，验证相同的身份并输入请求的确认信息。本地注释仍然存在。</p>
 <p>问题咨询： <a href="mailto:admin@smartsync.cc">admin@smartsync.cc</a>。包括您的平台和插件/Obsidian 版本；切勿发送密码、令牌、电子邮件代码或私人笔记。</p>

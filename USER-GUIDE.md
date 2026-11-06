@@ -91,7 +91,7 @@ On supported desktop hosts, **Advanced → Run in background with tray icon** is
 
 Open the storage-plan entry in settings to view the current plan. Mobile tries to open the system browser directly; use the offered link if the handoff fails or cannot be confirmed. Review the amount, currency, interval and renewal terms before paying. Checkout uses USD through the provider assigned to your account: Stripe by default, or Dodo Payments for eligible accounts. Reopening an unpaid purchase resumes its original checkout. Existing orders and subscriptions keep their provider; do not pay again while a result is uncertain. Return to the app and verify the plan update; inspect an uncertain order before paying again.
 
-The Free plan currently includes 50 MB, one cloud vault and unlimited devices. Paid capacities and current terms are shown on the [plans page](https://smartsync.cc/pricing/). Storage is shared across the account's cloud vaults.
+The Free plan includes 50 MB, one cloud vault and unlimited devices. Paid capacities and current terms are shown on the [plans page](https://smartsync.cc/pricing/). Storage is shared across the account's cloud vaults.
 
 ## Sign out, revoke a device or delete an account
 
