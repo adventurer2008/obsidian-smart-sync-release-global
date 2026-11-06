@@ -1,6 +1,6 @@
 <p><a href="../../../USER-GUIDE.md">English</a> · <a href="../zh-CN/USER-GUIDE.md">简体中文</a> · <a href="../zh-TW/USER-GUIDE.md">繁體中文</a> · <a href="../ja/USER-GUIDE.md">日本語</a> · <a href="../ko/USER-GUIDE.md">한국어</a> · <a href="../de/USER-GUIDE.md">Deutsch</a> · <a href="../fr/USER-GUIDE.md">Français</a> · <a href="../es/USER-GUIDE.md">Español</a> · <a href="../pt-BR/USER-GUIDE.md">Português (Brasil)</a> · <a href="../ru/USER-GUIDE.md">Русский</a></p>
 <h1 id="smart-sync-user-guide">Smart Sync 使用者指南</h1>
-<p>适用于 Smart Sync 1.1.5 (<code>smart-sync-global</code>），於 2026 年 11 月 6 日審核。 <a href="https://smartsync.cc/zh-TW/">網站</a> · <a href="https://smartsync.cc/zh-TW/download/">下載</a> · <a href="https://smartsync.cc/zh-TW/privacy/">隱私</a>.</p>
+<p>适用于 Smart Sync 1.1.5 (<code>smart-sync-global</code>). <a href="https://smartsync.cc/zh-TW/">網站</a> · <a href="https://smartsync.cc/zh-TW/download/">下載</a> · <a href="https://smartsync.cc/zh-TW/privacy/">隱私</a>.</p>
 <h2 id="install-or-update">安裝或更新</h2>
 <p>使用Obsidian <strong>1.12.7 或更高版本</strong>。備份您的筆記庫並先嘗試單獨的測試筆記庫。在Wujie Hub中，選擇 <strong>Smart Sync → 穩定</strong> 對於當前的穩定包。 Alpha 是一個獨立的測試通道。</p>
 <p>如需手動安裝，請下載 <code>main.js</code>, <code>manifest.json</code> 和 <code>styles.css</code> 從配對的 <a href="https://github.com/adventurer2008/obsidian-smart-sync-release-global/releases">GitHub 發布</a>。檢查其 <code>SHA256SUMS.txt</code>。將三個文件放入 <code>&lt;vault&gt;/.obsidian/plugins/smart-sync-global/</code> （或您的自訂設定資料夾的 <code>plugins/smart-sync-global/</code>）。重新載入 Obsidian，然後在親自檢查主機的信任提示後在社群外掛程式中啟用 Smart Sync。</p>
@@ -40,7 +40,7 @@
 <p>在支援的桌面主機上， <strong>進階 → 使用托盤圖示在背景運行</strong> 預設情況下處於開啟狀態。關閉筆記庫視窗可使其繼續運行；點擊其托盤圖示將其恢復。它的選單只能關閉這個筆記庫。不受支援的托盤主機保持正常關閉。行動裝置隱藏此選項。</p>
 <p><strong>登入時啟動至托盤</strong> 僅適用於 Windows，預設為關閉。啟用它會在目前使用者的啟動資料夾中建立此筆記庫的捷徑並啟用後台托盤。普通的發布保持可見。自訂 Obsidian 設定檔無法啟用啟動，因為主機可能會將請求路由到另一個實例。在停用托盤、卸載或還原到不支援啟動的版本之前先停用登入啟動。 macOS、Linux、Android、iPhone 和 iPad 不顯示 Windows 啟動開關。</p>
 <h2 id="storage-plans-and-payments">儲存計劃和付款</h2>
-<p>開啟設定中的儲存計畫條目以查看目前計畫。手機嘗試直接開啟系統瀏覽器；如果切換失敗或無法確認，請使用提供的連結。付款前請查看金額、貨幣、間隔和續訂條款。目前部署的生產結帳使用 Stripe。返回應用程式並驗證計劃更新；在再次付款之前檢查不確定的訂單。</p>
+<p>開啟設定中的儲存計畫條目以查看目前計畫。手機嘗試直接開啟系統瀏覽器；如果切換失敗或無法確認，請使用提供的連結。付款前請查看金額、貨幣、間隔和續訂條款。付款幣別為美元（USD），預設使用 Stripe，部分帳號可分配 Dodo Payments。未付款時再次進入會繼續原訂單；既有訂單和訂閱保留原管道，結果不確定時請勿重複付款。返回應用程式並驗證計劃更新；在再次付款之前檢查不確定的訂單。</p>
 <p>免費方案目前包括 50 個 MB、1 個雲端筆記庫和無限設備。付費容量和當前條款顯示在 <a href="https://smartsync.cc/zh-TW/pricing/">計劃頁面</a>。儲存容量由帳戶下的所有雲端筆記庫共用。</p>
 <h2 id="sign-out-revoke-a-device-or-delete-an-account">登出、撤銷設備或刪除帳戶</h2>
 <p>註銷會保留本地註釋。如果離線登出無法確認遠端撤銷，請在需要立即刪除時從另一個連接的裝置撤銷該裝置。卸載不會刪除雲端帳戶。</p>

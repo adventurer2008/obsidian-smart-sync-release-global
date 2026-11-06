@@ -1,6 +1,6 @@
 <p><a href="../../../USER-GUIDE.md">English</a> · <a href="../zh-CN/USER-GUIDE.md">简体中文</a> · <a href="../zh-TW/USER-GUIDE.md">繁體中文</a> · <a href="../ja/USER-GUIDE.md">日本語</a> · <a href="../ko/USER-GUIDE.md">한국어</a> · <a href="../de/USER-GUIDE.md">Deutsch</a> · <a href="../fr/USER-GUIDE.md">Français</a> · <a href="../es/USER-GUIDE.md">Español</a> · <a href="../pt-BR/USER-GUIDE.md">Português (Brasil)</a> · <a href="../ru/USER-GUIDE.md">Русский</a></p>
 <h1 id="smart-sync-user-guide">Smart Sync 用户指南</h1>
-<p>适用于 Smart Sync 1.1.5 (<code>smart-sync-global</code>），于 2026 年 11 月 6 日审核。 <a href="https://smartsync.cc/zh-CN/">网站</a> · <a href="https://smartsync.cc/zh-CN/download/">下载</a> · <a href="https://smartsync.cc/zh-CN/privacy/">隐私</a>.</p>
+<p>适用于 Smart Sync 1.1.5 (<code>smart-sync-global</code>). <a href="https://smartsync.cc/zh-CN/">网站</a> · <a href="https://smartsync.cc/zh-CN/download/">下载</a> · <a href="https://smartsync.cc/zh-CN/privacy/">隐私</a>.</p>
 <h2 id="install-or-update">安装或更新</h2>
 <p>使用Obsidian <strong>1.12.7 或更高版本</strong>。备份您的笔记库并首先尝试单独的测试笔记库。在Wujie Hub中，选择 <strong>Smart Sync → 稳定</strong> 对于当前的稳定包。 Alpha 是一个独立的测试通道。</p>
 <p>如需手动安装，请下载 <code>main.js</code>, <code>manifest.json</code> 和 <code>styles.css</code> 从匹配的 <a href="https://github.com/adventurer2008/obsidian-smart-sync-release-global/releases">GitHub 发布</a>。检查其 <code>SHA256SUMS.txt</code>。将三个文件放入 <code>&lt;vault&gt;/.obsidian/plugins/smart-sync-global/</code> （或者您的自定义配置文件夹的 <code>plugins/smart-sync-global/</code>）。重新加载 Obsidian，然后在亲自检查主机的信任提示后在社区插件中启用 Smart Sync。</p>
@@ -40,7 +40,7 @@
 <p>在支持的桌面主机上， <strong>高级 → 使用托盘图标在后台运行</strong> 默认情况下处于打开状态。关闭笔记库窗口可使其继续运行；单击其托盘图标将其恢复。它的菜单只能关闭这个笔记库。不受支持的托盘主机保持正常关闭。移动设备隐藏此选项。</p>
 <p><strong>登录时启动至托盘</strong> 仅限 Windows，默认情况下处于关闭状态。启用它会在当前用户的启动文件夹中创建此笔记库的快捷方式并启用后台托盘。普通的发布保持可见。自定义 Obsidian 配置文件无法启用启动，因为主机可能会将请求路由到另一个实例。在禁用托盘、卸载或恢复到不支持启动的版本之前先禁用登录启动。 macOS、Linux、Android、iPhone 和 iPad 不显示 Windows 启动开关。</p>
 <h2 id="storage-plans-and-payments">存储计划和付款</h2>
-<p>打开设置中的存储计划条目以查看当前计划。手机尝试直接打开系统浏览器；如果切换失败或无法确认，请使用提供的链接。付款前查看金额、货币、间隔和续订条款。当前部署的生产结帐使用 Stripe。返回应用程序并验证计划更新；在再次付款之前检查不确定的订单。</p>
+<p>打开设置中的存储计划条目以查看当前计划。手机尝试直接打开系统浏览器；如果切换失败或无法确认，请使用提供的链接。付款前查看金额、货币、间隔和续订条款。支付币种为美元（USD），默认使用 Stripe，部分账号可分配 Dodo Payments。未付款时再次进入会继续原订单；已有订单和订阅保留原渠道，结果不确定时请勿重复付款。返回应用程序并验证计划更新；在再次付款之前检查不确定的订单。</p>
 <p>免费计划目前包括 50 个 MB、1 个云笔记库和无限设备。付费容量和当前条款显示在 <a href="https://smartsync.cc/zh-CN/pricing/">计划页面</a>。存储容量由账户下的所有云笔记库共享。</p>
 <h2 id="sign-out-revoke-a-device-or-delete-an-account">注销、撤销设备或删除帐户</h2>
 <p>注销会保留本地注释。如果离线注销无法确认远程撤销，请在需要立即删除时从另一个连接的设备撤销该设备。卸载不会删除云帐户。</p>

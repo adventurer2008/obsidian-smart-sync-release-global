@@ -1,6 +1,6 @@
 <p><a href="../../../USER-GUIDE.md">English</a> · <a href="../zh-CN/USER-GUIDE.md">简体中文</a> · <a href="../zh-TW/USER-GUIDE.md">繁體中文</a> · <a href="../ja/USER-GUIDE.md">日本語</a> · <a href="../ko/USER-GUIDE.md">한국어</a> · <a href="../de/USER-GUIDE.md">Deutsch</a> · <a href="../fr/USER-GUIDE.md">Français</a> · <a href="../es/USER-GUIDE.md">Español</a> · <a href="../pt-BR/USER-GUIDE.md">Português (Brasil)</a> · <a href="../ru/USER-GUIDE.md">Русский</a></p>
 <h1 id="smart-sync-user-guide">Smart Sync ユーザーガイド</h1>
-<p>Smart Sync 1.1.5 (<code>smart-sync-global</code>)、2026 年 11 月 6 日にレビュー済み。 <a href="https://smartsync.cc/ja/">ウェブサイト</a> · <a href="https://smartsync.cc/ja/download/">ダウンロード</a> · <a href="https://smartsync.cc/ja/privacy/">プライバシー</a>.</p>
+<p>Smart Sync 1.1.5 (<code>smart-sync-global</code>). <a href="https://smartsync.cc/ja/">ウェブサイト</a> · <a href="https://smartsync.cc/ja/download/">ダウンロード</a> · <a href="https://smartsync.cc/ja/privacy/">プライバシー</a>.</p>
 <h2 id="install-or-update">インストールまたはアップデート</h2>
 <p>Obsidianを使用 <strong>1.12.7以降</strong>。コンテナーをバックアップし、最初に別のテスト用コンテナーを試してください。 Wujie Hub で、選択します <strong>Smart Sync → 安定</strong> 現在の安定したパッケージの場合。アルファは別個のテスト チャネルです。</p>
 <p>手動インストールの場合は、ダウンロードしてください <code>main.js</code>, <code>manifest.json</code> そして <code>styles.css</code> マッチングから <a href="https://github.com/adventurer2008/obsidian-smart-sync-release-global/releases">GitHub リリース</a>。チェックしてください <code>SHA256SUMS.txt</code>。 3つのファイルを次の場所に置きます <code>&lt;vault&gt;/.obsidian/plugins/smart-sync-global/</code> (またはカスタム構成フォルダーの <code>plugins/smart-sync-global/</code>）。 Obsidian をリロードし、ホストの信頼プロンプトを自分で確認した後、コミュニティ プラグインで Smart Sync を有効にします。</p>
@@ -40,7 +40,7 @@
 <p>サポートされているデスクトップ ホストでは、 <strong>詳細 → トレイアイコンを使用してバックグラウンドで実行</strong> はデフォルトでオンになっています。 Vault ウィンドウを閉じると、Vault は実行されたままになります。トレイアイコンをクリックして復元します。そのメニューはこのボールトのみを閉じることができます。サポートされていないトレイ ホストは、通常どおり閉じたままになります。モバイルではこのオプションが非表示になります。</p>
 <p><strong>ログイン時にトレイに起動</strong> は Windows のみで、デフォルトではオフになっています。これを有効にすると、現在のユーザーのスタートアップ フォルダーにこのボールトのショートカットが作成され、バックグラウンド トレイが有効になります。通常の打ち上げは表示されたままになります。ホストがリクエストを別のインスタンスにルーティングする可能性があるため、カスタム Obsidian プロファイルでは起動を有効にすることができません。トレイを無効にしたり、アンインストールしたり、起動サポートのないバージョンに戻したりする前に、ログイン起動を無効にしてください。 macOS、Linux、Android、iPhone、iPad では Windows 起動スイッチが表示されません。</p>
 <h2 id="storage-plans-and-payments">ストレージ プランと支払い</h2>
-<p>設定でストレージ プランのエントリを開いて、現在のプランを表示します。モバイルはシステム ブラウザを直接開こうとします。ハンドオフが失敗した場合、または確認できない場合は、提供されたリンクを使用します。支払う前に、金額、通貨、間隔、更新条件を確認してください。現在デプロイされている実稼働チェックアウトは Stripe を使用します。アプリに戻り、プランの更新を確認します。再度支払う前に、不確実な注文を確認してください。</p>
+<p>設定でストレージ プランのエントリを開いて、現在のプランを表示します。モバイルはシステム ブラウザを直接開こうとします。ハンドオフが失敗した場合、または確認できない場合は、提供されたリンクを使用します。支払う前に、金額、通貨、間隔、更新条件を確認してください。支払い通貨は USD です。標準は Stripe ですが、一部のアカウントには Dodo Payments が割り当てられます。未払いの注文は再開でき、既存の注文とサブスクリプションは元の決済サービスを維持します。結果が不明な場合は再度支払わないでください。アプリに戻り、プランの更新を確認します。再度支払う前に、不確実な注文を確認してください。</p>
 <p>現在、無料プランには 50 MB、1 つのクラウド ボールト、無制限のデバイスが含まれています。有料の容量と現在の条件は、 <a href="https://smartsync.cc/ja/pricing/">計画ページ</a>。ストレージ容量はアカウント内のすべてのクラウド保管庫で共有されます。</p>
 <h2 id="sign-out-revoke-a-device-or-delete-an-account">サインアウト、デバイスの取り消し、またはアカウントの削除</h2>
 <p>サインアウトしてもローカルのメモは保持されます。オフライン サインアウトでリモートの取り消しを確認できない場合、すぐに削除する必要がある場合は、接続されている別のデバイスからデバイスを取り消します。アンインストールしてもクラウド アカウントは削除されません。</p>

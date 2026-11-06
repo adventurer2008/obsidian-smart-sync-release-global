@@ -4,7 +4,7 @@
 [English](USER-GUIDE.md) · [Simplified Chinese](docs/i18n/zh-CN/USER-GUIDE.md) · [Traditional Chinese](docs/i18n/zh-TW/USER-GUIDE.md) · [Japanese](docs/i18n/ja/USER-GUIDE.md) · [Korean](docs/i18n/ko/USER-GUIDE.md) · [German](docs/i18n/de/USER-GUIDE.md) · [French](docs/i18n/fr/USER-GUIDE.md) · [Spanish](docs/i18n/es/USER-GUIDE.md) · [Brazilian Portuguese](docs/i18n/pt-BR/USER-GUIDE.md) · [Russian](docs/i18n/ru/USER-GUIDE.md)
 <!-- LANGUAGES:END -->
 
-Applies to Smart Sync 1.1.5 (`smart-sync-global`), reviewed on 6 November 2026. [Website](https://smartsync.cc/) · [Downloads](https://smartsync.cc/download/) · [Privacy](https://smartsync.cc/privacy/).
+Applies to Smart Sync 1.1.5 (`smart-sync-global`). [Website](https://smartsync.cc/) · [Downloads](https://smartsync.cc/download/) · [Privacy](https://smartsync.cc/privacy/).
 
 ## Install or update
 
@@ -76,7 +76,7 @@ On supported desktop hosts, **Advanced → Run in background with tray icon** is
 
 ## Storage plans and payments
 
-Open the storage-plan entry in settings to view the current plan. Mobile tries to open the system browser directly; use the offered link if the handoff fails or cannot be confirmed. Review the amount, currency, interval and renewal terms before paying. The currently deployed production checkout uses Stripe. Return to the app and verify the plan update; inspect an uncertain order before paying again.
+Open the storage-plan entry in settings to view the current plan. Mobile tries to open the system browser directly; use the offered link if the handoff fails or cannot be confirmed. Review the amount, currency, interval and renewal terms before paying. Checkout uses USD through the provider assigned to your account: Stripe by default, or Dodo Payments for eligible accounts. Reopening an unpaid purchase resumes its original checkout. Existing orders and subscriptions keep their provider; do not pay again while a result is uncertain. Return to the app and verify the plan update; inspect an uncertain order before paying again.
 
 The Free plan currently includes 50 MB, one cloud vault and unlimited devices. Paid capacities and current terms are shown on the [plans page](https://smartsync.cc/pricing/). Storage is shared across the account's cloud vaults.
 
