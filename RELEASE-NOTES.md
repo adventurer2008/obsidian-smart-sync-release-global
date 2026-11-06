@@ -1,4 +1,7 @@
-# Smart Sync 1.1.6
+# Smart Sync 1.1.7
+
+- Refine confirmation hints and account, plan, order and payment wording across all ten interface languages.
+- Hide closed orders and empty order-status rows in My plan while preserving current plan, usage, expiry and actionable checkout/refund states. Order history remains available.
 
 - Choose from ten interface languages, including English, Chinese, Japanese, Korean, German, French, Spanish, Portuguese and Russian. Follow Obsidian or choose a local preference, then reload the plugin.
 - Use localized sign-in, plan and payment pages. Interface language does not change your account, cloud vault or billing currency.
