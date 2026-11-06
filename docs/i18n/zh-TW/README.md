@@ -1,6 +1,7 @@
 <p><a href="../../../README.md">English</a> · <a href="../zh-CN/README.md">简体中文</a> · <a href="../zh-TW/README.md">繁體中文</a> · <a href="../ja/README.md">日本語</a> · <a href="../ko/README.md">한국어</a> · <a href="../de/README.md">Deutsch</a> · <a href="../fr/README.md">Français</a> · <a href="../es/README.md">Español</a> · <a href="../pt-BR/README.md">Português (Brasil)</a> · <a href="../ru/README.md">Русский</a></p>
 <h1 id="smart-sync">Smart Sync</h1>
 <p>Obsidian 筆記、附件和選定設定的加密同步。保留原始文件修改時間、恢復保留版本並管理您的裝置。</p>
+<p>Global 應用程式伺服器在美國阿什本的 Oracle Cloud 上運作。 加密物件資料使用 Cloudflare R2 進行私有儲存。</p>
 <p><strong>目前版本：1.1.5</strong> · Obsidian <strong>1.12.7+</strong> · 插件ID： <code>smart-sync-global</code>.</p>
 <p><a href="https://smartsync.cc/zh-TW/">網站</a> · <a href="https://smartsync.cc/zh-TW/download/">下載/更新</a> · <a href="USER-GUIDE.md">操作手冊</a> · <a href="https://smartsync.cc/zh-TW/pricing/">計劃</a></p>
 <h2 id="get-started">開始使用</h2>

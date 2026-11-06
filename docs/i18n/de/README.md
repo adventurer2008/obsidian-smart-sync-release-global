@@ -1,6 +1,7 @@
 <p><a href="../../../README.md">English</a> · <a href="../zh-CN/README.md">简体中文</a> · <a href="../zh-TW/README.md">繁體中文</a> · <a href="../ja/README.md">日本語</a> · <a href="../ko/README.md">한국어</a> · <a href="../de/README.md">Deutsch</a> · <a href="../fr/README.md">Français</a> · <a href="../es/README.md">Español</a> · <a href="../pt-BR/README.md">Português (Brasil)</a> · <a href="../ru/README.md">Русский</a></p>
 <h1 id="smart-sync">Smart Sync</h1>
 <p>Verschlüsselte Synchronisierung für Ihre Obsidian-Notizen, Anhänge und ausgewählten Einstellungen. Behalten Sie die Änderungszeiten der ursprünglichen Dateien bei, stellen Sie beibehaltene Versionen wieder her und verwalten Sie Ihre Geräte.</p>
+<p>Der globale Anwendungsserver läuft auf Oracle Cloud in Ashburn, USA. Verschlüsselte Objektdaten werden privat mit Cloudflare R2 gespeichert.</p>
 <p><strong>Aktuelle Version: 1.1.5</strong> · Obsidian <strong>1.12.7+</strong> · Plugin-ID: <code>smart-sync-global</code>.</p>
 <p><a href="https://smartsync.cc/de/">Website</a> · <a href="https://smartsync.cc/de/download/">Herunterladen/aktualisieren</a> · <a href="USER-GUIDE.md">Bedienungsanleitung</a> · <a href="https://smartsync.cc/de/pricing/">Pläne</a></p>
 <h2 id="get-started">Fangen Sie an</h2>

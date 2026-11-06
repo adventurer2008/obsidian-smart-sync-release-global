@@ -6,6 +6,8 @@
 
 Encrypted synchronization for your Obsidian notes, attachments and selected settings. Preserve original file modification times, recover retained versions and manage your devices.
 
+The Global application server runs on Oracle Cloud in Ashburn, United States. Encrypted object data is stored privately using Cloudflare R2.
+
 **Current version: 1.1.5** · Obsidian **1.12.7+** · Plugin ID: `smart-sync-global`.
 
 [Website](https://smartsync.cc/) · [Download / update](https://smartsync.cc/download/) · [Operation manual](USER-GUIDE.md) · [Plans](https://smartsync.cc/pricing/)

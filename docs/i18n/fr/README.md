@@ -1,6 +1,7 @@
 <p><a href="../../../README.md">English</a> · <a href="../zh-CN/README.md">简体中文</a> · <a href="../zh-TW/README.md">繁體中文</a> · <a href="../ja/README.md">日本語</a> · <a href="../ko/README.md">한국어</a> · <a href="../de/README.md">Deutsch</a> · <a href="../fr/README.md">Français</a> · <a href="../es/README.md">Español</a> · <a href="../pt-BR/README.md">Português (Brasil)</a> · <a href="../ru/README.md">Русский</a></p>
 <h1 id="smart-sync">Smart Sync</h1>
 <p>Synchronisation cryptée de vos notes, pièces jointes et paramètres sélectionnés Obsidian. Préservez les heures de modification des fichiers d&#x27;origine, récupérez les versions conservées et gérez vos appareils.</p>
+<p>Le serveur d&#x27;applications global s&#x27;exécute sur Oracle Cloud à Ashburn, aux États-Unis. Les données des objets chiffrés sont stockées de manière privée avec Cloudflare R2.</p>
 <p><strong>Version actuelle : 1.1.5</strong> · Obsidian <strong>1.12.7+</strong> · ID du plugin : <code>smart-sync-global</code>.</p>
 <p><a href="https://smartsync.cc/fr/">Site Web</a> · <a href="https://smartsync.cc/fr/download/">Télécharger / mettre à jour</a> · <a href="USER-GUIDE.md">Manuel d&#x27;utilisation</a> · <a href="https://smartsync.cc/fr/pricing/">Forfaits</a></p>
 <h2 id="get-started">Commencez</h2>

@@ -1,6 +1,7 @@
 <p><a href="../../../README.md">English</a> · <a href="../zh-CN/README.md">简体中文</a> · <a href="../zh-TW/README.md">繁體中文</a> · <a href="../ja/README.md">日本語</a> · <a href="../ko/README.md">한국어</a> · <a href="../de/README.md">Deutsch</a> · <a href="../fr/README.md">Français</a> · <a href="../es/README.md">Español</a> · <a href="../pt-BR/README.md">Português (Brasil)</a> · <a href="../ru/README.md">Русский</a></p>
 <h1 id="smart-sync">Smart Sync</h1>
 <p>Obsidian メモ、添付ファイル、および選択した設定の暗号化された同期。元のファイルの変更時刻を保存し、保持されているバージョンを復元し、デバイスを管理します。</p>
+<p>グローバル・アプリケーション・サーバーは、米国アッシュバーンのOracle Cloud上で実行されます。 暗号化されたオブジェクトデータは Cloudflare R2 で非公開に保存されます。</p>
 <p><strong>現在のバージョン: 1.1.5</strong> ・Obsidian <strong>1.12.7+</strong> · プラグイン ID: <code>smart-sync-global</code>.</p>
 <p><a href="https://smartsync.cc/ja/">ウェブサイト</a> · <a href="https://smartsync.cc/ja/download/">ダウンロード/アップデート</a> · <a href="USER-GUIDE.md">取扱説明書</a> · <a href="https://smartsync.cc/ja/pricing/">計画</a></p>
 <h2 id="get-started">始めましょう</h2>

@@ -1,6 +1,7 @@
 <p><a href="../../../README.md">English</a> · <a href="../zh-CN/README.md">简体中文</a> · <a href="../zh-TW/README.md">繁體中文</a> · <a href="../ja/README.md">日本語</a> · <a href="../ko/README.md">한국어</a> · <a href="../de/README.md">Deutsch</a> · <a href="../fr/README.md">Français</a> · <a href="../es/README.md">Español</a> · <a href="../pt-BR/README.md">Português (Brasil)</a> · <a href="../ru/README.md">Русский</a></p>
 <h1 id="smart-sync">Smart Sync</h1>
 <p>Sincronización cifrada para sus notas, archivos adjuntos y configuraciones seleccionadas del Obsidian. Conserve los tiempos de modificación de archivos originales, recupere versiones retenidas y administre sus dispositivos.</p>
+<p>El servidor de aplicaciones global se ejecuta en Oracle Cloud en Ashburn, Estados Unidos. Los datos de objetos cifrados se almacenan de forma privada con Cloudflare R2.</p>
 <p><strong>Versión actual: 1.1.5</strong> · Obsidian <strong>1.12.7+</strong> · ID del complemento: <code>smart-sync-global</code>.</p>
 <p><a href="https://smartsync.cc/es/">Sitio web</a> · <a href="https://smartsync.cc/es/download/">Descargar / actualizar</a> · <a href="USER-GUIDE.md">Manual de operación</a> · <a href="https://smartsync.cc/es/pricing/">Planes</a></p>
 <h2 id="get-started">empezar</h2>
