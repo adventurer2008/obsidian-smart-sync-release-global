@@ -3,7 +3,7 @@
 <p>Sincronização criptografada para suas notas, anexos e configurações selecionadas do Obsidian. Preserve os tempos de modificação dos arquivos originais, recupere versões retidas e gerencie seus dispositivos.</p>
 <p>O servidor de aplicativos Global é executado no Oracle Cloud em Ashburn, Estados Unidos. Os dados de objetos criptografados são armazenados de forma privada no Cloudflare R2.</p>
 <p>Valorizamos a segurança e a privacidade dos dados. Notas, anexos e caminhos de arquivos são criptografados no seu dispositivo com AES-256-GCM antes do envio. A criptografia e a descriptografia ocorrem nos seus dispositivos; o serviço armazena conteúdo criptografado e a senha de criptografia é separada das credenciais de acesso à conta.</p>
-<p><strong>Versão atual: 1.1.5</strong> · Obsidian <strong>1.12.7+</strong> · ID do plug-in: <code>smart-sync-global</code>.</p>
+<p><strong>Versão atual: 1.1.6</strong> · Obsidian <strong>1.12.7+</strong> · ID do plug-in: <code>smart-sync-global</code>.</p>
 <p><a href="https://smartsync.cc/pt-BR/">Site</a> · <a href="https://smartsync.cc/pt-BR/download/">Baixar / atualizar</a> · <a href="USER-GUIDE.md">Manual de operação</a> · <a href="https://smartsync.cc/pt-BR/pricing/">Planos</a></p>
 <h2 id="get-started">Comece</h2>
 <ol>
@@ -21,7 +21,7 @@
 <li>Notas inteiras ou texto selecionado protegidos por senha, edição segura e recuperação de rascunhos criptografados. Títulos, anexos vinculados e histórico anterior de texto simples têm limites de privacidade separados.</li>
 <li>Bandeja de desktop onde há suporte e inicialização opcional do Windows no login. Os sistemas móveis podem suspender o trabalho em segundo plano; retorne para Obsidian e confirme o término dos uploads.</li>
 </ul>
-<p>O Smart Sync 1.1.5 oferece dez idiomas de interface. Escolha o idioma nas configurações do plugin.</p>
+<p>O Smart Sync 1.1.6 oferece dez idiomas de interface. Escolha o idioma nas configurações do plugin.</p>
 <h2 id="account-payments-and-privacy">Conta, pagamentos e privacidade</h2>
 <p>A sincronização hospedada requer uma conta. O plano Gratuito inclui atualmente 50 MB, um cofre na nuvem e dispositivos ilimitados; planos pagos adicionam capacidade.Os pagamentos são em USD, com Stripe por padrão; algumas contas podem usar Dodo Payments. Pedidos não pagos podem ser retomados. Pedidos e assinaturas existentes mantêm o provedor original. Não pague novamente se o resultado estiver incerto. Revisão <a href="https://smartsync.cc/pt-BR/pricing/">planos</a> e <a href="https://smartsync.cc/pt-BR/terms/">termos</a> antes de pagar.</p>
 <p>O conteúdo e os caminhos são criptografados no dispositivo. A identidade da conta, os rótulos do cofre/dispositivo, o uso e os metadados operacionais estão fora da criptografia de conteúdo. O cliente Global mantém diagnósticos localmente para exportação manual e não carrega telemetria de diagnóstico. A criptografia e o histórico não substituem os backups independentes. Leia o <a href="https://smartsync.cc/pt-BR/privacy/">política de privacidade</a>.</p>

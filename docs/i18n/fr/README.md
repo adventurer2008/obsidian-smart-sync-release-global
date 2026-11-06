@@ -3,7 +3,7 @@
 <p>Synchronisation cryptée de vos notes, pièces jointes et paramètres sélectionnés Obsidian. Préservez les heures de modification des fichiers d&#x27;origine, récupérez les versions conservées et gérez vos appareils.</p>
 <p>Le serveur d&#x27;applications global s&#x27;exécute sur Oracle Cloud à Ashburn, aux États-Unis. Les données des objets chiffrés sont stockées de manière privée avec Cloudflare R2.</p>
 <p>Nous accordons de l’importance à la sécurité et à la confidentialité des données. Les notes, pièces jointes et chemins de fichiers sont chiffrés sur votre appareil avec AES-256-GCM avant leur envoi. Le chiffrement et le déchiffrement ont lieu sur vos appareils ; le service stocke le contenu chiffré et votre mot de passe de chiffrement est distinct de vos identifiants de connexion.</p>
-<p><strong>Version actuelle : 1.1.5</strong> · Obsidian <strong>1.12.7+</strong> · ID du plugin : <code>smart-sync-global</code>.</p>
+<p><strong>Version actuelle : 1.1.6</strong> · Obsidian <strong>1.12.7+</strong> · ID du plugin : <code>smart-sync-global</code>.</p>
 <p><a href="https://smartsync.cc/fr/">Site Web</a> · <a href="https://smartsync.cc/fr/download/">Télécharger / mettre à jour</a> · <a href="USER-GUIDE.md">Manuel d&#x27;utilisation</a> · <a href="https://smartsync.cc/fr/pricing/">Forfaits</a></p>
 <h2 id="get-started">Commencez</h2>
 <ol>
@@ -21,7 +21,7 @@
 <li>Notes entières ou texte sélectionné protégés par mot de passe, édition sécurisée et récupération de brouillons cryptés. Les titres, les pièces jointes liées et l&#x27;historique antérieur en texte brut ont des limites de confidentialité distinctes.</li>
 <li>Plateau de bureau pris en charge et lancement facultatif du Windows lors de la connexion. Les systèmes mobiles peuvent suspendre le travail en arrière-plan ; revenez à Obsidian et confirmez la fin des téléchargements.</li>
 </ul>
-<p>Smart Sync 1.1.5 prend en charge dix langues d’interface. Choisissez la langue dans les paramètres du plugin.</p>
+<p>Smart Sync 1.1.6 prend en charge dix langues d’interface. Choisissez la langue dans les paramètres du plugin.</p>
 <h2 id="account-payments-and-privacy">Compte, paiements et confidentialité</h2>
 <p>La synchronisation hébergée nécessite un compte. Le forfait gratuit comprend actuellement 50 MB, un coffre-fort cloud et un nombre illimité d&#x27;appareils ; les forfaits payants ajoutent de la capacité.Les paiements sont en USD, via Stripe par défaut ; certains comptes peuvent utiliser Dodo Payments. Une commande impayée peut être reprise. Les commandes et abonnements existants conservent leur prestataire. Ne payez pas à nouveau si le résultat est incertain. Examen <a href="https://smartsync.cc/fr/pricing/">plans</a> et <a href="https://smartsync.cc/fr/terms/">termes</a> avant de payer.</p>
 <p>Le contenu et les chemins sont cryptés sur l&#x27;appareil. L’identité du compte, les étiquettes du coffre-fort/appareil, l’utilisation et les métadonnées opérationnelles ne relèvent pas du cryptage du contenu. Le client Global conserve les diagnostics localement pour une exportation manuelle et ne télécharge pas la télémétrie de diagnostic. Le chiffrement et l&#x27;historique ne remplacent pas les sauvegardes indépendantes. Lire le <a href="https://smartsync.cc/fr/privacy/">politique de confidentialité</a>.</p>

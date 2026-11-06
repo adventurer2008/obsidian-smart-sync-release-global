@@ -3,7 +3,7 @@
 <p>Obsidian 메모, 첨부 파일 및 선택한 설정에 대한 암호화된 동기화입니다. 원본 파일 수정 시간을 보존하고, 보존된 버전을 복구하고, 장치를 관리하세요.</p>
 <p>글로벌 애플리케이션 서버는 미국 Ashburn의 Oracle Cloud에서 실행됩니다. 암호화된 객체 데이터는 Cloudflare R2에 비공개로 저장됩니다.</p>
 <p>데이터 보안과 개인정보 보호를 중요하게 생각합니다. 노트, 첨부 파일 및 파일 경로는 업로드 전에 기기에서 AES-256-GCM으로 암호화됩니다. 암호화와 복호화는 기기에서 이루어지며 서비스에는 암호화된 콘텐츠가 저장됩니다. 암호화 비밀번호는 계정 로그인 정보와 별개입니다.</p>
-<p><strong>현재 버전: 1.1.5</strong> · Obsidian <strong>1.12.7+</strong> · 플러그인 ID: <code>smart-sync-global</code>.</p>
+<p><strong>현재 버전: 1.1.6</strong> · Obsidian <strong>1.12.7+</strong> · 플러그인 ID: <code>smart-sync-global</code>.</p>
 <p><a href="https://smartsync.cc/ko/">웹사이트</a> · <a href="https://smartsync.cc/ko/download/">다운로드/업데이트</a> · <a href="USER-GUIDE.md">사용 설명서</a> · <a href="https://smartsync.cc/ko/pricing/">계획</a></p>
 <h2 id="get-started">시작하기</h2>
 <ol>
@@ -21,7 +21,7 @@
 <li>비밀번호로 보호된 전체 메모 또는 선택한 텍스트, 안전한 편집 및 암호화된 초안 복구. 제목, 연결된 첨부 파일 및 이전 일반 텍스트 기록에는 별도의 개인 정보 보호 범위가 있습니다.</li>
 <li>로그인 시 지원되고 선택적인 Windows가 실행되는 데스크탑 트레이. 모바일 시스템은 백그라운드 작업을 일시 중단할 수 있습니다. Obsidian로 돌아가서 업로드가 완료되었는지 확인하세요.</li>
 </ul>
-<p>Smart Sync 1.1.5은 10개 인터페이스 언어를 지원합니다. 플러그인 설정에서 언어를 선택할 수 있습니다.</p>
+<p>Smart Sync 1.1.6은 10개 인터페이스 언어를 지원합니다. 플러그인 설정에서 언어를 선택할 수 있습니다.</p>
 <h2 id="account-payments-and-privacy">계정, 결제 및 개인정보 보호</h2>
 <p>호스팅된 동기화에는 계정이 필요합니다. 무료 플랜에는 현재 50개의 MB, 1개의 클라우드 볼트 및 무제한 장치가 포함되어 있습니다. 유료 요금제는 용량을 추가합니다.결제 통화는 USD이며 기본 서비스는 Stripe입니다. 일부 계정에는 Dodo Payments가 할당됩니다. 미결제 주문은 다시 열어 계속할 수 있고 기존 주문과 구독은 원래 결제 서비스를 유지합니다. 결과가 불확실하면 다시 결제하지 마세요. 검토 <a href="https://smartsync.cc/ko/pricing/">계획</a> 그리고 <a href="https://smartsync.cc/ko/terms/">용어</a> 을 결제 전에 확인하세요.</p>
 <p>콘텐츠와 경로는 장치에서 암호화됩니다. 계정 ID, 저장소/장치 레이블, 사용량 및 운영 메타데이터는 콘텐츠 암호화 외부에 있습니다. 글로벌 클라이언트는 수동 내보내기를 위해 진단을 로컬로 유지하고 진단 원격 측정을 업로드하지 않습니다. 암호화 및 기록은 독립 백업을 대체하지 않습니다. 읽기 <a href="https://smartsync.cc/ko/privacy/">개인 정보 보호 정책</a>.</p>

@@ -1,7 +1,7 @@
 {
   "id": "smart-sync-global",
   "name": "Smart Sync",
-  "version": "1.1.5",
+  "version": "1.1.6",
   "minAppVersion": "1.12.7",
   "description": "Sync notes, attachments and selected settings with compression and client-side encryption.",
   "author": "lihy",

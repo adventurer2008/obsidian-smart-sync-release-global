@@ -10,7 +10,7 @@ The Global application server runs on Oracle Cloud in Ashburn, United States. En
 
 We value data security and privacy. Notes, attachments and file paths are encrypted on your device with AES-256-GCM before upload. Encryption and decryption happen on your devices; the service stores encrypted content, and your encryption password is separate from your account login.
 
-**Current version: 1.1.5** · Obsidian **1.12.7+** · Plugin ID: `smart-sync-global`.
+**Current version: 1.1.6** · Obsidian **1.12.7+** · Plugin ID: `smart-sync-global`.
 
 [Website](https://smartsync.cc/) · [Download / update](https://smartsync.cc/download/) · [Operation manual](USER-GUIDE.md) · [Plans](https://smartsync.cc/pricing/)
 
@@ -30,7 +30,7 @@ We value data security and privacy. Notes, attachments and file paths are encryp
 - Password-protected whole notes or selected text, secure editing and encrypted draft recovery. Titles, linked attachments and earlier plaintext history have separate privacy boundaries.
 - Desktop tray where supported and optional Windows launch at login. Mobile systems can suspend background work; return to Obsidian and confirm uploads finish.
 
-Version 1.1.5 also improves narrow-screen action labels, settings refresh, interrupted account operations and browser sign-in recovery. Choose from ten interface languages in Smart Sync settings.
+Version 1.1.6 also improves narrow-screen action labels, settings refresh, interrupted account operations and browser sign-in recovery. Choose from ten interface languages in Smart Sync settings.
 
 ## Account, payments and privacy
 

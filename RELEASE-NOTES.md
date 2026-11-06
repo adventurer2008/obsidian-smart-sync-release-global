@@ -1,10 +1,9 @@
-# Smart Sync 1.1.5
+# Smart Sync 1.1.6
 
-- Prevent repeated Danger zone controls and stale section headings when settings refresh after account changes.
-- Keep account and device action labels readable on narrow screens with enlarged interface text.
-- Recover automatic browser sign-in checks after temporary network failures or returning to Obsidian. Keep manual checks and same-account verification.
-- Recover interrupted account creation and deletion flows with bounded retries and clear, localized guidance; preserve confirmation and account/vault isolation.
-- Open the storage-plan browser directly on mobile when a valid account-bound entry is ready, with a conditional native-link fallback for uncertain or failed handoffs.
-- Include the maintained synchronization, original source-mtime preservation, encryption, device management and local tools without removing their existing controls.
+- Choose from ten interface languages, including English, Chinese, Japanese, Korean, German, French, Spanish, Portuguese and Russian. Follow Obsidian or choose a local preference, then reload the plugin.
+- Use localized sign-in, plan and payment pages. Interface language does not change your account, cloud vault or billing currency.
+- Pay in USD with Stripe by default; administrators can assign Dodo Payments to selected accounts or new-user scenarios. Existing orders and subscriptions keep their original provider.
+- Resume an unpaid checkout instead of creating duplicates. Recover closed or initially failed Dodo orders safely, and keep uncertain payments under review.
+- Verify refunds against the original payment and preserve new purchase rights when an old refund request is repeated. Correct misleading error text on refunded orders.
 
-The associated Global service update retains the current hosted plan/checkout interface. Update only main.js, manifest.json and styles.css; preserve per-device data.json, secret storage, checkpoints and all vault files. Keep an independent backup and inspect current tasks before closing a device.
+Synchronization, encryption, account/vault isolation and original file modification times retain their existing behavior. Replace only main.js, manifest.json and styles.css; preserve settings, secret storage, checkpoints and all vault files.

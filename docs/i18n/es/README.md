@@ -3,7 +3,7 @@
 <p>Sincronización cifrada para sus notas, archivos adjuntos y configuraciones seleccionadas del Obsidian. Conserve los tiempos de modificación de archivos originales, recupere versiones retenidas y administre sus dispositivos.</p>
 <p>El servidor de aplicaciones global se ejecuta en Oracle Cloud en Ashburn, Estados Unidos. Los datos de objetos cifrados se almacenan de forma privada con Cloudflare R2.</p>
 <p>Valoramos la seguridad y la privacidad de los datos. Las notas, los adjuntos y las rutas de archivos se cifran en su dispositivo con AES-256-GCM antes de subirlos. El cifrado y descifrado se realizan en sus dispositivos; el servicio almacena contenido cifrado y la contraseña de cifrado es independiente del inicio de sesión de la cuenta.</p>
-<p><strong>Versión actual: 1.1.5</strong> · Obsidian <strong>1.12.7+</strong> · ID del complemento: <code>smart-sync-global</code>.</p>
+<p><strong>Versión actual: 1.1.6</strong> · Obsidian <strong>1.12.7+</strong> · ID del complemento: <code>smart-sync-global</code>.</p>
 <p><a href="https://smartsync.cc/es/">Sitio web</a> · <a href="https://smartsync.cc/es/download/">Descargar / actualizar</a> · <a href="USER-GUIDE.md">Manual de operación</a> · <a href="https://smartsync.cc/es/pricing/">Planes</a></p>
 <h2 id="get-started">empezar</h2>
 <ol>
@@ -21,7 +21,7 @@
 <li>Notas completas o texto seleccionado protegido con contraseña, edición segura y recuperación de borradores cifrados. Los títulos, los archivos adjuntos vinculados y el historial de texto plano anterior tienen límites de privacidad separados.</li>
 <li>Bandeja de escritorio donde se admite y se inicia el Windows opcional al iniciar sesión. Los sistemas móviles pueden suspender el trabajo en segundo plano; Regrese a Obsidian y confirme que las cargas finalizaron.</li>
 </ul>
-<p>Smart Sync 1.1.5 admite diez idiomas de interfaz. Elija el idioma en los ajustes del complemento.</p>
+<p>Smart Sync 1.1.6 admite diez idiomas de interfaz. Elija el idioma en los ajustes del complemento.</p>
 <h2 id="account-payments-and-privacy">Cuenta, pagos y privacidad</h2>
 <p>La sincronización alojada requiere una cuenta. El plan gratuito actualmente incluye 50 MB, una bóveda en la nube y dispositivos ilimitados; Los planes pagos agregan capacidad.Los pagos se realizan en USD con Stripe de forma predeterminada; algunas cuentas pueden usar Dodo Payments. Se reanuda el pedido pendiente y los pedidos y suscripciones existentes conservan su proveedor. No vuelva a pagar si el resultado es incierto. Revisión <a href="https://smartsync.cc/es/pricing/">planes</a> y <a href="https://smartsync.cc/es/terms/">términos</a> antes de pagar.</p>
 <p>El contenido y las rutas están cifrados en el dispositivo. La identidad de la cuenta, las etiquetas de la bóveda/dispositivo, el uso y los metadatos operativos están fuera del cifrado de contenido. El cliente global mantiene los diagnósticos localmente para exportarlos manualmente y no carga telemetría de diagnóstico. El cifrado y el historial no reemplazan las copias de seguridad independientes. Lea el <a href="https://smartsync.cc/es/privacy/">política de privacidad</a>.</p>
