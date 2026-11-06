@@ -1,5 +1,4 @@
 <p><a href="../../../USER-GUIDE.md">English</a> · <a href="../zh-CN/USER-GUIDE.md">简体中文</a> · <a href="../zh-TW/USER-GUIDE.md">繁體中文</a> · <a href="../ja/USER-GUIDE.md">日本語</a> · <a href="../ko/USER-GUIDE.md">한국어</a> · <a href="../de/USER-GUIDE.md">Deutsch</a> · <a href="../fr/USER-GUIDE.md">Français</a> · <a href="../es/USER-GUIDE.md">Español</a> · <a href="../pt-BR/USER-GUIDE.md">Português (Brasil)</a> · <a href="../ru/USER-GUIDE.md">Русский</a></p>
-<p><em>이 번역은 초기 초안이며 원어민의 검토를 거치지 않았습니다. <a href="../../../USER-GUIDE.md">영어 소스</a>.</em></p>
 <h1 id="smart-sync-user-guide">Smart Sync 사용자 안내서</h1>
 <p>Smart Sync 1.1.5에 적용됩니다(<code>smart-sync-global</code>), 2026년 11월 6일에 검토됨. <a href="https://smartsync.cc/ko/">웹사이트</a> · <a href="https://smartsync.cc/ko/download/">다운로드</a> · <a href="https://smartsync.cc/ko/privacy/">개인 정보 보호</a>.</p>
 <h2 id="install-or-update">설치 또는 업데이트</h2>
@@ -42,7 +41,7 @@
 <p><strong>로그인 시 트레이로 실행</strong> Windows 전용이며 기본적으로 꺼져 있습니다. 활성화하면 현재 사용자의 시작 폴더에 이 볼트의 바로가기가 생성되고 배경 트레이가 활성화됩니다. 일반 출시는 계속 표시됩니다. 호스트가 요청을 다른 인스턴스로 라우팅할 수 있으므로 사용자 정의 Obsidian 프로필은 시작을 활성화할 수 없습니다. 트레이를 비활성화하거나 시작 지원이 없는 버전을 제거하거나 되돌리기 전에 로그인 시작을 비활성화하십시오. macOS, Linux, Android, iPhone 및 iPad에는 Windows 시작 스위치가 표시되지 않습니다.</p>
 <h2 id="storage-plans-and-payments">스토리지 요금제 및 결제</h2>
 <p>현재 계획을 보려면 설정에서 스토리지 계획 항목을 엽니다. 모바일은 시스템 브라우저를 직접 열려고 시도합니다. 핸드오프가 실패하거나 확인할 수 없는 경우 제공된 링크를 사용하세요. 결제하기 전에 금액, 통화, 간격 및 갱신 조건을 검토하세요. 현재 배포된 프로덕션 체크아웃은 Stripe를 사용합니다. 앱으로 돌아가 계획 업데이트를 확인하세요. 다시 지불하기 전에 불확실한 주문을 검사하십시오.</p>
-<p>현재 무료 요금제에는 MB 50개, 클라우드 볼트 1개, 장치 무제한이 포함되어 있습니다. 유료 용량과 현재 조건은 <a href="https://smartsync.cc/ko/pricing/">계획 페이지</a>. 스토리지는 계정의 클라우드 볼트 전체에서 공유됩니다. 갱신 취소 또는 환불 요청은 이용 가능한 구독 관리 항목을 이용하거나 문의하십시오. <a href="mailto:admin@smartsync.cc">지원하다</a>. 갱신을 취소하고 계정을 삭제해도 결제 금액이 자동으로 환불되지는 않습니다.</p>
+<p>현재 무료 요금제에는 MB 50개, 클라우드 볼트 1개, 장치 무제한이 포함되어 있습니다. 유료 용량과 현재 조건은 <a href="https://smartsync.cc/ko/pricing/">계획 페이지</a>. 저장 용량은 계정의 모든 클라우드 보관함에서 공유됩니다.</p>
 <h2 id="sign-out-revoke-a-device-or-delete-an-account">로그아웃, 기기 취소 또는 계정 삭제</h2>
 <p>로그아웃해도 로컬 메모가 유지됩니다. 오프라인 로그아웃으로 원격 해지를 확인할 수 없는 경우 즉시 제거가 필요할 때 연결된 다른 장치에서 해당 장치를 취소하세요. 제거해도 클라우드 계정은 삭제되지 않습니다.</p>
 <p>클라우드 삭제는 파괴적입니다. 먼저 독립적인 로컬 백업을 확인하세요. 볼트 관리를 통해 클라우드 볼트를 삭제하고 정리를 기다립니다. 열기 <strong>계정 → 위험지대 → 계정 삭제</strong>, 메시지가 나타나면 동일한 계정을 확인하고 다음을 입력하세요. <strong>DELETE</strong> 정확히. 유료 서비스 시간은 삭제를 방해하지 않습니다. 이렇게 하면 계정 액세스 및 연결된 ID가 제거됩니다. 현지 메모가 남아 있습니다. 읽기 <a href="https://smartsync.cc/ko/privacy/">보존 정책</a>.</p>

@@ -1,5 +1,4 @@
 <p><a href="../../../README.md">English</a> · <a href="../zh-CN/README.md">简体中文</a> · <a href="../zh-TW/README.md">繁體中文</a> · <a href="../ja/README.md">日本語</a> · <a href="../ko/README.md">한국어</a> · <a href="../de/README.md">Deutsch</a> · <a href="../fr/README.md">Français</a> · <a href="../es/README.md">Español</a> · <a href="../pt-BR/README.md">Português (Brasil)</a> · <a href="../ru/README.md">Русский</a></p>
-<p><em>此翻譯為初稿，未經母語人士審查。 <a href="../../../README.md">英文來源</a>.</em></p>
 <h1 id="smart-sync">Smart Sync</h1>
 <p>Obsidian 筆記、附件和選定設定的加密同步。保留原始文件修改時間、恢復保留版本並管理您的裝置。</p>
 <p><strong>目前版本：1.1.5</strong> · Obsidian <strong>1.12.7+</strong> · 插件ID： <code>smart-sync-global</code>.</p>
@@ -22,7 +21,7 @@
 </ul>
 <p>1.1.5 版本還改進了窄螢幕操作標籤、設定刷新、中斷的帳戶操作和瀏覽器登入恢復。其全球介面目前使用英語。發布並不意味著 Obsidian 社群上市獲得批准。</p>
 <h2 id="account-payments-and-privacy">帳戶、付款和隱私</h2>
-<p>託管同步需要一個帳戶。免費方案目前包括 50 個 MB、1 個雲端筆記庫和無限設備；付費方案增加了容量。目前的生產結帳使用 Stripe 和定期訂閱。評論 <a href="https://smartsync.cc/zh-TW/pricing/">計劃</a> 和 <a href="https://smartsync.cc/zh-TW/terms/">條款</a> 付款前。取消或刪除帳戶不會自動退款。</p>
+<p>託管同步需要一個帳戶。免費方案目前包括 50 個 MB、1 個雲端筆記庫和無限設備；付費方案增加了容量。目前的生產結帳使用 Stripe 和定期訂閱。評論 <a href="https://smartsync.cc/zh-TW/pricing/">計劃</a> 和 <a href="https://smartsync.cc/zh-TW/terms/">條款</a> ，然後再付款。</p>
 <p>內容和路徑在裝置上加密。帳戶身分、筆記庫/裝置標籤、使用情況和操作元資料都在內容加密之外。全域用戶端將診斷資訊保留在本機以供手動匯出，並且不會上傳診斷遙測資料。加密和歷史記錄不會取代獨立備份。閱讀 <a href="https://smartsync.cc/zh-TW/privacy/">隱私權政策</a>.</p>
 <p>對於帳戶刪除，請先刪除雲端筆記庫並等待清理，然後使用 <strong>帳戶 → 危險區域 → 刪除帳戶</strong>，驗證相同的身份並輸入請求的確認資訊。本地註釋仍然存在。</p>
-<p>問題或退款要求： <a href="mailto:admin@smartsync.cc">admin@smartsync.cc</a>。包括您的平台和外掛程式/Obsidian 版本；切勿發送密碼、令牌、電子郵件代碼或私人筆記。</p>
+<p>問題諮詢： <a href="mailto:admin@smartsync.cc">admin@smartsync.cc</a>。包括您的平台和外掛程式/Obsidian 版本；切勿發送密碼、令牌、電子郵件代碼或私人筆記。</p>

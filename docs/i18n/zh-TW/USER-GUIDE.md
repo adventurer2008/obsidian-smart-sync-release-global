@@ -1,5 +1,4 @@
 <p><a href="../../../USER-GUIDE.md">English</a> · <a href="../zh-CN/USER-GUIDE.md">简体中文</a> · <a href="../zh-TW/USER-GUIDE.md">繁體中文</a> · <a href="../ja/USER-GUIDE.md">日本語</a> · <a href="../ko/USER-GUIDE.md">한국어</a> · <a href="../de/USER-GUIDE.md">Deutsch</a> · <a href="../fr/USER-GUIDE.md">Français</a> · <a href="../es/USER-GUIDE.md">Español</a> · <a href="../pt-BR/USER-GUIDE.md">Português (Brasil)</a> · <a href="../ru/USER-GUIDE.md">Русский</a></p>
-<p><em>此翻譯為初稿，未經母語人士審查。 <a href="../../../USER-GUIDE.md">英文來源</a>.</em></p>
 <h1 id="smart-sync-user-guide">Smart Sync 使用者指南</h1>
 <p>适用于 Smart Sync 1.1.5 (<code>smart-sync-global</code>），於 2026 年 11 月 6 日審核。 <a href="https://smartsync.cc/zh-TW/">網站</a> · <a href="https://smartsync.cc/zh-TW/download/">下載</a> · <a href="https://smartsync.cc/zh-TW/privacy/">隱私</a>.</p>
 <h2 id="install-or-update">安裝或更新</h2>
@@ -42,7 +41,7 @@
 <p><strong>登入時啟動至托盤</strong> 僅適用於 Windows，預設為關閉。啟用它會在目前使用者的啟動資料夾中建立此筆記庫的捷徑並啟用後台托盤。普通的發布保持可見。自訂 Obsidian 設定檔無法啟用啟動，因為主機可能會將請求路由到另一個實例。在停用托盤、卸載或還原到不支援啟動的版本之前先停用登入啟動。 macOS、Linux、Android、iPhone 和 iPad 不顯示 Windows 啟動開關。</p>
 <h2 id="storage-plans-and-payments">儲存計劃和付款</h2>
 <p>開啟設定中的儲存計畫條目以查看目前計畫。手機嘗試直接開啟系統瀏覽器；如果切換失敗或無法確認，請使用提供的連結。付款前請查看金額、貨幣、間隔和續訂條款。目前部署的生產結帳使用 Stripe。返回應用程式並驗證計劃更新；在再次付款之前檢查不確定的訂單。</p>
-<p>免費方案目前包括 50 個 MB、1 個雲端筆記庫和無限設備。付費容量和當前條款顯示在 <a href="https://smartsync.cc/zh-TW/pricing/">計劃頁面</a>。儲存在帳戶的雲端筆記庫之間共用。如需取消續訂或退款要求，請使用可用的訂閱管理條目或聯繫 <a href="mailto:admin@smartsync.cc">支援</a>。取消續約和刪除帳戶不會自動退還付款。</p>
+<p>免費方案目前包括 50 個 MB、1 個雲端筆記庫和無限設備。付費容量和當前條款顯示在 <a href="https://smartsync.cc/zh-TW/pricing/">計劃頁面</a>。儲存容量由帳戶下的所有雲端筆記庫共用。</p>
 <h2 id="sign-out-revoke-a-device-or-delete-an-account">登出、撤銷設備或刪除帳戶</h2>
 <p>註銷會保留本地註釋。如果離線登出無法確認遠端撤銷，請在需要立即刪除時從另一個連接的裝置撤銷該裝置。卸載不會刪除雲端帳戶。</p>
 <p>雲端刪除具有破壞性：請先驗證獨立的本機備份。透過筆記庫管理刪除雲端筆記庫並等待清理。打開 <strong>帳戶 → 危險區域 → 刪除帳戶</strong>，出現提示時驗證相同帳戶，然後鍵入 <strong>DELETE</strong> 正是如此。付費服務時間並不能阻止刪除。這將刪除帳戶存取權限和連線的身份；保留本機註釋。閱讀 <a href="https://smartsync.cc/zh-TW/privacy/">保留政策</a>.</p>

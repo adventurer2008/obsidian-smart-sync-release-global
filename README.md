@@ -30,10 +30,10 @@ Version 1.1.5 also improves narrow-screen action labels, settings refresh, inter
 
 ## Account, payments and privacy
 
-Hosted synchronization requires an account. The Free plan currently includes 50 MB, one cloud vault and unlimited devices; paid plans add capacity. Current production checkout uses Stripe with recurring subscriptions. Review [plans](https://smartsync.cc/pricing/) and [terms](https://smartsync.cc/terms/) before paying. Cancellation or account deletion does not automatically issue a refund.
+Hosted synchronization requires an account. The Free plan currently includes 50 MB, one cloud vault and unlimited devices; paid plans add capacity. Current production checkout uses Stripe with recurring subscriptions. Review [plans](https://smartsync.cc/pricing/) and [terms](https://smartsync.cc/terms/) before paying.
 
 Content and paths are encrypted on the device. Account identity, vault/device labels, usage and operational metadata are outside content encryption. The Global client keeps diagnostics locally for manual export and does not upload diagnostic telemetry. Encryption and history do not replace independent backups. Read the [privacy policy](https://smartsync.cc/privacy/).
 
 For account deletion, first delete cloud vaults and wait for cleanup, then use **Account → Danger zone → Delete account**, verify the same identity and enter the requested confirmation. Local notes remain.
 
-Questions or refund requests: [admin@smartsync.cc](mailto:admin@smartsync.cc). Include your platform and plugin/Obsidian versions; never send passwords, tokens, email codes or private notes.
+Questions: [admin@smartsync.cc](mailto:admin@smartsync.cc). Include your platform and plugin/Obsidian versions; never send passwords, tokens, email codes or private notes.

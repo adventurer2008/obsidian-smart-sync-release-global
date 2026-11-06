@@ -1,5 +1,4 @@
 <p><a href="../../../README.md">English</a> · <a href="../zh-CN/README.md">简体中文</a> · <a href="../zh-TW/README.md">繁體中文</a> · <a href="../ja/README.md">日本語</a> · <a href="../ko/README.md">한국어</a> · <a href="../de/README.md">Deutsch</a> · <a href="../fr/README.md">Français</a> · <a href="../es/README.md">Español</a> · <a href="../pt-BR/README.md">Português (Brasil)</a> · <a href="../ru/README.md">Русский</a></p>
-<p><em>此翻译是初稿，未经母语人士审阅。 <a href="../../../README.md">英文来源</a>.</em></p>
 <h1 id="smart-sync">Smart Sync</h1>
 <p>Obsidian 笔记、附件和选定设置的加密同步。保留原始文件修改时间、恢复保留版本并管理您的设备。</p>
 <p><strong>当前版本：1.1.5</strong> ·Obsidian <strong>1.12.7+</strong> · 插件ID： <code>smart-sync-global</code>.</p>
@@ -22,7 +21,7 @@
 </ul>
 <p>1.1.5 版本还改进了窄屏操作标签、设置刷新、中断的帐户操作和浏览器登录恢复。其全球界面目前使用英语。发布并不意味着 Obsidian 社区上市获得批准。</p>
 <h2 id="account-payments-and-privacy">账户、付款和隐私</h2>
-<p>托管同步需要一个帐户。免费套餐目前包括 50 个 MB、1 个云笔记库和无限设备；付费计划增加了容量。当前的生产结账使用 Stripe 和定期订阅。评论 <a href="https://smartsync.cc/zh-CN/pricing/">计划</a> 和 <a href="https://smartsync.cc/zh-CN/terms/">条款</a> 付款前。取消或删除帐户不会自动退款。</p>
+<p>托管同步需要一个帐户。免费套餐目前包括 50 个 MB、1 个云笔记库和无限设备；付费计划增加了容量。当前的生产结账使用 Stripe 和定期订阅。评论 <a href="https://smartsync.cc/zh-CN/pricing/">计划</a> 和 <a href="https://smartsync.cc/zh-CN/terms/">条款</a> ，然后再付款。</p>
 <p>内容和路径在设备上加密。帐户身份、笔记库/设备标签、使用情况和操作元数据都在内容加密之外。全局客户端将诊断信息保留在本地以供手动导出，并且不会上传诊断遥测数据。加密和历史记录不会取代独立备份。阅读 <a href="https://smartsync.cc/zh-CN/privacy/">隐私政策</a>.</p>
 <p>对于帐户删除，请先删除云笔记库并等待清理，然后使用 <strong>账户 → 危险区域 → 删除账户</strong>，验证相同的身份并输入请求的确认信息。本地注释仍然存在。</p>
-<p>问题或退款请求： <a href="mailto:admin@smartsync.cc">admin@smartsync.cc</a>。包括您的平台和插件/Obsidian 版本；切勿发送密码、令牌、电子邮件代码或私人笔记。</p>
+<p>问题咨询： <a href="mailto:admin@smartsync.cc">admin@smartsync.cc</a>。包括您的平台和插件/Obsidian 版本；切勿发送密码、令牌、电子邮件代码或私人笔记。</p>
