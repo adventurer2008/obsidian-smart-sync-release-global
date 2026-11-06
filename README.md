@@ -8,7 +8,7 @@ Encrypted synchronization for your Obsidian notes, attachments and selected sett
 
 The Global application server runs on Oracle Cloud in Ashburn, United States. Encrypted object data is stored privately using Cloudflare R2.
 
-Notes, attachments and file paths are encrypted on your device with AES-256-GCM before upload. Encryption and decryption happen on your devices; the service stores encrypted content, and your encryption password is separate from your account login.
+We value data security and privacy. Notes, attachments and file paths are encrypted on your device with AES-256-GCM before upload. Encryption and decryption happen on your devices; the service stores encrypted content, and your encryption password is separate from your account login.
 
 **Current version: 1.1.5** · Obsidian **1.12.7+** · Plugin ID: `smart-sync-global`.
 
