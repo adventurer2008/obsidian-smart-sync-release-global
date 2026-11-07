@@ -1,0 +1,43 @@
+name: Attest published Global release
+on: [workflow_dispatch]
+permissions:
+  contents: read
+jobs:
+  attest:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: read
+      id-token: write
+      attestations: write
+      artifact-metadata: write
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          persist-credentials: false
+      - name: Require the published version tag and accepted source
+        run: >-
+          node --input-type=module -e 'import assert from "node:assert/strict"; import fs from "node:fs"; const manifest=JSON.parse(fs.readFileSync("manifest.json")); const source=JSON.parse(fs.readFileSync("SOURCE-SNAPSHOT.json")); assert.equal(process.env.GITHUB_REPOSITORY,"adventurer2008/obsidian-smart-sync-release-global"); assert.equal(process.env.GITHUB_REF,"refs/tags/"+manifest.version); assert.equal(source.previewOnly,false); assert.equal(source.edition,"global"); assert.equal(source.version,manifest.version);'
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1
+        with:
+          node-version: '26.12.1'
+      - run: npm ci --ignore-scripts
+      - run: npm run build
+      - name: Compare rebuilt files with published assets
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release download "$GITHUB_REF_NAME" --repo "$GITHUB_REPOSITORY" --pattern main.js --pattern styles.css --dir published-assets
+          cmp main.js published-assets/main.js
+          cmp styles.css published-assets/styles.css
+      - uses: actions/attest@1e69f48acb82d1966a394da916b4c1698aa569d6
+        with:
+          subject-path: |
+            main.js
+            styles.css
+      - name: Verify uploaded attestations
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh attestation verify main.js --repo "$GITHUB_REPOSITORY"
+          gh attestation verify styles.css --repo "$GITHUB_REPOSITORY"

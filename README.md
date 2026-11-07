@@ -1,6 +1,6 @@
 # Smart Sync
 
-Current Stable release: **1.1.8**. Refresh the Global version list in Hub and choose the Stable channel to install or update.
+Current Stable release: **1.1.9**. Refresh the Global version list in Hub and choose the Stable channel to install or update.
 
 <!-- LANGUAGES:START -->
 [English](README.md) · [Simplified Chinese](docs/i18n/zh-CN/README.md) · [Traditional Chinese](docs/i18n/zh-TW/README.md) · [Japanese](docs/i18n/ja/README.md) · [Korean](docs/i18n/ko/README.md) · [German](docs/i18n/de/README.md) · [French](docs/i18n/fr/README.md) · [Spanish](docs/i18n/es/README.md) · [Brazilian Portuguese](docs/i18n/pt-BR/README.md) · [Russian](docs/i18n/ru/README.md)

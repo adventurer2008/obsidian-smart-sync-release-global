@@ -1,6 +1,6 @@
 # Smart Sync user guide
 
-Current Stable version: **1.1.8**. Refresh the Global version list in Hub and choose Stable for updates.
+Current Stable version: **1.1.9**. Refresh the Global version list in Hub and choose Stable for updates.
 
 <!-- LANGUAGES:START -->
 [English](USER-GUIDE.md) · [Simplified Chinese](docs/i18n/zh-CN/USER-GUIDE.md) · [Traditional Chinese](docs/i18n/zh-TW/USER-GUIDE.md) · [Japanese](docs/i18n/ja/USER-GUIDE.md) · [Korean](docs/i18n/ko/USER-GUIDE.md) · [German](docs/i18n/de/USER-GUIDE.md) · [French](docs/i18n/fr/USER-GUIDE.md) · [Spanish](docs/i18n/es/USER-GUIDE.md) · [Brazilian Portuguese](docs/i18n/pt-BR/USER-GUIDE.md) · [Russian](docs/i18n/ru/USER-GUIDE.md)

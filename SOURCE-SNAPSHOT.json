@@ -1,19 +1,20 @@
 {
   "format": "smart-sync-community-source-1",
   "sourceRepository": "adventurer2008/obsidian-smart-sync-client",
-  "sourceCommit": "704d0de9b8910158e9be74e75795485322dd1b38",
+  "sourceCommit": "e779783f7c7941d9b2746be341bd636f6cccb02c",
   "edition": "global",
-  "version": "1.1.8",
+  "version": "1.1.9",
   "previewOnly": false,
   "sourceInputs": {
+    "CONTRIBUTING.md": "81ddaf73c82c412ce98d249518dce169f20bc915895168f66181063e0574cccb",
     "LICENSE": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
     "THIRD-PARTY-NOTICES.md": "c95b35209a0341a117d566cbadbc3a9d8e9817114ed77f7e862c554f2a076bde",
     "assets/boundless-sync.png": "fee950ecc66baf4644c75e98eab887a7af40b9cf324e098446bae99817002ff2",
     "editions/cn.json": "ae8bf4c835b7452f3ed72262fa3de0c451c989848432fcbd0d303d3609cb5685",
     "editions/global.json": "a0a8632d9edcef7c83627909fee0cfed390a8a32891a8b7529629a325dfbc061",
-    "manifest.json": "9e037568378715885d2c9bed0d186f42eac9c33ce58c4eae879e921801391b1a",
-    "package-lock.json": "8e9cdb851ea907f56b301dace4d0abcd331364c5b3d57b2a2af2e4db117d4be1",
-    "package.json": "cdef57803dbdb49bd35f476bf34f6568a32ae380e47bcbbe0339f649af42c294",
+    "manifest.json": "82930ad9e7ffda656a72c73de24df739645d4100039fa6626bfdeb2ed9c578e5",
+    "package-lock.json": "406e1212758c1ae0205a797901c7a5464b591fe5521f2ce3484b2c95d8fb01c5",
+    "package.json": "e180641088241fabdb4f3a0aa98ebc7c759e360cf2b07d39698936a1837443af",
     "scripts/build.mjs": "5423c8b9857f171dce64aa4eefc818d60dc9c305bdb8bd0278df9b76d6fe77d2",
     "scripts/check-isolation.mjs": "e79fb0b22e2e70ef9dccb3477e1965d93ae29ec11ee1a65ccb63d2965c05e43a",
     "scripts/edition-config.mjs": "8a1eb933e90566577ebb0574eb75ccb661c64ee86f71b34493ac5f489b198c94",
@@ -44,7 +45,7 @@
     "src/startup.js": "cc1449fff23eaaacc477b9621c0c3d1a927d59b1600d4af8a010caeabbf694f6",
     "src/synchronizer.js": "989559883579189f6d3dda97b68487a16b4ef515103883fc1d336ee72a3e5718",
     "src/tasks.js": "4939848fc071687573b0e69f10197f0814c45663b1600b314ed9d91d87506ab8",
-    "styles.css": "e96eba9c25ee52bb4367b658a7ea161432ee9945f2b507711fe207a9742e50ab",
+    "styles.css": "8f3a720d65f4c9f105b676add435316215b419a641bbc38d200fa70ba9291f9c",
     "test/android-diagnostics.test.mjs": "81ad561e1fd345a2e512628fdf4a2b50f20445a7fb4bc9b78665e94789ea4370",
     "test/android-transport.test.mjs": "278743e02f9c5936ba79697ebf6fb15660eb4b9d436a971f000c04730549079c",
     "test/background-tray.test.mjs": "53ce7d2335bd0fcf508a0f176044024aaf1f10780eb68bcfdec593529f66717f",
@@ -102,17 +103,18 @@
     "tools/community-lint/package-lock.json": "cb9ce9c1464a9d43db5bfb6a4403cd4f9ed3372b484eae3134f34c7432c493ed",
     "tools/community-lint/package.json": "90be99c5457e4bb996b847bdd92eeafc6f6cabfaf939c75d20d5c63ac61970d4",
     "tools/community-lint/run.mjs": "b2bc55e3888c8e133a9c9c572cce2bc9432d2c92a280cdd2b6777e30059794b5",
-    "versions.json": "29ea27fa44280b892ca41e0df20ce7ac3d731dbcf1c99dda9f1762ebb67e9c66"
+    "versions.json": "a579f855bd49c012b68a601b621336166b0dca67698013932bb243c18738f351"
   },
   "exportedFiles": {
+    "CONTRIBUTING.md": "81ddaf73c82c412ce98d249518dce169f20bc915895168f66181063e0574cccb",
     "LICENSE": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
     "THIRD-PARTY-NOTICES.md": "c95b35209a0341a117d566cbadbc3a9d8e9817114ed77f7e862c554f2a076bde",
     "assets/boundless-sync.png": "fee950ecc66baf4644c75e98eab887a7af40b9cf324e098446bae99817002ff2",
     "editions/cn.json": "ae8bf4c835b7452f3ed72262fa3de0c451c989848432fcbd0d303d3609cb5685",
     "editions/global.json": "a0a8632d9edcef7c83627909fee0cfed390a8a32891a8b7529629a325dfbc061",
-    "manifest.json": "6927e2e2f6b0beef1f17c3c8c79988c3bd208ce8ff68c7fa810f540840a8cfa9",
-    "package-lock.json": "8e9cdb851ea907f56b301dace4d0abcd331364c5b3d57b2a2af2e4db117d4be1",
-    "package.json": "8ded29f315db1a175294da2a5758b9c6c4746fb92ef997147c1b254901b0c8aa",
+    "manifest.json": "58cfecaae556a82a3f5fcf3992470cc4896e20336c7dbae77053f5f2fe491ed5",
+    "package-lock.json": "406e1212758c1ae0205a797901c7a5464b591fe5521f2ce3484b2c95d8fb01c5",
+    "package.json": "273d0c1e482a112b3fd18df25df17f007bee5411229f087acc6b61b32a8b13b7",
     "scripts/build.mjs": "baa8096baabcc2f0a94e6379b4c3608fb034e800f695b3115fc830cd1fd87ec1",
     "scripts/check-isolation.mjs": "e79fb0b22e2e70ef9dccb3477e1965d93ae29ec11ee1a65ccb63d2965c05e43a",
     "scripts/edition-config.mjs": "8a1eb933e90566577ebb0574eb75ccb661c64ee86f71b34493ac5f489b198c94",
@@ -143,7 +145,7 @@
     "src/startup.js": "cc1449fff23eaaacc477b9621c0c3d1a927d59b1600d4af8a010caeabbf694f6",
     "src/synchronizer.js": "989559883579189f6d3dda97b68487a16b4ef515103883fc1d336ee72a3e5718",
     "src/tasks.js": "4939848fc071687573b0e69f10197f0814c45663b1600b314ed9d91d87506ab8",
-    "styles.css": "20177061061fd6436d9079d464b041388229af10b74dae396c8bd2a1815aad4b",
+    "styles.css": "552eb4fc0cec4c22a86dd8fdedf96c4df31aeb3f4eea4313d8941b97f3b56de8",
     "test/android-diagnostics.test.mjs": "81ad561e1fd345a2e512628fdf4a2b50f20445a7fb4bc9b78665e94789ea4370",
     "test/android-transport.test.mjs": "278743e02f9c5936ba79697ebf6fb15660eb4b9d436a971f000c04730549079c",
     "test/background-tray.test.mjs": "53ce7d2335bd0fcf508a0f176044024aaf1f10780eb68bcfdec593529f66717f",
@@ -201,15 +203,16 @@
     "tools/community-lint/package-lock.json": "cb9ce9c1464a9d43db5bfb6a4403cd4f9ed3372b484eae3134f34c7432c493ed",
     "tools/community-lint/package.json": "90be99c5457e4bb996b847bdd92eeafc6f6cabfaf939c75d20d5c63ac61970d4",
     "tools/community-lint/run.mjs": "b2bc55e3888c8e133a9c9c572cce2bc9432d2c92a280cdd2b6777e30059794b5",
-    "versions.json": "29ea27fa44280b892ca41e0df20ce7ac3d731dbcf1c99dda9f1762ebb67e9c66",
-    "source-styles.css": "e96eba9c25ee52bb4367b658a7ea161432ee9945f2b507711fe207a9742e50ab",
+    "versions.json": "a579f855bd49c012b68a601b621336166b0dca67698013932bb243c18738f351",
+    "source-styles.css": "8f3a720d65f4c9f105b676add435316215b419a641bbc38d200fa70ba9291f9c",
     "scripts/community-build.mjs": "f6995782bf26b11908101a92687c609c05870f7399ef4aa447c879cadc011f93",
     "scripts/verify-accepted-artifacts.mjs": "a01b7eace9e2d4f6e89d4ebdeb6815e28670a7238391c95fbc74f5ada57a055c",
     "scripts/verify-source-snapshot.mjs": "b2689eef8d4632e8b4d81eb2194868a9e616bc665aac701edfe0e31be9c94097",
     ".gitignore": "e993dc196186e6371916fc30edbe592891ac2e226cb2716588f5666a0774f81f",
     ".gitattributes": "7846b37551c23529eb00c68fbb5a435390e922d9db2625cb88681c31746b289e",
     "AGENTS.md": "bcec834b29c9909fb5491fce648885961dc2d011952624834664aeff6ee7d01d",
-    ".github/workflows/verify-source.yml": "72d0723e5be47ca47df9a4fe678dcbe1a8b42f9d6e83273e7de5b9c119b8e914"
+    ".github/workflows/verify-source.yml": "72d0723e5be47ca47df9a4fe678dcbe1a8b42f9d6e83273e7de5b9c119b8e914",
+    ".github/workflows/attest-release.yml": "b58cfa78d2d3fa490b927884f4b1181d29ec3c65769caab08695000d24838694"
   },
   "transformations": [
     "Regional root manifest and default production build",
@@ -217,17 +220,11 @@
     "Generated verification and contribution rules; no private inputs"
   ],
   "historicalReleases": "Existing 0.1.81 and earlier MIT releases and assets are unchanged.",
-  "releaseCandidateDigest": "e3737d963453436a6f22933863ef41d3bc50b28637642374148e4245c1fe9f6e",
+  "releaseCandidateDigest": "81fd3c23fd0a39751b539b667475edfe3d0d8d68c40406eb6a70fc1a5a24de94",
   "runtimeManifest": "19e3bf87091e0742b247f521f0735a9fab71dbce1f477f121dbee530156058ed",
   "acceptedArtifacts": {
     "main.js": "a4246f552faf26286a2a81a441888ec5c5e24d5966cf619875a425d039ef716d",
-    "manifest.json": "6927e2e2f6b0beef1f17c3c8c79988c3bd208ce8ff68c7fa810f540840a8cfa9",
-    "styles.css": "20177061061fd6436d9079d464b041388229af10b74dae396c8bd2a1815aad4b"
-  },
-  "promotion": {
-    "alphaVersion": "1.1.8-alpha.6",
-    "alphaCandidate": "9163844b3bfd252d6852eb4d40e177129dd01ffeb3464f09e5bcccb8ddc7caa9",
-    "userAccepted": true,
-    "scope": "metadata-only"
+    "manifest.json": "58cfecaae556a82a3f5fcf3992470cc4896e20336c7dbae77053f5f2fe491ed5",
+    "styles.css": "552eb4fc0cec4c22a86dd8fdedf96c4df31aeb3f4eea4313d8941b97f3b56de8"
   }
 }
