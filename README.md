@@ -60,3 +60,5 @@ For account deletion, first delete cloud vaults and wait for cleanup, then use *
 Questions: [admin@smartsync.cc](mailto:admin@smartsync.cc). Include your platform and plugin/Obsidian versions; never send passwords, tokens, email codes or private notes.
 
 X: [@smartsync_cc](https://x.com/smartsync_cc)
+
+Contributions: see [CONTRIBUTING.md](CONTRIBUTING.md) for issue reports, pull requests and private security reporting.
