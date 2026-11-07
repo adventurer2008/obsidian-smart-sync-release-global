@@ -1,8 +1,8 @@
 <p><a href="../../../README.md">English</a> · <a href="../zh-CN/README.md">简体中文</a> · <a href="../zh-TW/README.md">繁體中文</a> · <a href="../ja/README.md">日本語</a> · <a href="../ko/README.md">한국어</a> · <a href="../de/README.md">Deutsch</a> · <a href="../fr/README.md">Français</a> · <a href="../es/README.md">Español</a> · <a href="../pt-BR/README.md">Português (Brasil)</a> · <a href="../ru/README.md">Русский</a></p>
 <h1 id="smart-sync">Smart Sync</h1>
-<p>Un plugin de sincronización de la comunidad para Obsidian. <strong>Sincronización en tiempo real entre dispositivos, mayor velocidad y funciones más potentes que van más allá del servicio oficial Obsidian Sync.</strong><br>
+<p>Un plugin de sincronización de la comunidad para Obsidian. <strong>Sincronización en tiempo real entre dispositivos, con mayor velocidad y funciones avanzadas que van más allá de las herramientas de sincronización habituales.</strong><br>
 Mantén sincronizadas tus notas, archivos adjuntos y ajustes seleccionados en ordenadores, teléfonos y tabletas.</p>
-<p>El servidor de aplicaciones global se ejecuta en Oracle Cloud en Ashburn, Estados Unidos. Los datos de objetos cifrados se almacenan de forma privada con Cloudflare R2.</p>
+<p>El servidor de aplicaciones global se ejecuta en Oracle Cloud en Estados Unidos. Los datos de objetos cifrados se almacenan de forma privada con Cloudflare R2.</p>
 <p>Valoramos la seguridad y la privacidad de los datos. Las notas, los adjuntos y las rutas de archivos se cifran en su dispositivo con AES-256-GCM antes de subirlos. El cifrado y descifrado se realizan en sus dispositivos; el servicio almacena contenido cifrado y la contraseña de cifrado es independiente del inicio de sesión de la cuenta.</p>
 <p>Utilice Obsidian <strong>1.12.7 o más reciente</strong>.</p>
 <p><a href="https://smartsync.cc/es/">Sitio web</a> · <a href="https://smartsync.cc/es/download/">Descargar / actualizar</a> · <a href="USER-GUIDE.md">Manual de operación</a> · <a href="https://smartsync.cc/es/pricing/">Planes</a></p>

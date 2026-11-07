@@ -1,8 +1,8 @@
 <p><a href="../../../README.md">English</a> · <a href="../zh-CN/README.md">简体中文</a> · <a href="../zh-TW/README.md">繁體中文</a> · <a href="../ja/README.md">日本語</a> · <a href="../ko/README.md">한국어</a> · <a href="../de/README.md">Deutsch</a> · <a href="../fr/README.md">Français</a> · <a href="../es/README.md">Español</a> · <a href="../pt-BR/README.md">Português (Brasil)</a> · <a href="../ru/README.md">Русский</a></p>
 <h1 id="smart-sync">Smart Sync</h1>
-<p>Obsidian 커뮤니티 동기화 플러그인. <strong>여러 기기에서 실시간 동기화, 더 빠른 동기화 속도와 공식 Obsidian Sync 를 넘어서는 강력한 기능.</strong><br>
+<p>Obsidian 커뮤니티 동기화 플러그인. <strong>기기 간 실시간 동기화, 더 빠른 동기화와 일반적인 동기화 도구를 넘어서는 고급 기능.</strong><br>
 컴퓨터, 휴대폰, 태블릿에서 노트, 첨부 파일 및 선택한 설정을 동기화하세요.</p>
-<p>글로벌 애플리케이션 서버는 미국 Ashburn의 Oracle Cloud에서 실행됩니다. 암호화된 객체 데이터는 Cloudflare R2에 비공개로 저장됩니다.</p>
+<p>글로벌 애플리케이션 서버는 미국의 Oracle Cloud에서 실행됩니다. 암호화된 객체 데이터는 Cloudflare R2에 비공개로 저장됩니다.</p>
 <p>데이터 보안과 개인정보 보호를 중요하게 생각합니다. 노트, 첨부 파일 및 파일 경로는 업로드 전에 기기에서 AES-256-GCM으로 암호화됩니다. 암호화와 복호화는 기기에서 이루어지며 서비스에는 암호화된 콘텐츠가 저장됩니다. 암호화 비밀번호는 계정 로그인 정보와 별개입니다.</p>
 <p>Obsidian 사용 <strong>1.12.7 이상</strong>.</p>
 <p><a href="https://smartsync.cc/ko/">웹사이트</a> · <a href="https://smartsync.cc/ko/download/">다운로드/업데이트</a> · <a href="USER-GUIDE.md">사용 설명서</a> · <a href="https://smartsync.cc/ko/pricing/">계획</a></p>

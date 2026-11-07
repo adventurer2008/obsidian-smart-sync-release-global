@@ -6,10 +6,10 @@ Current Stable release: **1.1.8**. Refresh the Global version list in Hub and ch
 [English](README.md) · [Simplified Chinese](docs/i18n/zh-CN/README.md) · [Traditional Chinese](docs/i18n/zh-TW/README.md) · [Japanese](docs/i18n/ja/README.md) · [Korean](docs/i18n/ko/README.md) · [German](docs/i18n/de/README.md) · [French](docs/i18n/fr/README.md) · [Spanish](docs/i18n/es/README.md) · [Brazilian Portuguese](docs/i18n/pt-BR/README.md) · [Russian](docs/i18n/ru/README.md)
 <!-- LANGUAGES:END -->
 
-A community sync plugin for Obsidian, **Real-time sync across devices, faster synchronization and more powerful features that go beyond the official sync features of Obsidian.**  
+A community sync plugin for Obsidian, **Real-time sync across devices, with faster synchronization and advanced features beyond typical sync tools.**<br>
 Keep notes, attachments and selected settings in sync across computers, phones and tablets.
 
-The Global application server runs on Oracle Cloud in Ashburn, United States. Encrypted object data is stored privately using Cloudflare R2.
+The Global application server runs on Oracle Cloud in the United States. Encrypted object data is stored privately using Cloudflare R2.
 
 We value data security and privacy. Notes, attachments and file paths are encrypted on your device with AES-256-GCM before upload. Encryption and decryption happen on your devices; the service stores encrypted content, and your encryption password is separate from your account login.
 

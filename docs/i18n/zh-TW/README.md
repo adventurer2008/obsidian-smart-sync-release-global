@@ -1,8 +1,8 @@
 <p><a href="../../../README.md">English</a> · <a href="../zh-CN/README.md">简体中文</a> · <a href="../zh-TW/README.md">繁體中文</a> · <a href="../ja/README.md">日本語</a> · <a href="../ko/README.md">한국어</a> · <a href="../de/README.md">Deutsch</a> · <a href="../fr/README.md">Français</a> · <a href="../es/README.md">Español</a> · <a href="../pt-BR/README.md">Português (Brasil)</a> · <a href="../ru/README.md">Русский</a></p>
 <h1 id="smart-sync">Smart Sync</h1>
-<p>Obsidian社群同步外掛， <strong>多裝置即時同步，同步速度更快，功能更強，超越Obsidian官方同步功能。</strong><br>
+<p>Obsidian社群同步外掛， <strong>跨裝置即時同步，更快的同步體驗，以及超出常見同步工具的進階功能。</strong><br>
 電腦、手機、平板，筆記、附件與所選設定保持同步。</p>
-<p>Global 應用程式伺服器在美國阿什本的 Oracle Cloud 上運作。 加密物件資料使用 Cloudflare R2 進行私有儲存。</p>
+<p>Global 應用程式伺服器在美國的 Oracle Cloud 上運作。 加密物件資料使用 Cloudflare R2 進行私有儲存。</p>
 <p>我們重視資料安全與隱私。筆記、附件及檔案路徑在上傳前，會先在您的裝置上使用 AES-256-GCM 加密。加密及解密均在您的裝置上完成，服務端儲存加密內容；加密密碼與帳戶登入憑證相互獨立。</p>
 <p>使用Obsidian <strong>1.12.7 或更高版本</strong>.</p>
 <p><a href="https://smartsync.cc/zh-TW/">網站</a> · <a href="https://smartsync.cc/zh-TW/download/">下載/更新</a> · <a href="USER-GUIDE.md">操作手冊</a> · <a href="https://smartsync.cc/zh-TW/pricing/">計劃</a></p>

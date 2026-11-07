@@ -1,8 +1,8 @@
 <p><a href="../../../README.md">English</a> · <a href="../zh-CN/README.md">简体中文</a> · <a href="../zh-TW/README.md">繁體中文</a> · <a href="../ja/README.md">日本語</a> · <a href="../ko/README.md">한국어</a> · <a href="../de/README.md">Deutsch</a> · <a href="../fr/README.md">Français</a> · <a href="../es/README.md">Español</a> · <a href="../pt-BR/README.md">Português (Brasil)</a> · <a href="../ru/README.md">Русский</a></p>
 <h1 id="smart-sync">Smart Sync</h1>
-<p>Obsidian のコミュニティ同期プラグイン。 <strong>複数デバイスでリアルタイム同期。より高速な同期と、公式の Obsidian Sync を超える充実した機能。</strong><br>
+<p>Obsidian のコミュニティ同期プラグイン。 <strong>デバイス間のリアルタイム同期。より速い同期と、一般的な同期ツールを超える高度な機能。</strong><br>
 パソコン、スマートフォン、タブレットで、ノート、添付ファイル、選択した設定を同期します。</p>
-<p>グローバル・アプリケーション・サーバーは、米国アッシュバーンのOracle Cloud上で実行されます。 暗号化されたオブジェクトデータは Cloudflare R2 で非公開に保存されます。</p>
+<p>グローバル・アプリケーション・サーバーは、米国のOracle Cloud上で実行されます。 暗号化されたオブジェクトデータは Cloudflare R2 で非公開に保存されます。</p>
 <p>データの安全性とプライバシーを重視しています。 ノート、添付ファイル、ファイルパスは、アップロード前に端末上で AES-256-GCM により暗号化されます。 暗号化と復号は端末上で行われ、サービスには暗号化されたコンテンツが保存されます。暗号化パスワードはアカウントのログイン情報とは別です。</p>
 <p>Obsidianを使用 <strong>1.12.7以降</strong>.</p>
 <p><a href="https://smartsync.cc/ja/">ウェブサイト</a> · <a href="https://smartsync.cc/ja/download/">ダウンロード/アップデート</a> · <a href="USER-GUIDE.md">取扱説明書</a> · <a href="https://smartsync.cc/ja/pricing/">計画</a></p>

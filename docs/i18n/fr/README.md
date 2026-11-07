@@ -1,8 +1,8 @@
 <p><a href="../../../README.md">English</a> · <a href="../zh-CN/README.md">简体中文</a> · <a href="../zh-TW/README.md">繁體中文</a> · <a href="../ja/README.md">日本語</a> · <a href="../ko/README.md">한국어</a> · <a href="../de/README.md">Deutsch</a> · <a href="../fr/README.md">Français</a> · <a href="../es/README.md">Español</a> · <a href="../pt-BR/README.md">Português (Brasil)</a> · <a href="../ru/README.md">Русский</a></p>
 <h1 id="smart-sync">Smart Sync</h1>
-<p>Un plugin communautaire de synchronisation pour Obsidian. <strong>Synchronisation en temps réel entre appareils, transferts plus rapides et fonctionnalités plus puissantes qui vont au-delà du service officiel Obsidian Sync.</strong><br>
+<p>Un plugin communautaire de synchronisation pour Obsidian. <strong>Synchronisation en temps réel entre appareils, avec une synchronisation plus rapide et des fonctions avancées qui vont au-delà des outils de synchronisation habituels.</strong><br>
 Gardez vos notes, pièces jointes et réglages sélectionnés synchronisés sur ordinateur, téléphone et tablette.</p>
-<p>Le serveur d&#x27;applications global s&#x27;exécute sur Oracle Cloud à Ashburn, aux États-Unis. Les données des objets chiffrés sont stockées de manière privée avec Cloudflare R2.</p>
+<p>Le serveur d&#x27;applications global s&#x27;exécute sur Oracle Cloud aux États-Unis. Les données des objets chiffrés sont stockées de manière privée avec Cloudflare R2.</p>
 <p>Nous accordons de l’importance à la sécurité et à la confidentialité des données. Les notes, pièces jointes et chemins de fichiers sont chiffrés sur votre appareil avec AES-256-GCM avant leur envoi. Le chiffrement et le déchiffrement ont lieu sur vos appareils ; le service stocke le contenu chiffré et votre mot de passe de chiffrement est distinct de vos identifiants de connexion.</p>
 <p>Utiliser Obsidian <strong>1.12.7 ou version ultérieure</strong>.</p>
 <p><a href="https://smartsync.cc/fr/">Site Web</a> · <a href="https://smartsync.cc/fr/download/">Télécharger / mettre à jour</a> · <a href="USER-GUIDE.md">Manuel d&#x27;utilisation</a> · <a href="https://smartsync.cc/fr/pricing/">Forfaits</a></p>

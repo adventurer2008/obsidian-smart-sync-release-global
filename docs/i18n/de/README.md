@@ -1,8 +1,8 @@
 <p><a href="../../../README.md">English</a> · <a href="../zh-CN/README.md">简体中文</a> · <a href="../zh-TW/README.md">繁體中文</a> · <a href="../ja/README.md">日本語</a> · <a href="../ko/README.md">한국어</a> · <a href="../de/README.md">Deutsch</a> · <a href="../fr/README.md">Français</a> · <a href="../es/README.md">Español</a> · <a href="../pt-BR/README.md">Português (Brasil)</a> · <a href="../ru/README.md">Русский</a></p>
 <h1 id="smart-sync">Smart Sync</h1>
-<p>Ein Community-Sync-Plugin für Obsidian. <strong>Echtzeit-Synchronisierung auf mehreren Geräten, schnellere Übertragung und leistungsfähigere Funktionen, die über das offizielle Obsidian Sync hinausgehen.</strong><br>
+<p>Ein Community-Sync-Plugin für Obsidian. <strong>Echtzeit-Synchronisierung zwischen Geräten mit schnellerer Synchronisierung und erweiterten Funktionen, die über typische Synchronisierungstools hinausgehen.</strong><br>
 Notizen, Anhänge und ausgewählte Einstellungen auf Computern, Smartphones und Tablets synchron halten.</p>
-<p>Der globale Anwendungsserver läuft auf Oracle Cloud in Ashburn, USA. Verschlüsselte Objektdaten werden privat mit Cloudflare R2 gespeichert.</p>
+<p>Der globale Anwendungsserver läuft auf Oracle Cloud in den USA. Verschlüsselte Objektdaten werden privat mit Cloudflare R2 gespeichert.</p>
 <p>Datensicherheit und Datenschutz sind uns wichtig. Notizen, Anhänge und Dateipfade werden vor dem Hochladen auf Ihrem Gerät mit AES-256-GCM verschlüsselt. Ver- und Entschlüsselung erfolgen auf Ihren Geräten. Der Dienst speichert verschlüsselte Inhalte; Ihr Verschlüsselungspasswort ist von Ihrer Kontoanmeldung getrennt.</p>
 <p>Verwenden Sie Obsidian <strong>1.12.7 oder neuer</strong>.</p>
 <p><a href="https://smartsync.cc/de/">Website</a> · <a href="https://smartsync.cc/de/download/">Herunterladen/aktualisieren</a> · <a href="USER-GUIDE.md">Bedienungsanleitung</a> · <a href="https://smartsync.cc/de/pricing/">Pläne</a></p>
