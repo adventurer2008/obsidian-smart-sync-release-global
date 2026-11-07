@@ -1,5 +1,7 @@
 # Smart Sync user guide
 
+Current Stable version: **1.1.8**. Refresh the Global version list in Hub and choose Stable for updates.
+
 <!-- LANGUAGES:START -->
 [English](USER-GUIDE.md) · [Simplified Chinese](docs/i18n/zh-CN/USER-GUIDE.md) · [Traditional Chinese](docs/i18n/zh-TW/USER-GUIDE.md) · [Japanese](docs/i18n/ja/USER-GUIDE.md) · [Korean](docs/i18n/ko/USER-GUIDE.md) · [German](docs/i18n/de/USER-GUIDE.md) · [French](docs/i18n/fr/USER-GUIDE.md) · [Spanish](docs/i18n/es/USER-GUIDE.md) · [Brazilian Portuguese](docs/i18n/pt-BR/USER-GUIDE.md) · [Russian](docs/i18n/ru/USER-GUIDE.md)
 <!-- LANGUAGES:END -->
@@ -38,6 +40,8 @@ For an update, disable the plugin, replace **only those three program files**, t
 If a vault-creation reply is lost, use the pending operation's recovery message and check existing cloud vaults. Do not repeatedly create new vaults with different names.
 
 ## Add another device
+
+If you are signed in but have not connected this local vault, **Add device** first guides you to select a cloud vault explicitly. Connect the intended vault before approving another device; the plugin does not select one automatically.
 
 Install the same regional plugin, sign in to the same account and select the same cloud vault. Use its original encryption passphrase. The device-management flow also offers a six-digit pairing code: obtain it on the new device, approve it from an already connected device using **Add device**, and compare the displayed fingerprint before approving. Include leading zeroes. Expired or used codes must be regenerated.
 

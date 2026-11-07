@@ -8,6 +8,11 @@ const {supportedLanguages,resolveLanguage,configureLanguage,englishDraft,t,local
 const {catalogs}=await import('../src/locales/catalogs.js');
 const {billingCard,capacityWarning}=await import('../src/billing.js');
 const slots=value=>[...value.matchAll(/\{(\w+)\}/g)].map(m=>m[1]).sort();
+test('Manage plan remains visible for a paid annual subscription long before expiry',()=>{
+ configureLanguage('en');
+ const card=billingCard({entitlement:{plan:'global-1gb-year',paid:true,logical:1024**3,ends:Date.now()+300*86400000}},true);
+ assert.equal(card.prominent,true);assert.equal(card.label,'Manage plan');
+});
 test('all ten Global locales are complete, retain placeholders and the machine deletion token',()=>{
  assert.equal(Object.keys(supportedLanguages).length,10);
  for(const code of Object.keys(supportedLanguages)){
@@ -39,6 +44,21 @@ test('translated Global billing keeps the actual Global free quota and subscript
  configureLanguage('en');
 });
 
+test('Global plan cards omit generic capacity prose but retain actionable billing notices',()=>{
+ const now=Date.UTC(2026,10,6);
+ const paid={entitlement:{plan:'global-1gb-month',paid:true,logical:1024**3,ends:now+86400000},usage:{logicalBytes:416*1024**2}};
+ for(const code of Object.keys(supportedLanguages)){
+  configureLanguage(code);
+  const card=billingCard(paid,true,now);
+  assert.equal(card.help,'',code);assert.ok(card.title);assert.ok(card.usage);assert.ok(card.expires);assert.ok(card.label);assert.equal(card.prominent,true);
+  assert.equal(billingCard({entitlement:{plan:'global-free',paid:false,logical:50*1024**2}},true,now).help,'',code);
+  assert.ok(billingCard({...paid,testMode:true},true,now).help,code);
+  assert.ok(billingCard({everPurchased:true,lastPurchase:{plan:'global-1gb-month',status:'refunded',ends:now+86400000}},true,now).help,code);
+  assert.ok(billingCard({everPurchased:true,lastPurchase:{plan:'global-1gb-month',ends:now-1}},true,now).help,code);
+ }
+ configureLanguage('en');
+});
+
 test('Global confirmation hints match the exact existing validation words in every language',()=>{
  for(const code of Object.keys(supportedLanguages)){
   configureLanguage(code);
@@ -65,12 +85,18 @@ test('language selection persists outside synchronized settings and applies only
  configureLanguage('en');
  const {IndependentSettings}=await import('../src/plugin.js');
  const settings={origin:'https://sync.smartsync.cc',workspace:'synthetic',direction:'both',interval:60,attachmentMiB:256,excludedExtensions:[],configuration:{}};
- const connection={synthetic:{key:'synthetic'}};let saves=0,changed,notice;
+ const connection={synthetic:{key:'synthetic'}};let saves=0,changed,notice,selected;
  const owner={data:{localId:'synthetic',settings,connections:connection},manifest:{version:'synthetic'},secret:()=>'',statusListeners:new Set(),status:{textContent:''},lanSummary:()=>'',saveData:async()=>{saves++;},notify:value=>{notice=value;}};
  const definitions=IndependentSettings.prototype.getSettingDefinitions.call({owner,expanded:new Set()});
  const row=definitions.find(item=>item.name===t('language.title'));assert.ok(row);
- row.render({setDesc(){return this;},addDropdown(callback){const input={addOptions(){return this;},setValue(){return this;},onChange(callback){changed=callback;return this;}};callback(input);return this;}});
+ const classes=new Set();
+ const control={settingEl:{classList:{add(value){classes.add(value);}}},setDesc(){assert.fail('Language row must not show a description');},addDropdown(callback){const input={addOptions(){return this;},setValue(value){selected=value;return this;},onChange(callback){changed=callback;return this;}};callback(input);return this;}};
+ row.render(control);assert.equal(selected,'auto');
+ assert.ok(classes.has('smart-sync-language-row'));
+ configureLanguage('zh-Hans');owner.data.interfaceLanguage='auto';row.render(control);assert.equal(selected,'auto');
+ configureLanguage('en');delete owner.data.interfaceLanguage;
  await changed('de');assert.equal(owner.data.interfaceLanguage,'de');assert.equal(owner.data.settings,settings);assert.equal(owner.data.connections,connection);assert.equal(settings.direction,'both');assert.equal(saves,1);assert.match(notice,/Reload/);assert.equal(t('language.auto'),'Follow Obsidian');
+ row.render(control);assert.equal(selected,'de');
  await changed('not-a-locale');assert.equal(saves,1);
  owner.saveData=async()=>{throw Error('Synthetic disk full');};await changed('ja');assert.equal(owner.data.interfaceLanguage,'de');assert.equal(settings.origin,'https://sync.smartsync.cc');
  let rejectFirst,attempt=0;owner.saveData=()=>++attempt===1?new Promise((resolve,reject)=>{rejectFirst=reject;}):Promise.resolve();

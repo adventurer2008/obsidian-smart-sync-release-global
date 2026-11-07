@@ -1,4 +1,8 @@
-# Smart Sync 1.1.7
+# Smart Sync 1.1.8
+
+- Promote the tested Alpha.6 to the Stable channel in Hub.
+- Guide signed-in accounts without a connected vault through explicit vault selection before approving another device.
+- Sign-in, successful sign-in, plans, orders and payment pages inherit the plugin language without another language selector.
 
 - Refine confirmation hints and account, plan, order and payment wording across all ten interface languages.
 - Hide closed orders and empty order-status rows in My plan while preserving current plan, usage, expiry and actionable checkout/refund states. Order history remains available.
