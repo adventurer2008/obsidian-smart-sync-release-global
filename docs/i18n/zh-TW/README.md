@@ -37,3 +37,4 @@
 <p>內容和路徑在裝置上加密。帳戶身分、筆記庫/裝置標籤、使用情況和操作元資料都在內容加密之外。全域用戶端將診斷資訊保留在本機以供手動匯出，並且不會上傳診斷遙測資料。加密和歷史記錄不會取代獨立備份。閱讀 <a href="https://smartsync.cc/zh-TW/privacy/">隱私權政策</a>.</p>
 <p>對於帳戶刪除，請先刪除雲端筆記庫並等待清理，然後使用 <strong>帳戶 → 危險區域 → 刪除帳戶</strong>，驗證相同的身份並輸入請求的確認資訊。本地註釋仍然存在。</p>
 <p>問題諮詢： <a href="mailto:admin@smartsync.cc">admin@smartsync.cc</a>。包括您的平台和外掛程式/Obsidian 版本；切勿發送密碼、令牌、電子郵件代碼或私人筆記。</p>
+<p>X: <a href="https://x.com/smartsync_cc">@smartsync_cc</a></p>

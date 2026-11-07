@@ -37,3 +37,4 @@
 <p>内容和路径在设备上加密。帐户身份、笔记库/设备标签、使用情况和操作元数据都在内容加密之外。全局客户端将诊断信息保留在本地以供手动导出，并且不会上传诊断遥测数据。加密和历史记录不会取代独立备份。阅读 <a href="https://smartsync.cc/zh-CN/privacy/">隐私政策</a>.</p>
 <p>对于帐户删除，请先删除云笔记库并等待清理，然后使用 <strong>账户 → 危险区域 → 删除账户</strong>，验证相同的身份并输入请求的确认信息。本地注释仍然存在。</p>
 <p>问题咨询： <a href="mailto:admin@smartsync.cc">admin@smartsync.cc</a>。包括您的平台和插件/Obsidian 版本；切勿发送密码、令牌、电子邮件代码或私人笔记。</p>
+<p>X: <a href="https://x.com/smartsync_cc">@smartsync_cc</a></p>
