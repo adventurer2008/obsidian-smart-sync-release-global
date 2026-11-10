@@ -1,4 +1,4 @@
-<p align="center"><img src="assets/boundless-sync.png" width="140" alt="Smart Sync logo"></p>
+<p align="center"><img src="assets/boundless-sync.png" width="80" alt="Smart Sync logo"></p>
 
 # Smart Sync
 
