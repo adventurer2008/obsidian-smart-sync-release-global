@@ -1,21 +1,32 @@
 # Smart Sync
 
-Current Stable release: **1.1.9**. Refresh the Global version list in Hub and choose the Stable channel to install or update.
+**End-to-end encrypted sync for Obsidian — with LAN acceleration when your devices are on the same network.**
+
+Your notes, attachments and file paths are encrypted on your device with AES-256-GCM before anything is uploaded. The server only ever stores ciphertext, and your encryption passphrase is separate from your account login — we can't read your notes, and we can't recover a lost passphrase.
+
+- 🔒 **Private by design** — AES-256-GCM encryption on your device; passphrase separate from account login
+- 🏠 **LAN acceleration** — devices on the same Wi-Fi sync directly, with cloud fallback when they don't
+- 🆓 **Free to start** — 50 MB, 1 vault, unlimited devices; paid plans from $1/month
+- 🛠 **More than files** — version history and recovery, device pairing, folder sorting, per-note encryption, and sync for selected settings, plugins and themes
 
 <!-- LANGUAGES:START -->
-[English](README.md) · [Simplified Chinese](docs/i18n/zh-CN/README.md) · [Traditional Chinese](docs/i18n/zh-TW/README.md) · [Japanese](docs/i18n/ja/README.md) · [Korean](docs/i18n/ko/README.md) · [German](docs/i18n/de/README.md) · [French](docs/i18n/fr/README.md) · [Spanish](docs/i18n/es/README.md) · [Brazilian Portuguese](docs/i18n/pt-BR/README.md) · [Russian](docs/i18n/ru/README.md)
+
+[English](README.md) · [Simplified Chinese](docs/i18n/zh-CN/README.md) · [Traditional Chinese](docs/i18n/zh-TW/README.md) · [Japanese](docs/i18n/ja/README.md) ·
+ [Korean](docs/i18n/ko/README.md) · [German](docs/i18n/de/README.md) · [French](docs/i18n/fr/README.md) · [Spanish](docs/i18n/es/README.md) · [Brazilian Portuguese](docs/i18n/pt-BR/README.md) · [Russian](docs/i18n/ru/README.md)
+
 <!-- LANGUAGES:END -->
 
-A community sync plugin for Obsidian, **Real-time sync across devices, with faster synchronization and advanced features beyond typical sync tools.**<br>
-Keep notes, attachments and selected settings in sync across computers, phones and tablets.
+## Start syncing in about a minute
 
-The Global application server runs on Oracle Cloud in the United States. Encrypted object data is stored privately using Cloudflare R2.
+1. Install **Smart Sync** from Obsidian's Community plugins and enable it.
+2. Open **Settings → Smart Sync → Sign in** (Google, GitHub or email).
+3. Create a cloud vault and set your encryption passphrase — that's it, sync runs automatically.
 
-We value data security and privacy. Notes, attachments and file paths are encrypted on your device with AES-256-GCM before upload. Encryption and decryption happen on your devices; the service stores encrypted content, and your encryption password is separate from your account login.
+Full walkthrough: [USER-GUIDE.md](USER-GUIDE.md)
 
-Use Obsidian **1.12.7 or newer**.
+[Website](https://smartsync.cc/) · [Plans](https://smartsync.cc/pricing/) · [Download / update](https://smartsync.cc/download/)
 
-[Website](https://smartsync.cc/) · [Download / update](https://smartsync.cc/download/) · [Operation manual](USER-GUIDE.md) · [Plans](https://smartsync.cc/pricing/)
+> Requires Obsidian **1.12.7 or newer**. Current stable release: **1.1.9**.
 
 ## Get started
 
@@ -50,6 +61,9 @@ For manual installation, download `main.js`, `manifest.json` and `styles.css` fr
 
 
 ## Account, payments and privacy
+
+The Global application server runs on Oracle Cloud in the United States. Encrypted object data is stored privately using Cloudflare R2.
+
 
 Hosted synchronization requires an account. The Free plan includes 50 MB, one cloud vault and unlimited devices; paid plans add capacity. Payments are charged in USD. Stripe is the default provider; some accounts may be assigned Dodo Payments. Existing orders and subscriptions stay with their original provider. Review [plans](https://smartsync.cc/pricing/) and [terms](https://smartsync.cc/terms/) before paying.
 
