@@ -1,6 +1,4 @@
-<p align="center"><img src="assets/boundless-sync.png" width="80" alt="Smart Sync logo"></p>
-
-# Smart Sync
+# Smart Sync <img src="assets/boundless-sync.png" width="32" height="32" align="absmiddle" alt="">
 
 **End-to-end encrypted sync for Obsidian — with LAN acceleration when your devices are on the same network.**
 
