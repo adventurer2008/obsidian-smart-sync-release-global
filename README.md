@@ -27,6 +27,10 @@ Full walkthrough: [USER-GUIDE.md](USER-GUIDE.md)
 
 > Requires Obsidian **1.12.7 or newer**. Current stable release: **1.1.9**.
 
+<p align="center"><img src="assets/settings-overview.png" width="720" alt="Smart Sync settings: sign in, pair a device, and sync"></p>
+
+<p align="center"><em>Smart Sync settings — sign in, pair a device, and sync from one panel.</em></p>
+
 ## Get started
 
 ### Install from Obsidian Community plugins
