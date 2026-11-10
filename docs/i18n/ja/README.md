@@ -1,4 +1,4 @@
-<p><a href="../../../README.md">English</a> · <a href="../zh-CN/README.md">简体中文</a> · <a href="../zh-TW/README.md">繁體中文</a> · <a href="../ja/README.md">日本語</a> · <a href="../ko/README.md">한국어</a> · <a href="../de/README.md">Deutsch</a> · <a href="../fr/README.md">Français</a> · <a href="../es/README.md">Español</a> · <a href="../pt-BR/README.md">Português (Brasil)</a> · <a href="../ru/README.md">Русский</a></p>
+<p><a href="../../../README.md">English</a> · <a href="../de/README.md">Deutsch</a> · <a href="../fr/README.md">Français</a> · <a href="../es/README.md">Español</a> · <a href="../pt-BR/README.md">Português (Brasil)</a> · <a href="../ru/README.md">Русский</a> · <a href="../zh-CN/README.md">简体中文</a> · <a href="../zh-TW/README.md">繁體中文</a> · <a href="../ja/README.md">日本語</a> · <a href="../ko/README.md">한국어</a></p>
 <h1 id="smart-sync">Smart Sync</h1>
 <p>Obsidian のコミュニティ同期プラグイン。 <strong>デバイス間のリアルタイム同期。より速い同期と、一般的な同期ツールを超える高度な機能。</strong><br>
 パソコン、スマートフォン、タブレットで、ノート、添付ファイル、選択した設定を同期します。</p>

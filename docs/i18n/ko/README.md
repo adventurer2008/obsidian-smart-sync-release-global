@@ -1,4 +1,4 @@
-<p><a href="../../../README.md">English</a> · <a href="../zh-CN/README.md">简体中文</a> · <a href="../zh-TW/README.md">繁體中文</a> · <a href="../ja/README.md">日本語</a> · <a href="../ko/README.md">한국어</a> · <a href="../de/README.md">Deutsch</a> · <a href="../fr/README.md">Français</a> · <a href="../es/README.md">Español</a> · <a href="../pt-BR/README.md">Português (Brasil)</a> · <a href="../ru/README.md">Русский</a></p>
+<p><a href="../../../README.md">English</a> · <a href="../de/README.md">Deutsch</a> · <a href="../fr/README.md">Français</a> · <a href="../es/README.md">Español</a> · <a href="../pt-BR/README.md">Português (Brasil)</a> · <a href="../ru/README.md">Русский</a> · <a href="../zh-CN/README.md">简体中文</a> · <a href="../zh-TW/README.md">繁體中文</a> · <a href="../ja/README.md">日本語</a> · <a href="../ko/README.md">한국어</a></p>
 <h1 id="smart-sync">Smart Sync</h1>
 <p>Obsidian 커뮤니티 동기화 플러그인. <strong>기기 간 실시간 동기화, 더 빠른 동기화와 일반적인 동기화 도구를 넘어서는 고급 기능.</strong><br>
 컴퓨터, 휴대폰, 태블릿에서 노트, 첨부 파일 및 선택한 설정을 동기화하세요.</p>
