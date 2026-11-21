@@ -4,7 +4,7 @@
   "sourceCommit": "8460490ed12201922b94255f7896a2f1de157bd1",
   "edition": "global",
   "version": "1.1.10",
-  "previewOnly": true,
+  "previewOnly": false,
   "sourceInputs": {
     "CONTRIBUTING.md": "81ddaf73c82c412ce98d249518dce169f20bc915895168f66181063e0574cccb",
     "LICENSE": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
@@ -237,5 +237,6 @@
     "styles.css": "1e26e0514ee9e7647573950c22b78e116cdcdac5df2db3ae360d43b584d48ca7"
   },
   "validationScope": "Complete public Client Windows and Linux suites; Global regional rebuild; browser responsive tests; isolated live Global body/source-mtime checks. Native device acceptance pending.",
-  "productionAcceptance": "pending-live-environment-verification"
+  "productionAcceptance": "verified-isolated-live-body-and-source-mtime",
+  "runtimeManifest": "19e3bf87091e0742b247f521f0735a9fab71dbce1f477f121dbee530156058ed"
 }
