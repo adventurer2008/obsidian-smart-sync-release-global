@@ -93,6 +93,9 @@ export class NoteEncryption {
 		this.volatileDrafts = new Map();
 		this.recoveryDir = `${this.app.vault.configDir}/plugins/${owner.manifest.id}/encrypted-drafts`;
 	}
+	addFileMenu(menu, file) {
+		if (fileIsNote(file)) menu.addItem(item => item.setTitle(t('encryption.encryptNote')).setIcon('lock').onClick(() => { void this.encryptNote(file).catch(failure); }));
+	}
 	active(epoch) { return !this.stopped && epoch === this.epoch && !this.document?.hidden; }
 	async capture(file, editor) {
 		if (!fileIsNote(file)) throw Error(t('encryption.text16'));
@@ -543,7 +546,7 @@ class LockWidget extends WidgetType {
 	}
 }
 
-export function encryptionExtension(manager) {
+export function encryptionExtension(manager, addSelectionAction) {
 	const decorate = state => Decoration.set(lockedRanges(state.doc.toString()).map(range => Decoration.replace({
 		widget: new LockWidget(manager, range.marker, range.box),
 	}).range(range.from, range.to)), true);
@@ -571,6 +574,7 @@ export function encryptionExtension(manager) {
 			toolbar = view.dom.parentElement.createDiv({ cls: 'wujie-encryption-selection-tools' });
 			const action = button(toolbar, t('encryption.encryptSelection'), () => { void manager.encryptSelection(info.editor, info.file).catch(failure); });
 			action.addEventListener('pointerdown', event => event.preventDefault());
+		addSelectionAction?.(toolbar, info.editor, info.file);
 		};
 		update();
 		return { update, destroy() { toolbar?.remove(); } };
@@ -578,7 +582,7 @@ export function encryptionExtension(manager) {
 	return [field, protect, mobile];
 }
 
-export function registerNoteEncryption(owner) {
+export function registerNoteEncryption(owner, addSelectionAction) {
 	const manager = new NoteEncryption(owner); owner.noteEncryption = manager;
 	owner.encryptWholeNote = () => manager.encryptNote().catch(failure);
 	owner.encryptSelectedText = () => {
@@ -601,9 +605,7 @@ export function registerNoteEncryption(owner) {
 			if (!editor.getSelection() || !fileIsNote(info.file)) return;
 			menu.addItem(item => item.setTitle(t('encryption.encryptSelection')).setIcon('lock').onClick(() => { void manager.encryptSelection(editor, info.file).catch(failure); }));
 		}));
-		owner.registerEvent(workspace.on('file-menu', (menu, file) => {
-			if (fileIsNote(file)) menu.addItem(item => item.setTitle(t('encryption.encryptNote')).setIcon('lock').onClick(() => { void manager.encryptNote(file).catch(failure); }));
-		}));
+		owner.registerEvent(workspace.on('file-menu', (menu, file) => manager.addFileMenu(menu, file)));
 		owner.registerEvent(workspace.on('layout-change', () => manager.sweep()));
 	}
 	if (owner.app.vault.on) for (const event of ['rename', 'delete']) owner.registerEvent(owner.app.vault.on(event, () => manager.lockAll()));
@@ -614,7 +616,7 @@ export function registerNoteEncryption(owner) {
 		owner.registerDomEvent(manager.document.defaultView, 'pagehide', () => manager.lockAll());
 	}
 	owner.registerInterval(window.setInterval(() => manager.sweep(), 10_000));
-	owner.registerEditorExtension?.(encryptionExtension(manager));
+	owner.registerEditorExtension?.(encryptionExtension(manager, addSelectionAction));
 	owner.registerMarkdownCodeBlockProcessor?.('wujie-encrypted', (source, el, ctx) => {
 		let box; try { box = decodeBox(source.trim()); } catch { /* Opaque damaged envelope. */ }
 		const marker = box ? lockedMarker(box) : '';

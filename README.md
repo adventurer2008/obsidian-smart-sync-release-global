@@ -25,7 +25,7 @@ Full walkthrough: [USER-GUIDE.md](USER-GUIDE.md)
 
 [Website](https://smartsync.cc/) · [Plans](https://smartsync.cc/pricing/) · [Download / update](https://smartsync.cc/download/)
 
-> Requires Obsidian **1.12.7 or newer**. Current stable release: **1.1.9**.
+> Requires Obsidian **1.12.7 or newer**. Current stable release: **1.1.10**.
 
 <p align="center"><img src="assets/settings-overview.png" width="720" alt="Smart Sync settings: sign in, pair a device, and sync"></p>
 

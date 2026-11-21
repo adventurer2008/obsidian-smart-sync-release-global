@@ -1,7 +1,9 @@
-# Smart Sync 1.1.9
+# Smart Sync 1.1.10
 
-- Improve settings layout on narrow screens and with enlarged text.
-- Remove CSS override and accessibility warnings while preserving touch targets and hidden actions.
-- Add a contribution guide and verifiable GitHub build provenance.
+- Read local EPUB books with chapter navigation, illustrations and internal links.
+- Find local Markdown notes faster with title-first results and an in-memory text filter.
+- Reduce remote checks during unchanged-file scans while preserving Markdown priority and source modification times.
+- Restore note actions in Notebook Navigator and improve restored sidebar titles.
+- Keep desktop synchronization feedback steady and update the language menu order.
 
-Synchronization, encryption, payments, settings and original file modification times retain their existing behavior. Preserve data.json, secret storage, checkpoints and vault files when updating.
+Update the program files while retaining data.json, secret storage, checkpoints and vault files. Physical-device acceptance of this Global package remains pending on Windows, macOS, Linux, Android, iPhone and iPad.

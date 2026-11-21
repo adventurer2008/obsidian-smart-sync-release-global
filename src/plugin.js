@@ -7,6 +7,9 @@ import { ConnectionCheckpoints } from './checkpoint.js';
 import { notePinState, queueNotePosition, moveNotePins, pinPathSet, synchronizeNotePins } from './pinning.js';
 import { registerNoteSearch } from './search.js';
 import { registerNoteEncryption } from './note-encryption.js';
+import { registerNoteTranslation } from './translation.js';
+import { registerEpubReader } from './epub-view.js';
+/* global __SMART_SYNC_CN_TRANSLATION__ -- injected by the regional build. */
 import {
 	ItemView,
 	Modal,
@@ -689,31 +692,35 @@ export default class IndependentSync extends Plugin {
 					window.clearTimeout(this.explorerSortTimer);
 					this.explorerSortTimer = window.setTimeout(() => this.refreshExplorerSorting(), 150);
 				}));
-		// R138 replaces legacy size presets with always / on-note-open.
-		if (workspace.on) this.registerEvent(workspace.on('file-menu', (menu, file) => {
+		const positionTitle = (key, navigator) => navigator ? t('pin.explorerAction', { action: t(key) }) : t(key);
+		const addFileMenu = (menu, file, navigator = false) => {
 			if (!this.canPinEntry(file)) return;
-			menu.addItem(item => item.setTitle(t(this.isNotePinned(file.path) ? 'pin.unpin' : 'pin.pin'))
+			menu.addItem(item => item.setTitle(positionTitle(this.isNotePinned(file.path) ? 'pin.unpin' : 'pin.pin', navigator))
 				.setIcon('pin').onClick(() => { void this.toggleNotePin(file).catch(error => this.notify(failureMessage(error))); }));
-			menu.addItem(item => item.setTitle(t(this.isNoteBottomed(file.path) ? 'pin.unbottom' : 'pin.bottom'))
+			menu.addItem(item => item.setTitle(positionTitle(this.isNoteBottomed(file.path) ? 'pin.unbottom' : 'pin.bottom', navigator))
 				.setIcon('arrow-down-to-line').onClick(() => { void this.setNoteBottoms([file], !this.isNoteBottomed(file.path)).catch(error => this.notify(failureMessage(error))); }));
 			if (file instanceof TFile && file.path.toLowerCase().endsWith('.md'))
 				menu.addItem(item => item.setTitle(t('history.contextMenu')).setIcon('history')
 					.onClick(() => { void this.history(undefined, file.path); }));
-		}));
-		if (workspace.on) this.registerEvent(workspace.on('files-menu', (menu, files) => {
+		};
+		const addFilesMenu = (menu, files, navigator = false) => {
 			const entries = files.filter(file => this.canPinEntry(file));
 			if (!entries.length) return;
 			for (const pinned of [true, false]) {
 				if (!entries.some(file => this.isNotePinned(file.path) !== pinned)) continue;
-				menu.addItem(item => item.setTitle(t(pinned ? 'pin.pin' : 'pin.unpin')).setIcon('pin')
+				menu.addItem(item => item.setTitle(positionTitle(pinned ? 'pin.pin' : 'pin.unpin', navigator)).setIcon('pin')
 					.onClick(() => { void this.setNotePins(entries, pinned).catch(error => this.notify(failureMessage(error))); }));
 			}
 			for (const bottomed of [true, false]) {
 				if (!entries.some(file => this.isNoteBottomed(file.path) !== bottomed)) continue;
-				menu.addItem(item => item.setTitle(t(bottomed ? 'pin.bottom' : 'pin.unbottom')).setIcon('arrow-down-to-line')
+				menu.addItem(item => item.setTitle(positionTitle(bottomed ? 'pin.bottom' : 'pin.unbottom', navigator)).setIcon('arrow-down-to-line')
 					.onClick(() => { void this.setNoteBottoms(entries, bottomed).catch(error => this.notify(failureMessage(error))); }));
 			}
-		}));
+		};
+		if (workspace.on) {
+			this.registerEvent(workspace.on('file-menu', (menu, file) => addFileMenu(menu, file)));
+			this.registerEvent(workspace.on('files-menu', (menu, files) => addFilesMenu(menu, files)));
+		}
 		if (this.app.vault.on) {
 			this.registerEvent(this.app.vault.on('rename', (file, from) => {
 				const { pins } = this.notePinContext();
@@ -773,7 +780,37 @@ export default class IndependentSync extends Plugin {
 			}
 		this.logViews = new Set();
 		registerNoteSearch(this);
-		registerNoteEncryption(this);
+		registerEpubReader(this);
+		let translation;
+		if (typeof __SMART_SYNC_CN_TRANSLATION__ === 'undefined' ? edition.edition === 'cn' : __SMART_SYNC_CN_TRANSLATION__) {
+			translation = registerNoteTranslation(this);
+		}
+		this.closeTranslation = translation?.close;
+		const encryption = registerNoteEncryption(this, translation?.addMobileAction);
+		let navigatorMenus;
+		const refreshNavigatorMenus = () => {
+			if (this.stopped) return;
+			const menus = this.app.plugins?.plugins?.['notebook-navigator']?.api?.menus;
+			if (menus === navigatorMenus) return;
+			this.disposeNavigatorMenus?.();
+			navigatorMenus = menus;
+			const disposeFile = menus?.registerFileMenu?.(context => {
+				if (context.selection?.mode === 'multiple') {
+					addFilesMenu(context, context.selection.files, true);
+					return;
+				}
+				addFileMenu(context, context.file, true);
+				encryption.addFileMenu(context, context.file);
+			});
+			const disposeFolder = menus?.registerFolderMenu?.(context => addFileMenu(context, context.folder, true));
+			this.disposeNavigatorMenus = () => {
+				disposeFile?.();
+				disposeFolder?.();
+			};
+		};
+		refreshNavigatorMenus();
+		workspace.onLayoutReady?.(refreshNavigatorMenus);
+		if (workspace.on) this.registerEvent(workspace.on('layout-change', refreshNavigatorMenus));
 		this.refreshBackgroundTray();
 		if (!Platform.isMobile && windowsStartupSupported(window.require) && this.registerObsidianProtocolHandler) {
 			this.registerObsidianProtocolHandler(`${this.manifest.id}-startup`, params => {
@@ -851,6 +888,7 @@ export default class IndependentSync extends Plugin {
 			});
 		}
 		this.status = this.addStatusBarItem();
+		if (!Platform.isMobile) this.status.classList.add('smart-sync-status-bar');
 		this.setStatus(t(this.data.manualSyncStopped ? 'task.stopped' : this.data.settings.direction === 'paused' ? 'msg_c4f91c861a' : 'sync.ready'));
 		this.tab = new IndependentSettings(this.app, this);
 		this.addSettingTab(this.tab);
@@ -2369,7 +2407,7 @@ export default class IndependentSync extends Plugin {
 				if (this.cycleActivity && Number.isSafeInteger(scan?.checked) && Number.isSafeInteger(scan?.total) && scan.checked >= 0 && scan.total >= scan.checked)
 					this.cycleActivity.scan = { checked: scan.checked, total: scan.total };
 				this.syncStage('scanning');
-				this.setStatus(t('msg_242eab2e90', { text: text }), { overview: this.transferPhase ?? t('overview.scanning') });
+				this.setStatus(t('msg_242eab2e90', { text: text }), { overview: this.transferPhase ?? t('overview.scanning'), progress: true });
 				this.logEvent(text);
 			},
 			onTask: async (event) => {
@@ -2451,7 +2489,18 @@ export default class IndependentSync extends Plugin {
 		for (const update of this.statusListeners ?? []) update(text);
 		if (this.logViews?.size) this.refreshTasks();
 	}
-	setStatus(text, { overview = text } = {}) {
+	writeStatusBar(text) {
+		if (this.status.textContent === text) return;
+		this.status.setText(text);
+		if (!Platform.isMobile) this.status.setAttribute('title', text);
+	}
+	clearStatusBarProgress() {
+		if (!this.statusBarProgress) return;
+		window.clearTimeout(this.statusBarProgress.timer);
+		this.statusBarProgress = undefined;
+	}
+	setStatus(text, { overview = text, progress = false } = {}) {
+		if (this.stopped) return;
 		if (this.deferBackgroundStatus && [t('msg_4c9b675ab6'), t('overview.scanning')].includes(overview)) {
 			this.backgroundStatus = { text, overview };
 			return;
@@ -2459,9 +2508,26 @@ export default class IndependentSync extends Plugin {
 		window.clearTimeout(this.backgroundStatusTimer);
 		this.deferBackgroundStatus = false;
 		this.backgroundStatus = undefined;
-		if (!this.data?.settings.workspace) text = t(this.data?.lastDeletedWorkspace ? 'notebooks.deletedStatus' : 'sync.notConnected');
-		this.status.setText(text);
-		this.publishOverview(this.data?.settings.workspace ? overview : text);
+		const workspace = this.data?.settings.workspace;
+		if (!workspace) text = t(this.data?.lastDeletedWorkspace ? 'notebooks.deletedStatus' : 'sync.notConnected');
+		if (!progress || !workspace || Platform.isMobile) {
+			this.clearStatusBarProgress();
+			this.writeStatusBar(text);
+		} else if (this.statusBarProgress) {
+			this.statusBarProgress.text = text;
+		} else {
+			const activity = this.cycleActivity;
+			const { localId, settings: { origin } } = this.data;
+			const pending = { text };
+			pending.timer = window.setTimeout(() => {
+				this.statusBarProgress = undefined;
+				if (this.cycleActivity === activity && this.data.localId === localId &&
+					this.data.settings.origin === origin && this.data.settings.workspace === workspace)
+					this.writeStatusBar(pending.text);
+			}, 1000);
+			this.statusBarProgress = pending;
+		}
+		this.publishOverview(workspace ? overview : text);
 	}
 
 	automaticChangesAllowed(sending = false) {
@@ -2595,6 +2661,8 @@ export default class IndependentSync extends Plugin {
 		} catch { this.notify(t('tray.unavailable')); }
 	}
 	onunload() {
+		this.disposeNavigatorMenus?.();
+		this.closeTranslation?.();
 		this.backgroundTray?.dispose();
 		this.backgroundTray = undefined;
 		this.tab?.disposeLegacySettings?.();
@@ -2611,6 +2679,7 @@ export default class IndependentSync extends Plugin {
 		this.detachLinkMaintenanceTimes?.();
 		window.clearTimeout(this.explorerSortTimer);
 		this.stopped = true;
+		this.clearStatusBarProgress();
 		for (const detach of this.explorerSortViews?.values() ?? []) detach();
 		this.explorerSortViews?.clear();
 		this.statusListeners?.clear();
@@ -2901,6 +2970,7 @@ export default class IndependentSync extends Plugin {
 			}
 		})().finally(() => {
 			window.clearInterval(this.stageTimer);
+			this.clearStatusBarProgress();
 			this.lastCycleActivity = { ...this.cycleActivity, finishedAt: Date.now() };
 			this.cycleActivity = undefined;
 			window.clearTimeout(this.backgroundStatusTimer);
@@ -2990,6 +3060,7 @@ export default class IndependentSync extends Plugin {
 		});
 	}
 	async signOut() {
+		this.closeTranslation?.();
 		this.billingHandoffCancel?.();this.billingFallbackWindow?.close();this.preparedBillingEntry=undefined;
 		this.accountEmail = '';
 		this.overviewIdentity = undefined;
